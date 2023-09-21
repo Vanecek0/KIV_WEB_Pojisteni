@@ -1,0 +1,11 @@
+{
+  "name": "autopojisteni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/init.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel Vaněček",
+  "license": "MIT"
+}
