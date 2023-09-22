@@ -1,5 +1,20 @@
 {
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+
     "require": {
-        "components/jquery": "^3.6"
+        "components/jquery": "^3.6",
+        "twig/twig": "^3.0"
     }
+    
 }
