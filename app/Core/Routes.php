@@ -6,5 +6,5 @@ use App\Controllers\Home;
 return [ 
     "/" => [Home::class, "index"],
     "/home" => [Home::class, "index"],
-
+    "/home/{user}" => [Home::class, "test"]
  ];
