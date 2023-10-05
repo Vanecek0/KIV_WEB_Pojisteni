@@ -15,19 +15,13 @@ class Home implements \App\Interfaces\IController {
         $this->twig = $twig;
     }
 
-    public function index() {
+    public function index($request) {
         $userModel = new User();
+        echo($request->get());
         echo($userModel->getUserById(1)[0]->username);
 
         return $this->twig->render('Home/index.twig', [
             "name" => "Fabian"
-        ]);
-    
-    }
-
-    public function test($user) {
-        return $this->twig->render('Home/index.twig', [
-            "name" => 'user'
         ]);
     
     }
