@@ -11,11 +11,14 @@ class PageError implements \App\Interfaces\IController {
         $this->twig = $twig;
     }
 
+    public function index () {
+        return $this->pageNotFound();
+    }
+
     public function pageNotFound () {
         return $this->twig->render('PageError/404.twig', [
             "errorTitle" => "404 Page not found"
         ]);
     }
-
 
 }

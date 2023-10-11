@@ -7,9 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controllers\\Home' => $baseDir . '/app/Controllers/Home.php',
-    'App\\Core\\App' => $baseDir . '/app/Core/App.php',
-    'App\\Core\\Controller' => $baseDir . '/app/Core/Controller.php',
+    'App\\Controllers\\PageError' => $baseDir . '/app/Controllers/PageError.php',
+    'App\\Controllers\\User' => $baseDir . '/app/Controllers/User.php',
+    'App\\Core\\Database' => $baseDir . '/app/Core/Database.php',
+    'App\\Core\\Request' => $baseDir . '/app/Core/Request.php',
+    'App\\Core\\Router' => $baseDir . '/app/Core/Router.php',
+    'App\\Interfaces\\IController' => $baseDir . '/app/Interfaces/IController.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Repository\\Repository' => $baseDir . '/app/Repository/Repository.php',
+    'App\\Repository\\UserRepository' => $baseDir . '/app/Repository/UserRepository.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Symfony\\Polyfill\\Ctype\\Ctype' => $vendorDir . '/symfony/polyfill-ctype/Ctype.php',
     'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',

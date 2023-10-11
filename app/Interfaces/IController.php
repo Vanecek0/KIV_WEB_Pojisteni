@@ -1,9 +1,10 @@
 <?php
 namespace App\Interfaces;
 
+use App\Core\Database;
 use Twig\Environment;
 
 interface IController {
 
-    public function __construct(Environment $twig);
+    public function index();
 }

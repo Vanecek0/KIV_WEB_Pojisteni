@@ -5,9 +5,9 @@ use App\Core\Database;
 
 class User {
 
-    private int $id;
-    public ?string $username;
-    private string $email;
+    public int $id;
+    public string $username;
+    public string $email;
     private string $password;
 
     // 0 => not logged in, 1 => user, 1<<1 => admin, 1<<2 => superadmin
@@ -19,8 +19,8 @@ class User {
         $this->db = Database::getInstance();
     }
 
-    public function getUserById($userId) {
-        return $this->db->select(User::class, [], $this->usersTable);
+    public function getUserByUsername($username) {
+        return $this->db->select(User::class, ["username=" => $username], $this->usersTable);
     }
 
 }

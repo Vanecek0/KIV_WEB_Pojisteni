@@ -48,9 +48,15 @@ class ComposerStaticInit1d238087c3dc958722fb6fe3b5a6e2a4
 
     public static $classMap = array (
         'App\\Controllers\\Home' => __DIR__ . '/../..' . '/app/Controllers/Home.php',
-        'App\\Core\\App' => __DIR__ . '/../..' . '/app/Core/App.php',
-        'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/Core/Controller.php',
+        'App\\Controllers\\PageError' => __DIR__ . '/../..' . '/app/Controllers/PageError.php',
+        'App\\Controllers\\User' => __DIR__ . '/../..' . '/app/Controllers/User.php',
+        'App\\Core\\Database' => __DIR__ . '/../..' . '/app/Core/Database.php',
+        'App\\Core\\Request' => __DIR__ . '/../..' . '/app/Core/Request.php',
+        'App\\Core\\Router' => __DIR__ . '/../..' . '/app/Core/Router.php',
+        'App\\Interfaces\\IController' => __DIR__ . '/../..' . '/app/Interfaces/IController.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Repository\\Repository' => __DIR__ . '/../..' . '/app/Repository/Repository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/app/Repository/UserRepository.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',

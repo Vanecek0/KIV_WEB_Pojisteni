@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>{% block title %}Default Title{% endblock %}</title>
+
+</head>
+<body>
+    {% include 'Components/menu.twig' %}
+        <div class="container-fluid">
+            {% block content %}{% endblock %}
+        </div>
+    {% include 'Components/footer.twig' %}
+</body>
+</html>

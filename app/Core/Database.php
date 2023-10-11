@@ -40,7 +40,7 @@ class Database
         array_walk(
             $params,
             function ($value, $key) use ($stmt) {
-                $stmt->bindValue($key + 1, $value);
+                $stmt->bindValue($key+1, $value);
             }
         );
 
@@ -57,11 +57,13 @@ class Database
         $tableName = $tableName ?? strtolower($class);
         $sql = "SELECT * FROM $tableName";
 
+
         if (!empty($where)) {
             $sql .= " WHERE ";
             $keys = array_map(fn ($key) => $key . " ?", array_keys($where));
             $sql .= join(", ", $keys);
         }
+
         $values = array_values($where);
         $result = $this->query($sql, $values);
 
