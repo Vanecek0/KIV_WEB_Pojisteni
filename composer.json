@@ -15,6 +15,7 @@
     "require": {
         "components/jquery": "^3.6",
         "twbs/bootstrap": "^5.3",
+        "twbs/bootstrap-icons": "^1.11",
         "twig/twig": "^3.0"
     }
     
