@@ -14,6 +14,8 @@ vendor
 /vendor/
 /vendor
 
+# NPM
+node_modules
 
 # Folder config file
 [Dd]esktop.ini
