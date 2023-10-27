@@ -44,7 +44,6 @@ class Database
             }
         );
 
-
         if (!$stmt->execute()) {
             return null;
         }
@@ -73,5 +72,20 @@ class Database
         }
 
         return $result->fetchAll(PDO::FETCH_CLASS, $class);
+    }
+
+    public function insert(string $tableName, array $data): ?int
+    {
+        $columns = implode(', ', array_keys($data));
+        $values = implode(', ', array_fill(0, count($data), '?'));
+        $sql = "INSERT INTO $tableName ($columns) VALUES ($values)";
+
+        $result = $this->query($sql, array_values($data));
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $this->pdo->lastInsertId();
     }
 }

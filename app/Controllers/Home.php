@@ -12,11 +12,6 @@ class Home implements \App\Interfaces\IController {
     }
 
     public function index() {
- 
-        return $this->twig->render('Home/index.twig', [
-            "name" => "Fabian"
-        ]);
-    
+        return $this->twig->render('Home/index.twig');
     }
-
 }

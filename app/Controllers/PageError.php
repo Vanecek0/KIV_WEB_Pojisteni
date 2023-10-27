@@ -1,9 +1,11 @@
 <?php
 namespace App\Controllers;
 
+use App\Core\Application;
+use App\Interfaces\IController;
 use Twig\Environment;
 
-class PageError implements \App\Interfaces\IController {
+class PageError implements IController {
 
     private Environment $twig;
 
@@ -16,7 +18,8 @@ class PageError implements \App\Interfaces\IController {
     }
 
     public function pageNotFound () {
-        return $this->twig->render('PageError/404.twig', [
+        Application::$app->response->setStatus(404);
+        return $this->twig->render('PageError/index.twig', [
             "errorTitle" => "404 Page not found"
         ]);
     }

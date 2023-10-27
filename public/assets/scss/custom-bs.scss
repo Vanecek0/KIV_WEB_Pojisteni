@@ -1,6 +1,10 @@
 $primary: #4c91ec;
 $secondary: #3D54B2;
 
+.btn-primary:hover, .btn-outline-primary:hover {
+    color: #fff !important;
+}
+
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";

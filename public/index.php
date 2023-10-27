@@ -1,7 +1,11 @@
 <?php
+
+use App\Core\Application;
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 require_once '../vendor/autoload.php';
 
-$router = new \App\Core\Router();
+$app = new Application();
+$app->run();

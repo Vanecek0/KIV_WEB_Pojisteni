@@ -3,44 +3,50 @@
 namespace App\Core;
 
 use App\Controllers\PageError;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class Router
 {
+    private RouteParser $routeParser;
+    private string $actualRoute;
+    private array $routes;
 
-    public function __construct()
+    private Request $request;
+    private Response $response;
+
+    private $controllerClass;
+    private string $action;
+
+    private FilesystemLoader $twigLoader;
+    private Environment $twig;
+
+    public function __construct(Request $request, Response $response)
     {
-        $routes = require "Routes.php";
-        $url = $this->urlParser($routes);
-        [$controllerClass, $action] = array_key_exists($url, $routes) ? $routes[$url] : [PageError::class, "pageNotFound"];
-
-        $loader = new \Twig\Loader\FilesystemLoader('../app/Views/');
-        $twig = new \Twig\Environment($loader);
-
-        $controller = new $controllerClass($twig);
-        $response = call_user_func([$controller, $action], new Request($url));
-        echo $response;
+        $this->routeParser = new RouteParser();
+        $this->routes = $this->routeParser->getRoutes();
+        $this->actualRoute = $this->routeParser->getActualRoute();
+        $this->request = $request;
+        $this->response = $response;
+        [$this->controllerClass, $this->action] = array_key_exists($this->actualRoute, $this->routes) ? $this->routes[$this->actualRoute] : [PageError::class, "pageNotFound"];
+        $this->twigLoader = new \Twig\Loader\FilesystemLoader('../app/Views/');
+        $this->twig = new \Twig\Environment($this->twigLoader);
     }
 
-    public function urlParser(array $routes): string
-    {
-        if (!isset($_GET['url'])) {
-            return '/';
-        }
+    public function resolve() {
+        $controller = new $this->controllerClass($this->twig);
+        return call_user_func([$controller, $this->action], $this->request, $this->response);
+    }
 
-        $urlBase = $_GET['url'];
-        $urlPath = rtrim(parse_url($urlBase, PHP_URL_PATH), '/');
-        $urlArray = explode('/', $urlBase);
+    public function getControllerClass():string {
+        return $this->controllerClass;
+    }
 
-        $matches = array_filter(
-            array_keys($routes),
-            fn ($url) => stripos($url, $urlPath) !== false
-        );
+    public function getAction():string {
+        return $this->action;
+    }
 
-        if (in_array('/' . $urlPath, $matches)) {
-            return $matches[array_key_first($matches)];
-        } else {
-            $urlArraySliced = '/' . implode('/', array_slice($urlArray, 0, -1));
-            return ($urlArraySliced . '/(:any)');
-        }
+    public function renderView() {
+        echo $this->resolve();
     }
 }

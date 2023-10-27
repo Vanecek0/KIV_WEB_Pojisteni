@@ -1,34 +1,28 @@
 <?php
 namespace App\Controllers;
 
-use App\Core\Database;
-use App\Models\User as UserModel;
+use App\Core\Session;
 use Twig\Environment;
 
 class User implements \App\Interfaces\IController {
 
     private Environment $twig;
-    private Database $db;
-    private UserModel $user;
+    private array $user;
 
     public function __construct(Environment $twig) {
-        $this->db = Database::getInstance();
         $this->twig = $twig;
-        $this->user = new UserModel();
+        $this->user = (array) json_decode(Session::getInstance()->get('user'));
     }
 
     public function index() {
-
         return $this->twig->render('Home/index.twig', [
-            "name" => "Fabian"
+            "user" => $this->user
         ]);
     }
 
-    public function getUser($request) {
-        $username = $this->user->getUserByUsername($request->get()[0])[0]->username;
-
+    public function getUser() {
         return $this->twig->render('Home/index.twig', [
-            "name" => $username
+            "user" => $this->user
         ]);
     }
 
