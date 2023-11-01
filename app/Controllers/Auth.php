@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Core\Application;
 use App\Core\FlashMessage;
 use App\Core\Request;
 use App\Core\Session;
+use App\DTO\LoginFormDTO;
+use App\DTO\RegisterFormDTO;
 use App\Interfaces\IController;
 use App\Models\User as UserModel;
 use Twig\Environment;
@@ -16,77 +17,117 @@ class Auth implements IController
     private Environment $twig;
     private UserModel $usermodel;
     private Session $session;
-    private FlashMessage $flashMessage;
+    private FlashMessage $flashmessage;
 
     public function __construct(Environment $twig)
     {
         $this->twig = $twig;
         $this->usermodel = new UserModel();
         $this->session = Session::getInstance();
-        $this->flashMessage = new FlashMessage();
+        $this->flashmessage = new FlashMessage();
     }
 
     public function index()
     {
-        if ($this->isLoggedIn()) {
-            Application::$app->request->redirect("/");
-        }
         return $this->twig->render('Login/index.twig', [
-            'username_message' => $this->flashMessage->getFlashMessage("username_message"),
-            'password_message' => $this->flashMessage->getFlashMessage("password_message")
+            'username_message' => $this->flashmessage->getFlashMessage("username_message"),
+            'password_message' => $this->flashmessage->getFlashMessage("password_message"),
+            'general_message' => $this->flashmessage->getFlashMessage("general_message")
         ]);
     }
 
-    public function signUpPage() {
-        return null;
-    }
-
-    public function handleRegister(Request $request) {
-        return null;
-    }
-
-    public function handleLogin(Request $request)
+    public function signUpPage()
     {
-        if ($request->isPost()) {
-            $formUsername = $request->getBody()['username'];
-            $formPassword = $request->getBody()['password'];
-            $dbUser = $this->usermodel->getByUsername($formUsername);
+        return $this->twig->render('Register/index.twig');
+    }
 
-            if (!$dbUser) {
-                $this->flashMessage->setFlashMessage("username_message", "Uživatel nenalezen!");
-                return false;
-            }
-
-            if (!password_verify($formPassword, $dbUser->password)) {
-                $this->flashMessage->setFlashMessage("password_message", "Chybně zadné heslo!");
-                return false;
-            }
-
-            $this->session->set('user',  json_encode($this->usermodel));
-            return true;
+    public function register(Request $request)
+    {
+        if (!$request->isPost()) {
+            $request->redirect('/login');
+            return false;
         }
 
-        if ($request->isGet()) {
-            if ($this->isLoggedIn()) {
-                return $request->redirect('/');
-            }
-            return $request->redirect('/login');;
+        $username = $request->getBody()['username'];
+        $password = $request->getBody()['password'];
+        $firstname = $request->getBody()['firstname'];
+        $lastname = $request->getBody()['lastname'];
+        $birth = $request->getBody()['birth'];
+        $address = $request->getBody()['address'];
+        $gdpr = $request->getBody()['gdpr'];
+        $terms = $request->getBody()['terms'];
+
+        $registerFormDTO = new RegisterFormDTO($firstname, $lastname, $birth, $address, $gdpr, $terms, $username, $password);
+
+        if (!$this->handleRegister($registerFormDTO)) {
+            return false;
         }
+
+        return true;
     }
 
-    public function handleLogout(Request $request)
+    private function handleRegister(RegisterFormDTO $registerFormDTO)
     {
-        $this->logout();
+        return false;
+    }
+
+
+    public function credentialLogin(Request $request)
+    {
+
+        if (!$request->isPost()) {
+            $request->redirect('/login');
+            return false;
+        }
+
+        $username = $request->getBody()['username'];
+        $password = $request->getBody()['password'];
+
+        $loginFormDTO = new LoginFormDTO($username, $password);
+
+        if (!$this->handleLogin($loginFormDTO)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function handleLogin(LoginFormDTO $loginFormDTO)
+    {
+        $username = $loginFormDTO->username;
+        $password = $loginFormDTO->password;
+
+        $dbUser = $this->usermodel->getByUsername($username);
+
+        if (!$dbUser) {
+            $this->flashmessage->setFlashMessage("username_message", "Uživatel nenalezen!");
+            return false;
+        }
+
+        if (!password_verify($password, $dbUser->password)) {
+            $this->flashmessage->setFlashMessage("password_message", "Chybně zadné heslo!");
+            return false;
+        }
+
+        $this->session->set('user', json_encode($this->usermodel));
+        return true;
+    }
+
+    public function logout(Request $request)
+    {
+        if (!$this->handleLogout()) {
+            return false;
+        }
+
         $request->redirect('/login');
+        return true;
     }
 
-    private function isLoggedIn()
+    private function handleLogout()
     {
-        return $this->session->get('user') !== false;
-    }
+        $this->flashmessage->setFlashMessage("general_message", "Uživatel úspěšně odhlášen");
 
-    private function logout()
-    {
-        return $this->session->remove('user');
+        $this->session->remove('user');
+        return true;
     }
 }

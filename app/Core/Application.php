@@ -25,6 +25,6 @@ class Application
     }
 
     public function run() {
-        $this->router->renderView();
+        $this->router->render();
     }
 }

@@ -1,0 +1,36 @@
+{% extends "index.twig" %}
+
+{% block title %}Registrace – Nebourej.cz{% endblock %}
+
+{% block content %}
+  <form id="portal-register" method="post">
+    <p>{{ general_message }}</p>
+    <div class="container">
+      <label for="firstname"><b>First name</b></label>
+        <input type="text" placeholder="Enter Firstname" id="firstname" name="firstname" required>
+      <br>
+      <label for="lastname"><b>Last name</b></label>
+        <input type="text" placeholder="Enter Lastname" id="lastname" name="lastname" required>
+      <br>
+      <label for="birth"><b>Date of birth</b></label>
+        <input type="text" placeholder="Enter Birth Date" id="birth" name="birth" required>
+      <br>
+      <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" id="address" name="address" required>
+      <br>
+      <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" id="username" name="username" required>
+        <p>{{ username_message }}</p>
+      <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="password" name="password" required>
+          <p>{{ password_message }}</p>
+          <button id="send-request">Login</button>
+      <label for="gdpr"><b>GDPR</b></label>
+          <input type="checkbox" checked="checked" name="gdpr">
+      <label for="terms"><b>Terms</b></label>
+          <input type="checkbox" checked="checked" name="terms">
+      <p>Máte již účet? <a href="/login">Přihlaste se</a></p>
+    </div>
+  </form>
+  <script src="/public/assets/js/portal_login.js"></script>
+{% endblock %}

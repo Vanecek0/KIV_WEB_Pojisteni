@@ -49,11 +49,11 @@ class User implements IDBmodel, JsonSerializable{
         return null;
     }
 
-    public function getByUsername($username) {
+    public function getByUsername($username): ?User {
         $user = $this->db->select(User::class, ["username=" => $username], $this->usersTable);
         
         if(!$user) { 
-            return false;
+            return null;
         }
 
         $this->id = $user[0]->id;
@@ -63,9 +63,10 @@ class User implements IDBmodel, JsonSerializable{
         $this->role = $user[0]->role;
 
         return $user[0];
+        
     }
 
-    public function jsonSerialize() {
+    public function jsonSerialize():mixed {
         return [
             'id' => $this->id,
             'username' => $this->username,
@@ -73,5 +74,4 @@ class User implements IDBmodel, JsonSerializable{
             'role' => $this->role
         ];
     }
-
 }

@@ -72,6 +72,7 @@ class Database
         }
 
         return $result->fetchAll(PDO::FETCH_CLASS, $class);
+        
     }
 
     public function insert(string $tableName, array $data): ?int

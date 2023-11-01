@@ -4,6 +4,7 @@
 
 {% block content %}
   <form id="portal-login" method="post">
+    <p>{{ general_message }}</p>
     <div class="container">
       <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" id="username" name="username" required>
@@ -16,6 +17,7 @@
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
+      <p>Nemáte ještě účet? <a href="/register">Registrujte se</a></p>
     </div>
   </form>
   <script src="/public/assets/js/portal_login.js"></script>
