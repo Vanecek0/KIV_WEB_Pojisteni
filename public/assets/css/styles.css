@@ -51,15 +51,29 @@ ul {
     gap: 5pt;
 }
 
-.menu {
+.main-menu {
     border-top: 1px solid var(--light-gray);
+}
+
+.main-menu ul {
+    align-items: stretch;
+    height: 30pt;
+    gap: 20pt;
+}
+
+.portal-menu {
+    border-top: 1px solid var(--light-gray);
+}
+
+.portal-menu ul {
+    gap: 20pt;
+    height: 30pt;
+    align-items: stretch;
+    justify-content: flex-end;
 }
 
 .menu ul {
     display: flex;
-    align-items: stretch;
-    height: 30pt;
-    gap: 20pt;
     list-style: none;
 }
 

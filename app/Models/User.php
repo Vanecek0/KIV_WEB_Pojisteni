@@ -8,9 +8,21 @@ use JsonSerializable;
 class User implements IDBmodel, JsonSerializable{
 
     public int $id;
-    public string $username;
+    public string $firstname;
+    public string $lastname;
+    public string $phone;
     public string $email;
+    public string $birth;
+    public string $birth_number;
+    public string $city;
+    public string $street;
+    public string $psc;
+    public string $username;
     public string $password;
+    public string $gdpr;
+    public string $terms;
+
+    public User $user;
 
     // 0 => not logged in, 1 => user, 1<<1 => admin, 1<<2 => superadmin
     private int $role;
@@ -24,10 +36,12 @@ class User implements IDBmodel, JsonSerializable{
     public function create(array $data) {
 
         $existingUser = $this->getByUsername($data['username']);
+
         if ($existingUser) {
             return false;
         }
-        return $this->db->insert($this->usersTable, $data);
+        $this->db->insert($this->usersTable, $data);
+        return true;
     }
 
     public function update(int $id, array $data)
@@ -62,8 +76,17 @@ class User implements IDBmodel, JsonSerializable{
         $this->email = $user[0]->email;
         $this->role = $user[0]->role;
 
-        return $user[0];
+        $this->user = $user[0];
+        return $this->user;
         
+    }
+
+    public function hasRequiredRole($requiredRole) {
+
+        if (!$this->user->role == $requiredRole) {
+            return false;
+        }
+        return true;
     }
 
     public function jsonSerialize():mixed {

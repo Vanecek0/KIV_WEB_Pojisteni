@@ -27,50 +27,98 @@ class Auth implements IController
         $this->flashmessage = new FlashMessage();
     }
 
-    public function index()
-    {
-        return $this->twig->render('Login/index.twig', [
-            'username_message' => $this->flashmessage->getFlashMessage("username_message"),
-            'password_message' => $this->flashmessage->getFlashMessage("password_message"),
-            'general_message' => $this->flashmessage->getFlashMessage("general_message")
-        ]);
+    public function logInPage() {
+        return $this->twig->render('Login/index.twig');
     }
 
-    public function signUpPage()
-    {
+    public function signUpPage() {
         return $this->twig->render('Register/index.twig');
     }
 
     public function register(Request $request)
     {
         if (!$request->isPost()) {
-            $request->redirect('/login');
+            $request->redirect('/register');
             return false;
         }
 
-        $username = $request->getBody()['username'];
-        $password = $request->getBody()['password'];
         $firstname = $request->getBody()['firstname'];
         $lastname = $request->getBody()['lastname'];
         $birth = $request->getBody()['birth'];
-        $address = $request->getBody()['address'];
-        $gdpr = $request->getBody()['gdpr'];
-        $terms = $request->getBody()['terms'];
+        $birth_number = $request->getBody()['birth_number'];
+        $email = $request->getBody()['email'];
+        $phone = $request->getBody()['phone'];
+        $city = $request->getBody()['city'];
+        $street = $request->getBody()['street'];
+        $psc = $request->getBody()['psc'];
+        $username = $request->getBody()['username'];
+        $password = $request->getBody()['password'];
 
-        $registerFormDTO = new RegisterFormDTO($firstname, $lastname, $birth, $address, $gdpr, $terms, $username, $password);
+        $registerFormDTO = new RegisterFormDTO(
+            $firstname, 
+            $lastname, 
+            $phone, 
+            $email, 
+            $birth, 
+            $birth_number, 
+            $city,
+            $street,
+            $psc, 
+            $username, 
+            $password
+        );
+
 
         if (!$this->handleRegister($registerFormDTO)) {
             return false;
         }
 
-        return true;
+        return $this->handleRegister($registerFormDTO);
     }
 
     private function handleRegister(RegisterFormDTO $registerFormDTO)
     {
-        return false;
-    }
+        $firstname = $registerFormDTO->firstname;
+        $lastname = $registerFormDTO->lastname;
+        $phone = $registerFormDTO->phone;
+        $email = $registerFormDTO->email;
+        $birth = $registerFormDTO->birth;
+        $birth_number = $registerFormDTO->birth_number;
+        $city = $registerFormDTO->city;
+        $street = $registerFormDTO->street;
+        $psc = $registerFormDTO->psc;
+        $username = $registerFormDTO->username;
+        $password = password_hash($registerFormDTO->password, PASSWORD_BCRYPT);
 
+        if($this->usermodel->getByUsername($username) != null) {
+            $this->flashmessage->setFlashMessage("register_error", "Uživatelské jméno již existuje, zvolte prosím jiné");
+            echo $this->flashmessage->getMessagesArray();
+            return false;
+        }
+
+        $insertUser = $this->usermodel->create([
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'phone' => $phone,
+            'email' => $email,
+            'birth' => $birth,
+            'birth_number' => $birth_number,
+            'city' => $city,
+            'street' => $street,
+            'psc' => $psc,
+            'username' => $username,
+            'password' => $password
+        ]);
+        
+        if(!$insertUser) {
+            $this->flashmessage->setFlashMessage("register_error", "Účet nemohl být vytvořen");
+            echo $this->flashmessage->getMessagesArray();
+            return false;
+        }
+
+        $this->flashmessage->setFlashMessage("register_message", "Váš účet byl úspěšně vytvořen");
+        return $this->flashmessage->getMessagesArray();
+    }
 
     public function credentialLogin(Request $request)
     {
@@ -99,13 +147,15 @@ class Auth implements IController
 
         $dbUser = $this->usermodel->getByUsername($username);
 
-        if (!$dbUser) {
-            $this->flashmessage->setFlashMessage("username_message", "Uživatel nenalezen!");
+        if ($dbUser == null) {
+            $this->flashmessage->setFlashMessage("login_error", "Uživatel nenalezen!");
+            echo $this->flashmessage->getMessagesArray();
             return false;
         }
 
         if (!password_verify($password, $dbUser->password)) {
-            $this->flashmessage->setFlashMessage("password_message", "Chybně zadné heslo!");
+            $this->flashmessage->setFlashMessage("login_error", "Chybně zadané heslo!");
+            echo $this->flashmessage->getMessagesArray();
             return false;
         }
 
@@ -125,8 +175,6 @@ class Auth implements IController
 
     private function handleLogout()
     {
-        $this->flashmessage->setFlashMessage("general_message", "Uživatel úspěšně odhlášen");
-
         $this->session->remove('user');
         return true;
     }

@@ -26,23 +26,19 @@ class FlashMessage extends Session
         $temp = [];
         if(!isset($_SESSION[self::F_MESSAGES_KEY][$key]['value'])) {
             return false;
-        } else {
-            $temp = $_SESSION[self::F_MESSAGES_KEY][$key]['value'];
-            unset($_SESSION[self::F_MESSAGES_KEY][$key]);
         }
 
         return $temp ?? false;
     }
-    
-    /*public function __destruct()
-    {
+
+    public function getMessagesArray() {
+        $arr = array();
         $fmessages = $_SESSION[self::F_MESSAGES_KEY] ?? [];
         foreach($fmessages as $key => &$fmessage) {
-            if($fmessage['removed']) {
-                unset($fmessages[$key]);
-                var_dump("done");
-            }
+            $arr[$key] = $fmessage['value'];
         }
-        $_SESSION[self::F_MESSAGES_KEY] = $fmessages;
-    }*/
+        unset($_SESSION[self::F_MESSAGES_KEY]);
+
+        return json_encode($arr);
+    }
 }

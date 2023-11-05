@@ -4,33 +4,47 @@
 
 {% block content %}
   <form id="portal-register" method="post">
-    <p>{{ general_message }}</p>
+    <p id="register-message"></p>
+    <p id="register-error"></p>
     <div class="container">
-      <label for="firstname"><b>First name</b></label>
-        <input type="text" placeholder="Enter Firstname" id="firstname" name="firstname" required>
+      <h2>Kontaktní osoba</h2>
+      <label for="firstname"><b>Jméno</b></label>
+        <input type="text" placeholder="Zadejte jméno" id="firstname" name="firstname" required>
       <br>
-      <label for="lastname"><b>Last name</b></label>
-        <input type="text" placeholder="Enter Lastname" id="lastname" name="lastname" required>
+      <label for="lastname"><b>Příjmení</b></label>
+        <input type="text" placeholder="Zadejte příjmení" id="lastname" name="lastname" required>
       <br>
-      <label for="birth"><b>Date of birth</b></label>
-        <input type="text" placeholder="Enter Birth Date" id="birth" name="birth" required>
+      <label for="phone"><b>Telefon</b></label>
+        +420 <input type="text" placeholder="Zadejte telefonní číslo" id="phone" name="phone">
       <br>
-      <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter Address" id="address" name="address" required>
+       <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Zadejte email" id="email" name="email">
       <br>
+      <label for="birth"><b>Datum narození</b></label>
+        <input type="text" placeholder="Zadejte datum narození" id="birth" name="birth" required>
+      <br>
+      <label for="birth_number"><b>Rodné číslo</b></label>
+        <input type="text" placeholder="Zadejte rodné číslo" id="birth_number" name="birth_number" required>
+      <br>
+      <h2>Kontaktní adresa</h2>
+      <label for="city"><b>Město/obec</b></label>
+        <input type="text" placeholder="Zadejte město/obec" id="city" name="city" required>
+      <br>
+      <label for="street"><b>Ulice</b></label>
+        <input type="text" placeholder="Zadejte ulici a číslo popisné" id="street" name="street" required>
+      <br>
+      <label for="psc"><b>PSČ</b></label>
+        <input type="text" placeholder="Zadejte PSČ" id="psc" name="psc" required>
+      <br>
+      <h2>Přihlašovací údaje</h2>
       <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" id="username" name="username" required>
-        <p>{{ username_message }}</p>
+        <input type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username" required>
       <label for="password"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" id="password" name="password" required>
-          <p>{{ password_message }}</p>
-          <button id="send-request">Login</button>
-      <label for="gdpr"><b>GDPR</b></label>
-          <input type="checkbox" checked="checked" name="gdpr">
-      <label for="terms"><b>Terms</b></label>
-          <input type="checkbox" checked="checked" name="terms">
+          <input type="password" placeholder="Zadejte heslo" id="password" name="password" required>
+          <button id="send-request">Register</button>
+        <p>Registrací souhlasíte s GDPR a podmínkami použití</p>
       <p>Máte již účet? <a href="/login">Přihlaste se</a></p>
     </div>
   </form>
-  <script src="/public/assets/js/portal_login.js"></script>
+  <script src="/public/assets/js/portal_register.js"></script>
 {% endblock %}

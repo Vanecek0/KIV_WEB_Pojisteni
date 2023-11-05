@@ -4,15 +4,13 @@
 
 {% block content %}
   <form id="portal-login" method="post">
-    <p>{{ general_message }}</p>
+    <p id="login-message"></p>
+    <p id="login-error"></p>
     <div class="container">
       <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="username" name="username" required>
-      <p>{{ username_message }}</p>
-
+      <input type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username" required>
       <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" id="password" name="password" required>
-      <p>{{ password_message }}</p>
+      <input type="password" placeholder="Zadejte heslo" id="password" name="password" required>
       <button id="send-request">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
