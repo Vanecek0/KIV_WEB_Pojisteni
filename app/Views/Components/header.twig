@@ -14,5 +14,7 @@
             </section>
         </div>
     </div>
-    {% include 'Components/menu.twig' %}
+    {% if showMainMenu is not defined or showMainMenu %}
+        {% include 'Components/menu.twig' %}
+    {% endif %}
 </header>

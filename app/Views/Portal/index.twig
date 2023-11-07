@@ -1,10 +1,17 @@
 {% extends "index.twig" %}
+{% set template = 'Portal/pages/' ~ template %}
+{% set showMainMenu = false %}
 
-{% block title %}Klientský portál{% endblock %}
+{% block title %}{{ block("title", template) }}{% endblock %}
 
 {% block content %}
-<div class="container-xl">
-{% include 'Components/portal-menu.twig' %}
-    <p>Portál</p>
+<div class="portal container-xl">
+    <div class="my-3">
+    <h2 class="display-6">{{ block("headline", template) }}</h2>
+        {% include 'Components/portal-menu.twig' %}
+        <div class="portal-content my-2">
+            {{ block("content", template) }}
+        </div>
+    </div>
 </div>
 {% endblock %}

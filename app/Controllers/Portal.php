@@ -23,6 +23,15 @@ class Portal implements IController{
             return $this->twig->render('Login/index.twig');
         }
 
-        return $this->twig->render('Portal/index.twig');
+        return $this->twig->render('Portal/index.twig', [
+            "template" => "overview.twig",
+            "user" => json_decode($this->session->get('user'))
+        ]);
+    }
+
+    public function contracts() {
+        return $this->twig->render('Portal/index.twig', [
+            "template" => "contracts.twig",
+        ]);
     }
 }

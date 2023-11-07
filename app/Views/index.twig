@@ -8,13 +8,13 @@
     <link href="/public/assets/css/styles.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/public/assets/images/favicon.ico">
     <link rel="manifest" href="/public/manifest.json">
-    <title>{% block title %}Default Title{% endblock %}</title>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <title>{% block title %}Default Title{% endblock %}</title>
 
 </head>
 <body>
     {% include 'Components/header.twig' %}
-        <div class="app container-fluid">
+        <div class="app container-xl">
             {% block content %}{% endblock %}
         </div>
     {% include 'Components/footer.twig' %}

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.btn-primary:hover, .btn-outline-primary:hover {
+.btn-primary:hover, .btn-primary, .btn-outline-primary:hover {
   color: #fff !important;
 }
 

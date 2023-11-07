@@ -9,7 +9,6 @@
 
 .menu a {
     text-decoration: none;
-    color: var(--black);
 }
 
 ol,
@@ -60,16 +59,8 @@ ul {
     height: 30pt;
     gap: 20pt;
 }
-
-.portal-menu {
-    border-top: 1px solid var(--light-gray);
-}
-
 .portal-menu ul {
-    gap: 20pt;
-    height: 30pt;
-    align-items: stretch;
-    justify-content: flex-end;
+    margin: 0;
 }
 
 .menu ul {
@@ -92,4 +83,19 @@ ul {
     color: var(--blue);
     text-decoration: underline;
     text-decoration-thickness: 3px;
+}
+
+.portal {
+    background-color: #ffffff;
+    border-top: 1px solid var(--light-gray);
+    padding: 10pt;
+}
+
+.portal-menu .bi {
+    font-size: 1em;
+    margin-right: 5pt;
+}
+
+.portal .contract-card-header {
+    border-left: 5px solid var(--blue);
 }

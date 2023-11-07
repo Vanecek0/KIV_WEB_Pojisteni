@@ -71,6 +71,14 @@ class User implements IDBmodel, JsonSerializable{
         }
 
         $this->id = $user[0]->id;
+        $this->firstname = $user[0]->firstname;
+        $this->lastname = $user[0]->lastname;
+        $this->phone = $user[0]->phone;
+        $this->birth = $user[0]->birth;
+        $this->birth_number = $user[0]->birth_number;
+        $this->city = $user[0]->city;
+        $this->street = $user[0]->street;
+        $this->psc = $user[0]->psc;
         $this->username = $user[0]->username;
         $this->password = $user[0]->password;
         $this->email = $user[0]->email;
@@ -78,11 +86,9 @@ class User implements IDBmodel, JsonSerializable{
 
         $this->user = $user[0];
         return $this->user;
-        
     }
 
     public function hasRequiredRole($requiredRole) {
-
         if (!$this->user->role == $requiredRole) {
             return false;
         }
@@ -92,6 +98,14 @@ class User implements IDBmodel, JsonSerializable{
     public function jsonSerialize():mixed {
         return [
             'id' => $this->id,
+            'firstname' => $this->firstname,
+            'lastname' => $this->lastname,
+            'phone' => $this->phone,
+            'birth' => $this->birth,
+            'birth_number' => $this->birth_number,
+            'city' => $this->city,
+            'street' => $this->street,
+            'psc' => $this->psc,
             'username' => $this->username,
             'email' => $this->email,
             'role' => $this->role

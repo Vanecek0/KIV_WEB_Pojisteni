@@ -18,4 +18,5 @@ return [
     "/register" => [Auth::class, "signUpPage", "guest_only", "/"],
     "/register/post" => [Auth::class, "register", "guest_only", "/register"],
     "/portal" => [Portal::class, "index"],
+    "/portal/contracts" => [Portal::class, "contracts"],
  ];

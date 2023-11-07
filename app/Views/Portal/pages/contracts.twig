@@ -1,0 +1,44 @@
+{% block title %}Smlouvy - Klientský portál{% endblock %}
+{% block headline %}Smlouvy - Klientský portál{% endblock %}
+
+{% block content %}
+<section class="contracts py-3">
+    <h3>Vaše smlouvy</h3>
+    <div class="card my-2">
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
+            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent1"
+                aria-expanded="false" aria-controls="collapseContent">
+                MAXI 1.0
+            </button>
+            <div class="portal-action-buttons">
+                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
+            </div>
+        </div>
+        <div id="collapseContent1" class="collapse" aria-labelledby="collapseHeader">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="card my-2">
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
+            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent2"
+                aria-expanded="false" aria-controls="collapseContent">
+                STANDARD 2.0
+            </button>
+            <div class="portal-action-buttons">
+                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
+            </div>
+        </div>
+        <div id="collapseContent2" class="collapse" aria-labelledby="collapseHeader">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
