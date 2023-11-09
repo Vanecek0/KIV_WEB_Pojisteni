@@ -27,7 +27,7 @@ class User implements IDBmodel, JsonSerializable{
     // 0 => not logged in, 1 => user, 1<<1 => admin, 1<<2 => superadmin
     private int $role;
     private Database $db;
-    protected $usersTable = 'users';
+    protected $table = 'users';
 
     public function __construct() {
         $this->db = Database::getInstance();
@@ -40,7 +40,7 @@ class User implements IDBmodel, JsonSerializable{
         if ($existingUser) {
             return false;
         }
-        $this->db->insert($this->usersTable, $data);
+        $this->db->insert($this->table, $data);
         return true;
     }
 
@@ -62,9 +62,10 @@ class User implements IDBmodel, JsonSerializable{
     {
         return null;
     }
+    
 
     public function getByUsername($username): ?User {
-        $user = $this->db->select(User::class, ["username=" => $username], $this->usersTable);
+        $user = $this->db->select(User::class, ["username=" => $username], $this->table);
         
         if(!$user) { 
             return null;

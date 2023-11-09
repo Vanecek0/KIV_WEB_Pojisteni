@@ -1,0 +1,3592 @@
+[
+    {
+        "make": "Audi",
+        "model": "A1",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2012",
+        "eng_power": "86",
+        "eng_capacity": "1390",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Audi",
+        "model": "A3",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2014",
+        "eng_power": "110",
+        "eng_capacity": "1395",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Audi",
+        "model": "A4",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2016",
+        "eng_power": "150",
+        "eng_capacity": "1395",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Audi",
+        "model": "A5",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2015",
+        "eng_power": "190",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "A6",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2018",
+        "eng_power": "190",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "A7",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2017",
+        "eng_power": "252",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "A8",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2018",
+        "eng_power": "340",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q2",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2017",
+        "eng_power": "116",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q3",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "150",
+        "eng_capacity": "1395",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Audi",
+        "model": "Q4",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "170",
+        "eng_capacity": "1969",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q5",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2018",
+        "eng_power": "190",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q5 Sportback",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "204",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q7",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2017",
+        "eng_power": "272",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q7 e-Tron",
+        "fueltype": "Electric",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "373",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Audi",
+        "model": "Q8",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2018",
+        "eng_power": "340",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "Q8 Sportback",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "340",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "R8",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2019",
+        "eng_power": "540",
+        "eng_capacity": "5204",
+        "eng_capacity_short": "5.2"
+    },
+    {
+        "make": "Audi",
+        "model": "S1",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2019",
+        "eng_power": "231",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S3",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2020",
+        "eng_power": "310",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S4",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "347",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S5",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "354",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S6",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "450",
+        "eng_capacity": "3996",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S7",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "450",
+        "eng_capacity": "3996",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Audi",
+        "model": "S8",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "571",
+        "eng_capacity": "3993",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Audi",
+        "model": "SQ2",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "300",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "SQ5",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "349",
+        "eng_capacity": "2995",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Audi",
+        "model": "SQ7",
+        "fueltype": "Diesel",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "435",
+        "eng_capacity": "3956",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Audi",
+        "model": "SQ8",
+        "fueltype": "Natural 100",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "435",
+        "eng_capacity": "3996",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Audi",
+        "model": "TT",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2021",
+        "eng_power": "245",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Audi",
+        "model": "e-Tron",
+        "fueltype": "Electric",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "360",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Audi",
+        "model": "e-Tron GT",
+        "fueltype": "Electric",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "476",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "1 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2018",
+        "eng_power": "136",
+        "eng_capacity": "1499",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "BMW",
+        "model": "2 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2019",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "3 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2020",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "4 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2021",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "5 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2019",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "6 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2020",
+        "eng_power": "250",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "7 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "280",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "8 Series",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "340",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X1",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2018",
+        "eng_power": "140",
+        "eng_capacity": "1499",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "BMW",
+        "model": "X2",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "192",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X3",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X4",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "184",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X5",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "340",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X6",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "340",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X7",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "340",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "i3",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "170",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "i4",
+        "fueltype": "Electric",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "340",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "i8",
+        "fueltype": "Premium unleaded",
+        "vclass": "Coupe",
+        "year": "2019",
+        "eng_power": "369",
+        "eng_capacity": "1499",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "BMW",
+        "model": "M2",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2020",
+        "eng_power": "410",
+        "eng_capacity": "2979",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "M3",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "480",
+        "eng_capacity": "2993",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "M4",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "480",
+        "eng_capacity": "2993",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "M5",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2023",
+        "eng_power": "600",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "M6",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "560",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "X3 M",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "510",
+        "eng_capacity": "2993",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X4 M",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "510",
+        "eng_capacity": "2993",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "X5 M",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "600",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "X6 M",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "600",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "X7 M",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "600",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "Z4",
+        "fueltype": "Natural 98",
+        "vclass": "Convertible",
+        "year": "2021",
+        "eng_power": "255",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "iX3",
+        "fueltype": "Electric",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "286",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "iX5",
+        "fueltype": "Electric",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "516",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "iX7",
+        "fueltype": "Electric",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "610",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "BMW",
+        "model": "ActiveHybrid 3",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2014",
+        "eng_power": "306",
+        "eng_capacity": "2979",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "ActiveHybrid 5",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2015",
+        "eng_power": "306",
+        "eng_capacity": "2979",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "ActiveHybrid 7",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2016",
+        "eng_power": "326",
+        "eng_capacity": "2979",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "ActiveHybrid X6",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2017",
+        "eng_power": "485",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "BMW",
+        "model": "Alpina B3",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2020",
+        "eng_power": "455",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "Alpina B4",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2021",
+        "eng_power": "456",
+        "eng_capacity": "2998",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "BMW",
+        "model": "Alpina B5",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "621",
+        "eng_capacity": "4395",
+        "eng_capacity_short": "4.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Aveo",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2015",
+        "eng_power": "84",
+        "eng_capacity": "1398",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Camaro",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2018",
+        "eng_power": "275",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Colorado",
+        "fueltype": "Natural 95",
+        "vclass": "Pickup",
+        "year": "2019",
+        "eng_power": "200",
+        "eng_capacity": "2776",
+        "eng_capacity_short": "2.8"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Corvette",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2020",
+        "eng_power": "495",
+        "eng_capacity": "6162",
+        "eng_capacity_short": "6.2"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Cruze",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2017",
+        "eng_power": "153",
+        "eng_capacity": "1399",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Equinox",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2016",
+        "eng_power": "170",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Impala",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2018",
+        "eng_power": "197",
+        "eng_capacity": "1969",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2019",
+        "eng_power": "160",
+        "eng_capacity": "1490",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Silverado",
+        "fueltype": "Natural 95",
+        "vclass": "Pickup",
+        "year": "2017",
+        "eng_power": "285",
+        "eng_capacity": "5300",
+        "eng_capacity_short": "5.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Sonic",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2016",
+        "eng_power": "138",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Spark",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2017",
+        "eng_power": "81",
+        "eng_capacity": "1398",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Suburban",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2018",
+        "eng_power": "355",
+        "eng_capacity": "5328",
+        "eng_capacity_short": "5.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tahoe",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "355",
+        "eng_capacity": "5328",
+        "eng_capacity_short": "5.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Traverse",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "310",
+        "eng_capacity": "3649",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Trax",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "140",
+        "eng_capacity": "1364",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Volt",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2019",
+        "eng_power": "149",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Blazer",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "193",
+        "eng_capacity": "2300",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Trailblazer",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "137",
+        "eng_capacity": "1500",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "S10",
+        "fueltype": "Natural 95",
+        "vclass": "Pickup",
+        "year": "2020",
+        "eng_power": "153",
+        "eng_capacity": "2389",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Onix",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "116",
+        "eng_capacity": "1332",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Prisma",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "84",
+        "eng_capacity": "1332",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Spin",
+        "fueltype": "Natural 95",
+        "vclass": "MPV",
+        "year": "2020",
+        "eng_power": "111",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Cobalt",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "108",
+        "eng_capacity": "1438",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Celta",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2019",
+        "eng_power": "78",
+        "eng_capacity": "998",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Cruze Hatchback",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2020",
+        "eng_power": "153",
+        "eng_capacity": "1399",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Opala",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2018",
+        "eng_power": "171",
+        "eng_capacity": "4100",
+        "eng_capacity_short": "4.1"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Trailblazer",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2017",
+        "eng_power": "200",
+        "eng_capacity": "2776",
+        "eng_capacity_short": "2.8"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Cheyenne",
+        "fueltype": "Natural 95",
+        "vclass": "Pickup",
+        "year": "2016",
+        "eng_power": "197",
+        "eng_capacity": "2776",
+        "eng_capacity_short": "2.8"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Express",
+        "fueltype": "Natural 95",
+        "vclass": "Van",
+        "year": "2015",
+        "eng_power": "285",
+        "eng_capacity": "4300",
+        "eng_capacity_short": "4.3"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Montana",
+        "fueltype": "Natural 95",
+        "vclass": "Pickup",
+        "year": "2019",
+        "eng_power": "99",
+        "eng_capacity": "1399",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tiggo",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2020",
+        "eng_power": "137",
+        "eng_capacity": "1971",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tiggo 3X",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "138",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tiggo 4",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "146",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tiggo 5X",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "147",
+        "eng_capacity": "1498",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Celer",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2019",
+        "eng_power": "98",
+        "eng_capacity": "1498",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Celer Sedan",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2020",
+        "eng_power": "98",
+        "eng_capacity": "1498",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Tiggo 7",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "147",
+        "eng_capacity": "1498",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "300",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "292",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Pacifica",
+        "fueltype": "Regular unleaded",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "287",
+        "eng_capacity": "3600",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Voyager",
+        "fueltype": "Regular unleaded",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "287",
+        "eng_capacity": "3600",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Aspen",
+        "fueltype": "Regular unleaded",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "290",
+        "eng_capacity": "3605",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Sebring",
+        "fueltype": "Regular unleaded",
+        "vclass": "Convertible",
+        "year": "2019",
+        "eng_power": "173",
+        "eng_capacity": "2360",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Crossfire",
+        "fueltype": "Premium unleaded",
+        "vclass": "Coupe",
+        "year": "2008",
+        "eng_power": "330",
+        "eng_capacity": "3199",
+        "eng_capacity_short": "3.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "PT Cruiser",
+        "fueltype": "Regular unleaded",
+        "vclass": "Wagon",
+        "year": "2010",
+        "eng_power": "150",
+        "eng_capacity": "2410",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "300M",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2004",
+        "eng_power": "250",
+        "eng_capacity": "3518",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Concorde",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2002",
+        "eng_power": "200",
+        "eng_capacity": "2736",
+        "eng_capacity_short": "2.7"
+    },
+    {
+        "make": "Chrysler",
+        "model": "LHS",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2001",
+        "eng_power": "253",
+        "eng_capacity": "3518",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Viper",
+        "fueltype": "Premium unleaded",
+        "vclass": "Coupe",
+        "year": "2017",
+        "eng_power": "645",
+        "eng_capacity": "8394",
+        "eng_capacity_short": "8.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Grand Voyager",
+        "fueltype": "Regular unleaded",
+        "vclass": "Minivan",
+        "year": "2015",
+        "eng_power": "178",
+        "eng_capacity": "2360",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Cirrus",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2003",
+        "eng_power": "147",
+        "eng_capacity": "2429",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Delta",
+        "fueltype": "Regular unleaded",
+        "vclass": "Hatchback",
+        "year": "2012",
+        "eng_power": "120",
+        "eng_capacity": "1368",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Intrepid",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2004",
+        "eng_power": "200",
+        "eng_capacity": "2736",
+        "eng_capacity_short": "2.7"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Neon",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "2005",
+        "eng_power": "132",
+        "eng_capacity": "1996",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Saratoga",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1996",
+        "eng_power": "150",
+        "eng_capacity": "2497",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Vision",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1996",
+        "eng_power": "214",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Dynasty",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1993",
+        "eng_power": "150",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Le Baron",
+        "fueltype": "Regular unleaded",
+        "vclass": "Convertible",
+        "year": "1995",
+        "eng_power": "152",
+        "eng_capacity": "2501",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "TC",
+        "fueltype": "Regular unleaded",
+        "vclass": "Convertible",
+        "year": "1991",
+        "eng_power": "141",
+        "eng_capacity": "2213",
+        "eng_capacity_short": "2.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Prowler",
+        "fueltype": "Premium unleaded",
+        "vclass": "Convertible",
+        "year": "2002",
+        "eng_power": "253",
+        "eng_capacity": "3518",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Airflow",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1936",
+        "eng_power": "130",
+        "eng_capacity": "5240",
+        "eng_capacity_short": "5.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Airstream",
+        "fueltype": "Regular unleaded",
+        "vclass": "Wagon",
+        "year": "1935",
+        "eng_power": "100",
+        "eng_capacity": "5229",
+        "eng_capacity_short": "5.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Cordoba",
+        "fueltype": "Regular unleaded",
+        "vclass": "Coupe",
+        "year": "1976",
+        "eng_power": "180",
+        "eng_capacity": "5898",
+        "eng_capacity_short": "5.9"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Daytona",
+        "fueltype": "Regular unleaded",
+        "vclass": "Coupe",
+        "year": "1988",
+        "eng_power": "146",
+        "eng_capacity": "2213",
+        "eng_capacity_short": "2.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Imperial",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1993",
+        "eng_power": "150",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Laser",
+        "fueltype": "Regular unleaded",
+        "vclass": "Coupe",
+        "year": "1994",
+        "eng_power": "224",
+        "eng_capacity": "2213",
+        "eng_capacity_short": "2.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "New Yorker",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1996",
+        "eng_power": "214",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Pacifica Hybrid",
+        "fueltype": "Regular unleaded",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "260",
+        "eng_capacity": "3600",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Royal",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1990",
+        "eng_power": "150",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Saratoga",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1996",
+        "eng_power": "150",
+        "eng_capacity": "2497",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Sunbeam",
+        "fueltype": "Regular unleaded",
+        "vclass": "Coupe",
+        "year": "1993",
+        "eng_power": "174",
+        "eng_capacity": "2213",
+        "eng_capacity_short": "2.2"
+    },
+    {
+        "make": "Chrysler",
+        "model": "Vision",
+        "fueltype": "Regular unleaded",
+        "vclass": "Sedan",
+        "year": "1996",
+        "eng_power": "214",
+        "eng_capacity": "3301",
+        "eng_capacity_short": "3.3"
+    },
+    {
+        "make": "Citroën",
+        "model": "C3",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "83",
+        "eng_capacity": "1199",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Citroën",
+        "model": "C4",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "130",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "C5 Aircross",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "130",
+        "eng_capacity": "1199",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Citroën",
+        "model": "C-Elysée",
+        "fueltype": "Diesel",
+        "vclass": "Sedan",
+        "year": "2021",
+        "eng_power": "100",
+        "eng_capacity": "1560",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "Berlingo",
+        "fueltype": "Petrol",
+        "vclass": "Van",
+        "year": "2023",
+        "eng_power": "110",
+        "eng_capacity": "1199",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Citroën",
+        "model": "SpaceTourer",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "150",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "C4 Cactus",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2021",
+        "eng_power": "110",
+        "eng_capacity": "1199",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Citroën",
+        "model": "C3 Aircross",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "110",
+        "eng_capacity": "1199",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Citroën",
+        "model": "C1",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "72",
+        "eng_capacity": "998",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "C4 Picasso",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2021",
+        "eng_power": "120",
+        "eng_capacity": "1560",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "C4 Spacetourer",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "130",
+        "eng_capacity": "1560",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "C5",
+        "fueltype": "Diesel",
+        "vclass": "Sedan",
+        "year": "2023",
+        "eng_power": "130",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS 3 Crossback",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "155",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS 7 Crossback",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "225",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "Ami",
+        "fueltype": "Electric",
+        "vclass": "Microcar",
+        "year": "2021",
+        "eng_power": "8",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Citroën",
+        "model": "Axel",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1988",
+        "eng_power": "55",
+        "eng_capacity": "954",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "BX",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1993",
+        "eng_power": "75",
+        "eng_capacity": "1360",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Citroën",
+        "model": "C2",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2008",
+        "eng_power": "60",
+        "eng_capacity": "1124",
+        "eng_capacity_short": "1.1"
+    },
+    {
+        "make": "Citroën",
+        "model": "C6",
+        "fueltype": "Diesel",
+        "vclass": "Sedan",
+        "year": "2012",
+        "eng_power": "241",
+        "eng_capacity": "2992",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "C8",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2007",
+        "eng_power": "170",
+        "eng_capacity": "2720",
+        "eng_capacity_short": "2.7"
+    },
+    {
+        "make": "Citroën",
+        "model": "CX",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1989",
+        "eng_power": "170",
+        "eng_capacity": "2500",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "1975",
+        "eng_power": "112",
+        "eng_capacity": "1985",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "E-Méhari",
+        "fueltype": "Electric",
+        "vclass": "Convertible",
+        "year": "2016",
+        "eng_power": "67",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Citroën",
+        "model": "Evasion",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "1997",
+        "eng_power": "109",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "GS",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1976",
+        "eng_power": "122",
+        "eng_capacity": "1299",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Citroën",
+        "model": "LN",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1976",
+        "eng_power": "36",
+        "eng_capacity": "602",
+        "eng_capacity_short": "0.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "Saxo",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2003",
+        "eng_power": "75",
+        "eng_capacity": "1124",
+        "eng_capacity_short": "1.1"
+    },
+    {
+        "make": "Citroën",
+        "model": "Visa",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1988",
+        "eng_power": "50",
+        "eng_capacity": "954",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "Xantia",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1993",
+        "eng_power": "90",
+        "eng_capacity": "1580",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "XM",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "1993",
+        "eng_power": "132",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Citroën",
+        "model": "Xsara",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2004",
+        "eng_power": "88",
+        "eng_capacity": "1360",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Citroën",
+        "model": "ZX",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1997",
+        "eng_power": "88",
+        "eng_capacity": "1360",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS3",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2016",
+        "eng_power": "165",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS4",
+        "fueltype": "Diesel",
+        "vclass": "Hatchback",
+        "year": "2015",
+        "eng_power": "120",
+        "eng_capacity": "1560",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Citroën",
+        "model": "DS5",
+        "fueltype": "Diesel",
+        "vclass": "Wagon",
+        "year": "2015",
+        "eng_power": "180",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Dacia",
+        "model": "Sandero",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "90",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Dacia",
+        "model": "Logan",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "75",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Dacia",
+        "model": "Duster",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "100",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2021",
+        "eng_power": "95",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Lodgy",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "115",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Spring",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "45",
+        "eng_capacity": "0",
+        "eng_capacity_short": "Electric"
+    },
+    {
+        "make": "Dacia",
+        "model": "Solenza",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2003",
+        "eng_power": "75",
+        "eng_capacity": "1149",
+        "eng_capacity_short": "1.1"
+    },
+    {
+        "make": "Dacia",
+        "model": "1300",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "1973",
+        "eng_power": "55",
+        "eng_capacity": "1289",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Dacia",
+        "model": "1304",
+        "fueltype": "Petrol",
+        "vclass": "Wagon",
+        "year": "1979",
+        "eng_power": "54",
+        "eng_capacity": "1289",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Dacia",
+        "model": "1305",
+        "fueltype": "Petrol",
+        "vclass": "Wagon",
+        "year": "1982",
+        "eng_power": "54",
+        "eng_capacity": "1289",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Dacia",
+        "model": "Supernova",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2000",
+        "eng_power": "75",
+        "eng_capacity": "1149",
+        "eng_capacity_short": "1.1"
+    },
+    {
+        "make": "Dacia",
+        "model": "Nova",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "1996",
+        "eng_power": "55",
+        "eng_capacity": "1149",
+        "eng_capacity_short": "1.1"
+    },
+    {
+        "make": "Dacia",
+        "model": "Logan MCV",
+        "fueltype": "Diesel",
+        "vclass": "Wagon",
+        "year": "2019",
+        "eng_power": "95",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Logan Pick-Up",
+        "fueltype": "Diesel",
+        "vclass": "Pickup",
+        "year": "2018",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Lodgy Stepway",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2016",
+        "eng_power": "110",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Duster Oroch",
+        "fueltype": "Petrol",
+        "vclass": "Pickup",
+        "year": "2015",
+        "eng_power": "112",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Dacia",
+        "model": "Duster Pick-Up",
+        "fueltype": "Diesel",
+        "vclass": "Pickup",
+        "year": "2018",
+        "eng_power": "110",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Stepway",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2016",
+        "eng_power": "75",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Van",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2017",
+        "eng_power": "75",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Pick-Up",
+        "fueltype": "Diesel",
+        "vclass": "Pickup",
+        "year": "2015",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Camper",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2018",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Express",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2016",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Ambulance",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2019",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Fire Truck",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2019",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Police Car",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2019",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Postal Van",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2019",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dacia",
+        "model": "Dokker Taxi",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2019",
+        "eng_power": "90",
+        "eng_capacity": "1461",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Dodge",
+        "model": "Challenger",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2023",
+        "eng_power": "303",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Dodge",
+        "model": "Charger",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "292",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Dodge",
+        "model": "Durango",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "293",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Dodge",
+        "model": "Journey",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "172",
+        "eng_capacity": "2360",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Grand Caravan",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "283",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Dodge",
+        "model": "Viper",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "645",
+        "eng_capacity": "8394",
+        "eng_capacity_short": "8.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram 1500",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2022",
+        "eng_power": "395",
+        "eng_capacity": "5735",
+        "eng_capacity_short": "5.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram 2500",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2023",
+        "eng_power": "410",
+        "eng_capacity": "5654",
+        "eng_capacity_short": "5.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram 3500",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2023",
+        "eng_power": "410",
+        "eng_capacity": "5654",
+        "eng_capacity_short": "5.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Challenger SRT Hellcat",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "717",
+        "eng_capacity": "6166",
+        "eng_capacity_short": "6.2"
+    },
+    {
+        "make": "Dodge",
+        "model": "Charger SRT Hellcat",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2023",
+        "eng_power": "717",
+        "eng_capacity": "6166",
+        "eng_capacity_short": "6.2"
+    },
+    {
+        "make": "Dodge",
+        "model": "Durango SRT Hellcat",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "710",
+        "eng_capacity": "6166",
+        "eng_capacity_short": "6.2"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram 1500 TRX",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2022",
+        "eng_power": "702",
+        "eng_capacity": "6417",
+        "eng_capacity_short": "6.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Dart",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2016",
+        "eng_power": "160",
+        "eng_capacity": "1999",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Dodge",
+        "model": "Avenger",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2014",
+        "eng_power": "283",
+        "eng_capacity": "3604",
+        "eng_capacity_short": "3.6"
+    },
+    {
+        "make": "Dodge",
+        "model": "Caliber",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2012",
+        "eng_power": "158",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Dodge",
+        "model": "Nitro",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2011",
+        "eng_power": "260",
+        "eng_capacity": "3701",
+        "eng_capacity_short": "3.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Magnum",
+        "fueltype": "Petrol",
+        "vclass": "Wagon",
+        "year": "2008",
+        "eng_power": "425",
+        "eng_capacity": "6063",
+        "eng_capacity_short": "6.1"
+    },
+    {
+        "make": "Dodge",
+        "model": "Neon",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2005",
+        "eng_power": "230",
+        "eng_capacity": "2400",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Intrepid",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2004",
+        "eng_power": "232",
+        "eng_capacity": "3518",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Dodge",
+        "model": "Stratus",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2006",
+        "eng_power": "200",
+        "eng_capacity": "2736",
+        "eng_capacity_short": "2.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Sprinter",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2009",
+        "eng_power": "154",
+        "eng_capacity": "2987",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram Van",
+        "fueltype": "Petrol",
+        "vclass": "Van",
+        "year": "2003",
+        "eng_power": "150",
+        "eng_capacity": "2399",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram Wagon",
+        "fueltype": "Petrol",
+        "vclass": "Van",
+        "year": "2001",
+        "eng_power": "150",
+        "eng_capacity": "2399",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Dodge",
+        "model": "Viper SRT-10",
+        "fueltype": "Petrol",
+        "vclass": "Convertible",
+        "year": "2010",
+        "eng_power": "600",
+        "eng_capacity": "8285",
+        "eng_capacity_short": "8.3"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram SRT-10",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2006",
+        "eng_power": "500",
+        "eng_capacity": "8277",
+        "eng_capacity_short": "8.3"
+    },
+    {
+        "make": "Dodge",
+        "model": "Ram SRT-10 Quad Cab",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2006",
+        "eng_power": "500",
+        "eng_capacity": "8277",
+        "eng_capacity_short": "8.3"
+    },
+    {
+        "make": "Dodge",
+        "model": "Dakota",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2009",
+        "eng_power": "302",
+        "eng_capacity": "3778",
+        "eng_capacity_short": "3.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Dakota Quad Cab",
+        "fueltype": "Petrol",
+        "vclass": "Truck",
+        "year": "2011",
+        "eng_power": "290",
+        "eng_capacity": "3778",
+        "eng_capacity_short": "3.7"
+    },
+    {
+        "make": "Dodge",
+        "model": "Nitro SRT-4",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2008",
+        "eng_power": "290",
+        "eng_capacity": "3778",
+        "eng_capacity_short": "3.7"
+    },
+    {
+        "make": "Ferrari",
+        "model": "488 GTB",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2023",
+        "eng_power": "661",
+        "eng_capacity": "3902",
+        "eng_capacity_short": "3.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "812 Superfast",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "789",
+        "eng_capacity": "6496",
+        "eng_capacity_short": "6.5"
+    },
+    {
+        "make": "Ferrari",
+        "model": "SF90 Stradale",
+        "fueltype": "Hybrid",
+        "vclass": "Coupe",
+        "year": "2023",
+        "eng_power": "986",
+        "eng_capacity": "3990",
+        "eng_capacity_short": "4.0"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Roma",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2023",
+        "eng_power": "612",
+        "eng_capacity": "3855",
+        "eng_capacity_short": "3.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Portofino",
+        "fueltype": "Petrol",
+        "vclass": "Convertible",
+        "year": "2022",
+        "eng_power": "612",
+        "eng_capacity": "3855",
+        "eng_capacity_short": "3.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "F8 Tributo",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2022",
+        "eng_power": "710",
+        "eng_capacity": "3902",
+        "eng_capacity_short": "3.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "F8 Spider",
+        "fueltype": "Petrol",
+        "vclass": "Convertible",
+        "year": "2023",
+        "eng_power": "710",
+        "eng_capacity": "3902",
+        "eng_capacity_short": "3.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "812 GTS",
+        "fueltype": "Petrol",
+        "vclass": "Convertible",
+        "year": "2023",
+        "eng_power": "789",
+        "eng_capacity": "6496",
+        "eng_capacity_short": "6.5"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Ferrari Monza SP1",
+        "fueltype": "Petrol",
+        "vclass": "Roadster",
+        "year": "2022",
+        "eng_power": "799",
+        "eng_capacity": "6496",
+        "eng_capacity_short": "6.5"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Ferrari Monza SP2",
+        "fueltype": "Petrol",
+        "vclass": "Roadster",
+        "year": "2023",
+        "eng_power": "799",
+        "eng_capacity": "6496",
+        "eng_capacity_short": "6.5"
+    },
+    {
+        "make": "Ferrari",
+        "model": "LaFerrari",
+        "fueltype": "Hybrid",
+        "vclass": "Coupe",
+        "year": "2016",
+        "eng_power": "950",
+        "eng_capacity": "6262",
+        "eng_capacity_short": "6.3"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Enzo Ferrari",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "2004",
+        "eng_power": "651",
+        "eng_capacity": "5998",
+        "eng_capacity_short": "6.0"
+    },
+    {
+        "make": "Ferrari",
+        "model": "F50",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1995",
+        "eng_power": "520",
+        "eng_capacity": "4700",
+        "eng_capacity_short": "4.7"
+    },
+    {
+        "make": "Ferrari",
+        "model": "F40",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1992",
+        "eng_power": "478",
+        "eng_capacity": "2936",
+        "eng_capacity_short": "2.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "288 GTO",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1984",
+        "eng_power": "400",
+        "eng_capacity": "2855",
+        "eng_capacity_short": "2.9"
+    },
+    {
+        "make": "Ferrari",
+        "model": "Dino 246 GT",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1971",
+        "eng_power": "195",
+        "eng_capacity": "2418",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Ferrari",
+        "model": "250 GT Berlinetta SWB",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1961",
+        "eng_power": "276",
+        "eng_capacity": "2953",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Ferrari",
+        "model": "250 GTO",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1962",
+        "eng_power": "296",
+        "eng_capacity": "2953",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Ferrari",
+        "model": "166 Inter",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1948",
+        "eng_power": "140",
+        "eng_capacity": "1995",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Ferrari",
+        "model": "125 S",
+        "fueltype": "Petrol",
+        "vclass": "Coupe",
+        "year": "1947",
+        "eng_power": "118",
+        "eng_capacity": "1497",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Fiat",
+        "model": "500",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "84",
+        "eng_capacity": "875",
+        "eng_capacity_short": "0.9"
+    },
+    {
+        "make": "Fiat",
+        "model": "Panda",
+        "fueltype": "Petrol",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "69",
+        "eng_capacity": "875",
+        "eng_capacity_short": "0.9"
+    },
+    {
+        "make": "Fiat",
+        "model": "Tipo",
+        "fueltype": "Petrol",
+        "vclass": "Sedan",
+        "year": "2023",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "500X",
+        "fueltype": "Petrol",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "118",
+        "eng_capacity": "1368",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "124 Spider",
+        "fueltype": "Petrol",
+        "vclass": "Convertible",
+        "year": "2023",
+        "eng_power": "168",
+        "eng_capacity": "1368",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblo",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "Fullback",
+        "fueltype": "Diesel",
+        "vclass": "Pickup",
+        "year": "2022",
+        "eng_power": "178",
+        "eng_capacity": "2448",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Fiat",
+        "model": "Qubo",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "79",
+        "eng_capacity": "1248",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "Talento",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "118",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "Fiorino",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "94",
+        "eng_capacity": "1248",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "Ducato",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2023",
+        "eng_power": "118",
+        "eng_capacity": "2287",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "500e",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "118",
+        "eng_capacity": "null",
+        "eng_capacity_short": "null"
+    },
+    {
+        "make": "Fiat",
+        "model": "Panda Hybrid",
+        "fueltype": "Hybrid",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "70",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Tipo Hybrid",
+        "fueltype": "Hybrid",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "500X Hybrid",
+        "fueltype": "Hybrid",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "148",
+        "eng_capacity": "1332",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Hybrid",
+        "fueltype": "Hybrid",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "500e Convertible",
+        "fueltype": "Electric",
+        "vclass": "Convertible",
+        "year": "2023",
+        "eng_power": "118",
+        "eng_capacity": "null",
+        "eng_capacity_short": "null"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Wagon",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Cargo",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2023",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Passenger",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Urban",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Ducato Passenger",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2022",
+        "eng_power": "120",
+        "eng_capacity": "2287",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Cross",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Adventure",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Business",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Ducato Van",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "120",
+        "eng_capacity": "2287",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Fiat",
+        "model": "500L Lounge",
+        "fueltype": "Petrol",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "94",
+        "eng_capacity": "999",
+        "eng_capacity_short": "1.0"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Cargo Maxi",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Panorama",
+        "fueltype": "Diesel",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Fiat",
+        "model": "Doblò Cargo XL",
+        "fueltype": "Diesel",
+        "vclass": "Van",
+        "year": "2022",
+        "eng_power": "103",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Ford",
+        "model": "Bronco Sport Big Bend",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "181",
+        "eng_capacity": "1499",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Ford",
+        "model": "Edge Titanium",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "250",
+        "eng_capacity": "1999",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Ford",
+        "model": "Escape SE",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "181",
+        "eng_capacity": "1499",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Ford",
+        "model": "Escape Titanium",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "250",
+        "eng_capacity": "1999",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Ford",
+        "model": "Explorer Limited",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "290",
+        "eng_capacity": "3496",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Ford",
+        "model": "F-150 Lariat",
+        "fueltype": "Natural 87",
+        "vclass": "Pickup Truck",
+        "year": "2023",
+        "eng_power": "400",
+        "eng_capacity": "4987",
+        "eng_capacity_short": "5.0"
+    },
+    {
+        "make": "Ford",
+        "model": "Fiesta SE",
+        "fueltype": "Natural 87",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "120",
+        "eng_capacity": "1496",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Ford",
+        "model": "Focus Electric",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2021",
+        "eng_power": "143",
+        "eng_capacity": "None",
+        "eng_capacity_short": "N/A"
+    },
+    {
+        "make": "Ford",
+        "model": "Focus ST",
+        "fueltype": "Natural 91",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "280",
+        "eng_capacity": "2261",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Ford",
+        "model": "Fusion Titanium",
+        "fueltype": "Natural 87",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "245",
+        "eng_capacity": "1999",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Ford",
+        "model": "Mustang EcoBoost",
+        "fueltype": "Natural 91",
+        "vclass": "Coupe",
+        "year": "2023",
+        "eng_power": "310",
+        "eng_capacity": "2300",
+        "eng_capacity_short": "2.3"
+    },
+    {
+        "make": "Ford",
+        "model": "Mustang GT",
+        "fueltype": "Natural 91",
+        "vclass": "Coupe",
+        "year": "2021",
+        "eng_power": "450",
+        "eng_capacity": "5038",
+        "eng_capacity_short": "5.0"
+    },
+    {
+        "make": "Ford",
+        "model": "Ranger XLT",
+        "fueltype": "Natural 87",
+        "vclass": "Pickup Truck",
+        "year": "2021",
+        "eng_power": "270",
+        "eng_capacity": "2694",
+        "eng_capacity_short": "2.7"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord LX",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2005",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord EX",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2006",
+        "eng_power": "166",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord Coupe",
+        "fueltype": "Natural 98",
+        "vclass": "Coupe",
+        "year": "2007",
+        "eng_power": "244",
+        "eng_capacity": "2997",
+        "eng_capacity_short": "3.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic DX",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2001",
+        "eng_power": "115",
+        "eng_capacity": "1668",
+        "eng_capacity_short": "1.7"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic LX",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2002",
+        "eng_power": "115",
+        "eng_capacity": "1668",
+        "eng_capacity_short": "1.7"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic EX",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2003",
+        "eng_power": "127",
+        "eng_capacity": "1668",
+        "eng_capacity_short": "1.7"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic Si",
+        "fueltype": "Natural 98",
+        "vclass": "Hatchback",
+        "year": "2004",
+        "eng_power": "160",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic Type R",
+        "fueltype": "Natural 98",
+        "vclass": "Hatchback",
+        "year": "2005",
+        "eng_power": "200",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "CR-V LX",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2002",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "CR-V EX",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2003",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "CR-V SE",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2005",
+        "eng_power": "156",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Element LX",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2003",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Element EX",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2004",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Stream RSZ",
+        "fueltype": "Natural 95",
+        "vclass": "MPV",
+        "year": "2004",
+        "eng_power": "160",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Vezel",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2015",
+        "eng_power": "130",
+        "eng_capacity": "1496",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Honda",
+        "model": "Zest",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2006",
+        "eng_power": "64",
+        "eng_capacity": "656",
+        "eng_capacity_short": "0.7"
+    },
+    {
+        "make": "Honda",
+        "model": "Fit",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2007",
+        "eng_power": "100",
+        "eng_capacity": "1339",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Honda",
+        "model": "Fit Shuttle",
+        "fueltype": "Natural 95",
+        "vclass": "Station Wagon",
+        "year": "2011",
+        "eng_power": "120",
+        "eng_capacity": "1496",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Honda",
+        "model": "HR-V",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2016",
+        "eng_power": "130",
+        "eng_capacity": "1497",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Honda",
+        "model": "Insight",
+        "fueltype": "Hybrid",
+        "vclass": "Sedan",
+        "year": "2009",
+        "eng_power": "98",
+        "eng_capacity": "1339",
+        "eng_capacity_short": "1.3"
+    },
+    {
+        "make": "Honda",
+        "model": "Jazz",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2008",
+        "eng_power": "83",
+        "eng_capacity": "1198",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Honda",
+        "model": "Legend",
+        "fueltype": "Natural 98",
+        "vclass": "Sedan",
+        "year": "2007",
+        "eng_power": "295",
+        "eng_capacity": "3471",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Honda",
+        "model": "NSX",
+        "fueltype": "Natural 98",
+        "vclass": "Sports Car",
+        "year": "2017",
+        "eng_power": "581",
+        "eng_capacity": "3493",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Honda",
+        "model": "Odyssey",
+        "fueltype": "Natural 95",
+        "vclass": "Minivan",
+        "year": "2015",
+        "eng_power": "248",
+        "eng_capacity": "3471",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Honda",
+        "model": "Pilot",
+        "fueltype": "Natural 98",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "280",
+        "eng_capacity": "3471",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Honda",
+        "model": "Prelude",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2001",
+        "eng_power": "200",
+        "eng_capacity": "2157",
+        "eng_capacity_short": "2.2"
+    },
+    {
+        "make": "Honda",
+        "model": "Ridgeline",
+        "fueltype": "Natural 98",
+        "vclass": "Pickup",
+        "year": "2017",
+        "eng_power": "280",
+        "eng_capacity": "3471",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Honda",
+        "model": "S2000",
+        "fueltype": "Natural 98",
+        "vclass": "Convertible",
+        "year": "2000",
+        "eng_power": "240",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Stream",
+        "fueltype": "Natural 95",
+        "vclass": "MPV",
+        "year": "2001",
+        "eng_power": "156",
+        "eng_capacity": "1998",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2008",
+        "eng_power": "156",
+        "eng_capacity": "1997",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord Coupe",
+        "fueltype": "Natural 95",
+        "vclass": "Coupe",
+        "year": "2009",
+        "eng_power": "190",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Accord Tourer",
+        "fueltype": "Natural 98",
+        "vclass": "Station Wagon",
+        "year": "2011",
+        "eng_power": "180",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2006",
+        "eng_power": "125",
+        "eng_capacity": "1339",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Honda",
+        "model": "Civic Type-R",
+        "fueltype": "Natural 98",
+        "vclass": "Hatchback",
+        "year": "2015",
+        "eng_power": "310",
+        "eng_capacity": "1996",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Honda",
+        "model": "CR-V",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "173",
+        "eng_capacity": "1498",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Honda",
+        "model": "CR-Z",
+        "fueltype": "Hybrid",
+        "vclass": "Coupe",
+        "year": "2010",
+        "eng_power": "124",
+        "eng_capacity": "1497",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Honda",
+        "model": "e",
+        "fueltype": "Electric",
+        "vclass": "Hatchback",
+        "year": "2020",
+        "eng_power": "136",
+        "eng_capacity": "N/A",
+        "eng_capacity_short": "N/A"
+    },
+    {
+        "make": "Honda",
+        "model": "Element",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2003",
+        "eng_power": "160",
+        "eng_capacity": "2354",
+        "eng_capacity_short": "2.4"
+    },
+    {
+        "make": "Škoda",
+        "model": "Fabia RS",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2016",
+        "eng_power": "150",
+        "eng_capacity": "1395",
+        "eng_capacity_short": "1.4"
+    },
+    {
+        "make": "Škoda",
+        "model": "Kodiaq RS",
+        "fueltype": "Diesel",
+        "vclass": "SUV",
+        "year": "2019",
+        "eng_power": "240",
+        "eng_capacity": "1968",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Škoda",
+        "model": "Octavia RS",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2013",
+        "eng_power": "220",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Škoda",
+        "model": "Rapid Spaceback",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2014",
+        "eng_power": "110",
+        "eng_capacity": "1598",
+        "eng_capacity_short": "1.6"
+    },
+    {
+        "make": "Škoda",
+        "model": "Superb",
+        "fueltype": "Diesel",
+        "vclass": "Sedan",
+        "year": "2015",
+        "eng_power": "190",
+        "eng_capacity": "1968",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Škoda",
+        "model": "Yeti",
+        "fueltype": "Natural 95",
+        "vclass": "SUV",
+        "year": "2014",
+        "eng_power": "110",
+        "eng_capacity": "1197",
+        "eng_capacity_short": "1.2"
+    },
+    {
+        "make": "Škoda",
+        "model": "Yeti Outdoor",
+        "fueltype": "Diesel",
+        "vclass": "SUV",
+        "year": "2017",
+        "eng_power": "120",
+        "eng_capacity": "1968",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Toyota",
+        "model": "Camry Hybrid",
+        "fueltype": "Hybrid",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "208",
+        "eng_capacity": "2487",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Corolla LE",
+        "fueltype": "Natural 87",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "139",
+        "eng_capacity": "1987",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Toyota",
+        "model": "Highlander XLE",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2023",
+        "eng_power": "295",
+        "eng_capacity": "3456",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Land Cruiser Heritage Edition",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "381",
+        "eng_capacity": "5663",
+        "eng_capacity_short": "5.7"
+    },
+    {
+        "make": "Toyota",
+        "model": "Prius C",
+        "fueltype": "Hybrid",
+        "vclass": "Hatchback",
+        "year": "2020",
+        "eng_power": "99",
+        "eng_capacity": "1497",
+        "eng_capacity_short": "1.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Prius Prime",
+        "fueltype": "Hybrid",
+        "vclass": "Hatchback",
+        "year": "2022",
+        "eng_power": "121",
+        "eng_capacity": "1798",
+        "eng_capacity_short": "1.8"
+    },
+    {
+        "make": "Toyota",
+        "model": "RAV4 Adventure",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2021",
+        "eng_power": "203",
+        "eng_capacity": "2487",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Sequoia Platinum",
+        "fueltype": "Natural 87",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "381",
+        "eng_capacity": "5663",
+        "eng_capacity_short": "5.7"
+    },
+    {
+        "make": "Toyota",
+        "model": "Sienna XLE",
+        "fueltype": "Hybrid",
+        "vclass": "Minivan",
+        "year": "2023",
+        "eng_power": "245",
+        "eng_capacity": "2487",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Tacoma TRD Pro",
+        "fueltype": "Natural 87",
+        "vclass": "Pickup Truck",
+        "year": "2023",
+        "eng_power": "278",
+        "eng_capacity": "3456",
+        "eng_capacity_short": "3.5"
+    },
+    {
+        "make": "Toyota",
+        "model": "Camry XSE",
+        "fueltype": "Natural 87",
+        "vclass": "Sedan",
+        "year": "2022",
+        "eng_power": "206",
+        "eng_capacity": "2494",
+        "eng_capacity_short": "2.5"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "Arteon",
+        "fueltype": "Natural 95",
+        "vclass": "Fastback",
+        "year": "2022",
+        "eng_power": "105",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "Golf GTI",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2011",
+        "eng_power": "155",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "Golf R",
+        "fueltype": "Natural 98",
+        "vclass": "Hatchback",
+        "year": "2023",
+        "eng_power": "250",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "New Beetle",
+        "fueltype": "Natural 95",
+        "vclass": "Hatchback",
+        "year": "2005",
+        "eng_power": "85",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "Passat GT",
+        "fueltype": "Natural 95",
+        "vclass": "Sedan",
+        "year": "2023",
+        "eng_power": "120",
+        "eng_capacity": "1984",
+        "eng_capacity_short": "2.0"
+    },
+    {
+        "make": "Volkswagen",
+        "model": "Tiguan Sport",
+        "fueltype": "Diesel",
+        "vclass": "SUV",
+        "year": "2022",
+        "eng_power": "150",
+        "eng_capacity": "1968",
+        "eng_capacity_short": "2.0"
+    }
+]

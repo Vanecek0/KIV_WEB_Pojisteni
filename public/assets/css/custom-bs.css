@@ -3,6 +3,10 @@
   color: #fff !important;
 }
 
+.bootstrap-select > .dropdown-toggle {
+  width: auto !important;
+}
+
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
