@@ -1,0 +1,96 @@
+{% block title %}Nové pojištění - Klientský portál{% endblock %}
+
+{% block content %}
+<form id="new-contract" class="multistep-form">
+    <div class="form-header d-flex mb-5">
+        <span class="stepIndicator">Vstupní údaje</span>
+        <span class="stepIndicator">Kalkulace ceny</span>
+        <span class="stepIndicator">Údaje o vozidle</span>
+        <span class="stepIndicator">Smlouva</span>
+    </div>
+    <div class="container">
+        <div class="step">
+            <fieldset id="vehicle" class="mb-4">
+                <h3>Moje vozidlo</h3>
+
+                <div class="form-check">
+                    <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
+                    <label for="car" class="form-check-label"><i class="bi bi-car-front-fill"></i>Osobní vozidlo (do 3,5t)</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="radio" id="motocycle" value="motocycle" name="vehicle" class="form-check-input">
+                    <label for="motocycle" class="form-check-label"><i class="fa-solid fa-motorcycle"></i>Motocykl</label><br />
+                </div>
+
+
+                <label for="spz" class="form-label">SPZ vozidla</label>
+                <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" >
+            </fieldset>
+            <fieldset id="vehicle" class="mb-4">
+                <h3>Údaje pojistníka</h3>
+
+                <div class="form-check">
+                    <input type="radio" id="person" value="person" name="insurer" class="form-check-input" checked>
+                    <label for="person" class="form-check-label">Fyzická osoba</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="radio" id="entrepreneur" value="entrepreneur" name="insurer" class="form-check-input">
+                    <label for="entrepreneur" class="form-check-label">Právnická osoba</label><br />
+                </div>
+
+                <label for="firstname" class="form-label">Jméno</label>
+                <input type="text" placeholder="Např.: Jan" id="firstname" name="firstname" class="form-control"><br />
+
+                <label for="lastname" class="form-label">Příjmení</label>
+                <input type="text" placeholder="Např.: Novák" id="lastname" name="lastname" class="form-control"><br />
+
+                <label for="birth" class="form-label">Datum narození</label>
+                <input type="date" placeholder="Např.: Novák" id="birth" name="birth" class="form-control"><br />
+
+                <label for="birth-number" class="form-label">Rodné číslo</label>
+                <input type="text" placeholder="Např.: 739028/5163" id="birth-number" name="birth-number" class="form-control"><br />
+
+                <label for="phone-number" class="form-label">Telefon</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">+420</span>
+                    <input type="text" placeholder="Např.: 123 456 789" id="phone-number" name="phone-number" aria-describedby="basic-addon1" class="form-control">
+                </div>
+
+                <label for="email" class="form-label">Emailová adresa *</label>
+                <input type="text" placeholder="Např.: jan.novak@example.com" id="email" name="email" class="form-control" required><br />
+
+                <label for="city" class="form-label">Město/obec</label>
+                <input type="text" placeholder="Např.: Praha 7-Holešovice" id="city" name="city" class="form-control"><br />
+
+                <label for="street" class="form-label">Ulice</label>
+                <input type="text" placeholder="Např.: Dukelských Hrdinů 906/48" id="street" name="street" class="form-control"><br />
+
+                <label for="psc" class="form-label">PSČ</label>
+                <input type="text" placeholder="Např.: 170 00" id="psc" name="psc" class="form-control"><br />
+
+            </fieldset>
+        </div>
+        <div class="step">
+            <p class="text-center mb-4">Your presence on the social network</p>
+            <div class="mb-3">
+                <input type="text" placeholder="Linked In" oninput="this.className = ''" name="linkedin">
+            </div>
+            <div class="mb-3">
+                <input type="text" placeholder="Twitter" oninput="this.className = ''" name="twitter">
+            </div>
+            <div class="mb-3">
+                <input type="text" placeholder="Facebook" oninput="this.className = ''" name="facebook">
+            </div>
+        </div>
+        <p id="errorMessage" class="text-danger"></p>
+        <div class="form-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-primary btn-lg" id="prevBtn" onclick="nextPrev(-1)">Předchozí</button>
+            <button type="button" class="btn btn-primary btn-lg" id="nextBtn" onclick="nextPrev(1)">Pokračovat</button>
+            <button type="button" class="btn btn-primary btn-lg" id="submitBtn" >Odeslat</button>
+        </div>
+    </div>
+</form>
+<script src="/public/assets/js/multistep-form.js"></script>
+{% endblock %}

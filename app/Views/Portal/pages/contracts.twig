@@ -4,6 +4,9 @@
 {% block content %}
 <section class="contracts py-3">
     <h3>Vaše smlouvy</h3>
+    <div class="contracts-header d-flex bg-light py-1">
+        <a class="btn btn-primary" href="/portal/new/contract"><i class="bi bi-plus-lg"></i> Vytvořit novou</a>
+    </div>
     {% for contract in contracts %}
     <div class="contract card my-2">
         <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">

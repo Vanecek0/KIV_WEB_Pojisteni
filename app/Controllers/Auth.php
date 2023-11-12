@@ -68,7 +68,6 @@ class Auth implements IController
             $password
         );
 
-
         if (!$this->handleRegister($registerFormDTO)) {
             return false;
         }

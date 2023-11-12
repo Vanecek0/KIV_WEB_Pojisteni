@@ -1,0 +1,16 @@
+{% extends "index.twig" %}
+{% set template = 'Contract/pages/' ~ template %}
+{% set showMainMenu = true %}
+
+{% block title %}{{ block("title", template) }}{% endblock %}
+
+{% block content %}
+<div class="portal container-xl">
+    <div class="my-3">
+    <h2 class="display-6">Povinné ručení</h2>
+        <div class="portal-content my-2">
+            {{ block("content", template) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

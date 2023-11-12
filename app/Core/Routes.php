@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\Controllers\Auth;
+use App\Controllers\Contract;
 use App\Controllers\Home;
 use App\Controllers\Portal;
 use App\Controllers\User;
@@ -19,4 +20,6 @@ return [
     "/register/post" => [Auth::class, "register", "guest_only", "/register"],
     "/portal" => [Portal::class, "index"],
     "/portal/contracts" => [Portal::class, "contracts"],
+    "/portal/new/contract" => [Contract::class, "create"],
+    "/portal/new/contract/post" => [Contract::class, "handleCreate" ],
  ];
