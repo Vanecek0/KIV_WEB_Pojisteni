@@ -10,34 +10,49 @@
     </div>
     <div class="container">
         <div class="step">
-            <fieldset id="vehicle" class="mb-4">
+            <fieldset id="vehicle" class="mb-4 mt-2">
                 <h3>Moje vozidlo</h3>
-
-                <div class="form-check">
-                    <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
-                    <label for="car" class="form-check-label"><i class="bi bi-car-front-fill"></i>Osobní vozidlo (do 3,5t)</label>
+                <div class="vehicle-radio-group d-flex gap-2 mb-3 mt-3">
+                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="car" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
+                        <span>Osobní vozidlo (do 3,5t)</span>
+                        <i class="bi bi-car-front-fill fs-4"></i>
+                        <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
+                        </label>
+                    </div>
+                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="motocycle" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
+                        <span>Motocykl</span>
+                        <i class="fa-solid fa-motorcycle fs-4"></i>
+                        <input type="radio" id="motocycle" value="motocycle" name="vehicle" class="form-check-input">
+                        </label>
+                    </div>
                 </div>
 
-                <div class="form-check">
-                    <input type="radio" id="motocycle" value="motocycle" name="vehicle" class="form-check-input">
-                    <label for="motocycle" class="form-check-label"><i class="fa-solid fa-motorcycle"></i>Motocykl</label><br />
-                </div>
+                <label for="icoInput">Zadejte IČO:</label>
+                <input onchange="searchIco('icoInput')" type="text" id="icoInput">
 
+                <div id="result">
+                    <!-- Zde se zobrazí výsledek hledání -->
+                </div>
 
                 <label for="spz" class="form-label">SPZ vozidla</label>
-                <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" >
+                <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" class="form-control">
             </fieldset>
-            <fieldset id="vehicle" class="mb-4">
+            <fieldset id="vehicle" class="mb-4 mt-2">
                 <h3>Údaje pojistníka</h3>
 
-                <div class="form-check">
-                    <input type="radio" id="person" value="person" name="insurer" class="form-check-input" checked>
-                    <label for="person" class="form-check-label">Fyzická osoba</label>
-                </div>
-
-                <div class="form-check">
-                    <input type="radio" id="entrepreneur" value="entrepreneur" name="insurer" class="form-check-input">
-                    <label for="entrepreneur" class="form-check-label">Právnická osoba</label><br />
+                <div class="insurer-radio-group d-flex gap-2 mb-3 mt-3">
+                    <div class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="person" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Fyzická osoba
+                            <input type="radio" id="person" value="person" name="insurer" class="form-check-input" checked>
+                        </label>
+                    </div>
+                    <div class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="entrepreneur" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Právnická osoba
+                            <input type="radio" id="entrepreneur" value="entrepreneur" name="insurer" class="form-check-input">
+                        </label>
+                    </div>
                 </div>
 
                 <label for="firstname" class="form-label">Jméno</label>
@@ -93,4 +108,5 @@
     </div>
 </form>
 <script src="/public/assets/js/multistep-form.js"></script>
+<script src="/public/assets/js/ares.js"></script>
 {% endblock %}

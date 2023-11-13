@@ -27,6 +27,26 @@ class Request
         return array_values(array_diff($this->urlParams, $this->getPath()));
     }
 
+    public function getAllParams() {
+        $url = $_GET['url'] ?? '/';
+        $url = ltrim($url, '/');
+
+        $queryString = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+
+        $queryParameters = [];
+        if ($queryString !== null) {
+            parse_str($queryString, $queryParameters);
+        }
+        $allParams = array_merge($this->urlParams, $queryParameters);
+
+        return $allParams;
+    }
+
+    public function getParam($param) {
+        $allParams = $this->getAllParams();
+        return $allParams[$param];
+    }
+
     public function getPath()
     {
         return array_filter(array_slice(explode('/', $this->actualRoute), 0, -1));
