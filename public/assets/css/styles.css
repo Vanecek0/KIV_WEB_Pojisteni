@@ -59,6 +59,11 @@ ul {
     height: 30pt;
     gap: 20pt;
 }
+
+.main-menu ul li a {
+    color: black;
+}
+
 .portal-menu ul {
     margin: 0;
 }
@@ -184,4 +189,70 @@ ul {
 }
 .multistep-form .vehicle-radio-input .form-check-input {
     margin-bottom: 3px;
+}
+
+.header-modal {
+    background: url('../images/modal_bac.min.jpg') no-repeat center center;
+    background-position: left;
+    background-size: 130%;
+    height: 100vh;
+    max-height: 500px;
+}
+
+.header-modal .modal-item {
+    width: 100%;
+    max-width: 720px;
+}
+
+.header-modal .modal-item .header-headline{
+    background-color: var(--blue);
+}
+
+.help-article {
+    background-color: var(--blue);
+}
+
+.help-article .headline .underline{
+    height: 4px;
+    background-color: white;
+    max-width: 250px;
+    width: 100%;
+}
+
+.help-article .btn {
+    padding: 20pt;
+    color: white;
+}
+
+.help-article .btn:hover {
+    color: var(--blue);
+    background-color: white;
+}
+
+.benefits-article .card {
+    width: 350px;
+    min-width: 200px;
+}
+
+.benefits-article img {
+    width: 100px;
+}
+
+.insurance-process-article .card {
+    width: 400px;
+    min-width: 300px;
+}
+
+.insurance-process-article .lg-number {
+    font-size: 80pt;
+    z-index: 0;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.insurance-process-article img {
+    width: 350px;
+}
+
+.faq-article {
+    
 }

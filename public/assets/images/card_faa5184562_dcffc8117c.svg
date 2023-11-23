@@ -1,7 +1,75 @@
-<svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="1" width="55" height="83" rx="10" fill="#F2F5CC"/>
-    <path d="M71 24.75C74.4518 24.75 77.25 27.5482 77.25 31V53C77.25 56.4518 74.4518 59.25 71 59.25H29C25.5482 59.25 22.75 56.4518 22.75 53L22.75 31C22.75 27.5482 25.5482 24.75 29 24.75L71 24.75Z" fill="white" stroke="#98A300" stroke-width="1.5"/>
-    <path d="M71 37.4813C71 35.5722 69.5553 34 67.7666 34L32.199 34C30.4447 34 29 35.5722 29 37.4813C29 39.4278 30.4447 41 32.199 41L67.7666 41C69.5553 41 71 39.4278 71 37.4813Z" fill="#F2F5CC" stroke="#98A300" stroke-width="1.5"/>
-    <path d="M37 72C37 74.2091 35.2091 76 33 76C30.7909 76 29 74.2091 29 72C29 69.7909 30.7909 68 33 68C35.2091 68 37 69.7909 37 72Z" fill="white" stroke="#98A300" stroke-width="1.5"/>
-    <path d="M43 12.4813C43 10.5722 41.4624 9 39.5588 9L27.4046 9C25.5376 9 24 10.5722 24 12.4813C24 14.4278 25.5376 16 27.4046 16L39.5588 16C41.4624 16 43 14.4278 43 12.4813Z" fill="white" stroke="#98A300" stroke-width="1.5"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="85"
+   height="85"
+   viewBox="0 0 85 85"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="card_faa5184562_dcffc8117c.svg"
+   inkscape:export-filename="card.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.2474964"
+     inkscape:cx="32.332952"
+     inkscape:cy="43.9376"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <rect
+     x="6"
+     y="1"
+     width="55"
+     height="83"
+     rx="10"
+     fill="#F2F5CC"
+     id="rect1"
+     style="fill:#74a8ed;fill-opacity:1" />
+  <path
+     d="M71 24.75C74.4518 24.75 77.25 27.5482 77.25 31V53C77.25 56.4518 74.4518 59.25 71 59.25H29C25.5482 59.25 22.75 56.4518 22.75 53L22.75 31C22.75 27.5482 25.5482 24.75 29 24.75L71 24.75Z"
+     fill="white"
+     stroke="#98A300"
+     stroke-width="1.5"
+     id="path1"
+     style="stroke:#94b4f7;stroke-opacity:1" />
+  <path
+     d="M71 37.4813C71 35.5722 69.5553 34 67.7666 34L32.199 34C30.4447 34 29 35.5722 29 37.4813C29 39.4278 30.4447 41 32.199 41L67.7666 41C69.5553 41 71 39.4278 71 37.4813Z"
+     fill="#F2F5CC"
+     stroke="#98A300"
+     stroke-width="1.5"
+     id="path2"
+     style="stroke:#94b4f7;stroke-opacity:1;fill:#74a8ed;fill-opacity:1" />
+  <path
+     d="M37 72C37 74.2091 35.2091 76 33 76C30.7909 76 29 74.2091 29 72C29 69.7909 30.7909 68 33 68C35.2091 68 37 69.7909 37 72Z"
+     fill="white"
+     stroke="#98A300"
+     stroke-width="1.5"
+     id="path3"
+     style="stroke:#74a8ed;stroke-opacity:1" />
+  <path
+     d="M43 12.4813C43 10.5722 41.4624 9 39.5588 9L27.4046 9C25.5376 9 24 10.5722 24 12.4813C24 14.4278 25.5376 16 27.4046 16L39.5588 16C41.4624 16 43 14.4278 43 12.4813Z"
+     fill="white"
+     stroke="#98A300"
+     stroke-width="1.5"
+     id="path4"
+     style="stroke:#74a8ed;stroke-opacity:1" />
 </svg>

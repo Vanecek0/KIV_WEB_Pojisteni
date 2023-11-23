@@ -11,7 +11,7 @@ class Database
     private static ?Database $instance = null;
     private PDO $pdo;
     private string $dbuser = 'root';
-    private string $dbpass = 'Carinsurance123?';
+    private string $dbpass = '';
 
     private function __construct()
     {
@@ -26,7 +26,7 @@ class Database
     public function connect(): PDO
     {
         try {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=carinsurance', $this->dbuser, $this->dbpass);
+            $this->pdo = new PDO('mysql:host=127.0.0.1:3306;dbname=carinsurance', $this->dbuser, $this->dbpass);
             return $this->pdo;
         } catch (PDOException $e) {
             error_log('Database connection error: ' . $e->getMessage());
