@@ -22,7 +22,7 @@ ul {
 }
 
 .logo img {
-    width: 200px;
+    width: 300px;
 }
 
 .top-menu {
@@ -196,12 +196,12 @@ ul {
     background-position: left;
     background-size: 130%;
     height: 100vh;
-    max-height: 500px;
+    max-height: 720px;
 }
 
 .header-modal .modal-item {
     width: 100%;
-    max-width: 720px;
+    max-width: 920px;
 }
 
 .header-modal .modal-item .header-headline{
@@ -210,6 +210,8 @@ ul {
 
 .help-article {
     background-color: var(--blue);
+    height: 100vh;
+    max-height: 480px;
 }
 
 .help-article .headline .underline{
@@ -253,6 +255,6 @@ ul {
     width: 350px;
 }
 
-.faq-article {
-    
+ .insurance-table {
+    width: 600px;
 }
