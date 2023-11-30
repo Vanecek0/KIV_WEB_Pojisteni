@@ -5,47 +5,47 @@
 {% block content %}
 {% include 'Components/header-modal.twig' %}
 
-<article class="help-article container-fluid d-flex flex-column justify-content-center">
+<article id="help" class="help-article container-fluid d-flex flex-column py-5">
     <div class="headline d-flex flex-column justify-content-center align-items-center pt-4 ">
-        <h2 class="text-white text-center fs-1">Jak Vám můžeme pomoci?</h2>
+        <h2 class="text-white text-center fs-3">Jak Vám můžeme pomoci?</h2>
         <div class="underline rounded"></div>
     </div>
     <div class="container d-flex flex-wrap justify-content-around pt-5 pb-5">
-        <a href="/insurance-report" class="btn d-flex flex-column fw-bolder fs-4"><i
-                class="bi bi-ev-front-fill fs-1"></i>Hlášení
+        <a href="/insurance-report" class="btn d-flex flex-column fw-bolder fs-6"><i
+                class="bi bi-ev-front-fill fs-2"></i>Hlášení
             škody</a>
-        <a href="#faq" class="btn d-flex flex-column fw-bolder fs-4"><i
-                class="bi bi-info-circle-fill fs-1"></i></i>Časté dotazy</a>
-        <a href="#" class="btn d-flex flex-column fw-bolder fs-4"><i class="bi bi-envelope-fill fs-1"></i>Napište
+        <a href="#faq" class="btn d-flex flex-column fw-bolder fs-6"><i
+                class="bi bi-info-circle-fill fs-2"></i></i>Časté dotazy</a>
+        <a href="#" class="btn d-flex flex-column fw-bolder fs-6"><i class="bi bi-envelope-fill fs-2"></i>Napište
             nám</a>
     </div>
 </article>
 
-<article class="benefits-article container-fluid">
-    <h2 class="text-center fs-2 pt-5 pb-4 fs-1">Výhody pojištění od Nebourej.cz</h2>
+<article id="benefits" class="benefits-article container-fluid">
+    <h2 class="text-center fs-3 pt-5 pb-4 fs-3">Výhody pojištění od Nebourej.cz</h2>
 
     <div class="container d-flex flex-row flex-wrap gap-2 justify-content-around pt-4 pb-5">
         <div class="card p-4 shadow">
             <div class="card-body">
                 <img src="./public/assets/images/hands.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">Povinné ručení se 100 miliony</h5>
-                <p class="card-text fs-5">Chceme, abyste byli dostatečně krytí, proto od nás máte v základu 100 milionů.
+                <h5 class="card-title pt-5 pb-2 fs-6">Povinné ručení se 100 miliony</h5>
+                <p class="card-text fs-6">Chceme, abyste byli dostatečně krytí, proto od nás máte v základu 100 milionů.
                 </p>
             </div>
         </div>
         <div class="card p-4 shadow">
             <div class="card-body">
                 <img src="./public/assets/images/card.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">Online zelená karta</h5>
-                <p class="card-text fs-5">Zelenou kartu stejně jako asistenční kartičku máte vždy po ruce a zobrazíte ji
+                <h5 class="card-title pt-5 pb-2 fs-6">Online zelená karta</h5>
+                <p class="card-text fs-6">Zelenou kartu stejně jako asistenční kartičku máte vždy po ruce a zobrazíte ji
                     offline v naší mobilní appce.</p>
             </div>
         </div>
         <div class="card p-4 shadow">
             <div class="card-body">
                 <img src="./public/assets/images/bonus.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">45 % na pojištění autoskel</h5>
-                <p class="card-text fs-5">Při sjednání havarijka na všechna rizika od nás dostanete zvýhodněnou cenu na
+                <h5 class="card-title pt-5 pb-2 fs-6">45 % na pojištění autoskel</h5>
+                <p class="card-text fs-6">Při sjednání havarijka na všechna rizika od nás dostanete zvýhodněnou cenu na
                     skla.
                 </p>
             </div>
@@ -53,16 +53,16 @@
     </div>
 </article>
 
-<article class="insurance-select container-fluid">
-    <h2 class="text-center fs-2 pt-5 pb-4 fs-1">4 balíčky autopojištění. 1 snadná volba.</h2>
+<article id="insurance-offer" class="insurance-select container-fluid">
+    <h2 class="text-center fs-3 pt-5 pb-4 fs-3">4 balíčky autopojištění. 1 snadná volba.</h2>
     <div class="container-xl d-flex flex-column justify-content-center align-items-center">
-        <p class="text-center container-xl fs-5">Aby pro vás byl výběr pojištění vašeho auta ještě jednodušší,
+        <p class="text-center container-xl fs-6">Aby pro vás byl výběr pojištění vašeho auta ještě jednodušší,
             připravili
             jsme na základě našich dlouhodobých zkušeností 4 balíčky autopojištění. Vyberte si ten, který vám nejvíc
             vyhovuje. Balíček s povinným ručením a základní asistencí zdarma nebo komplexní balíček, který zahrnuje
             většinu rizik, se kterými se můžete setkat.
         </p>
-        <table class="insurance-table fs-5">
+        <table class="insurance-table fs-6">
             <thead class="text-center">
                 <th></th>
                 <th>Komfort</th>
@@ -70,6 +70,18 @@
                 <th>Extra</th>
                 <th>Max</th>
             </thead>
+            <colgroup>
+                <col width="30%">
+                </col>
+                <col width="15%">
+                </col>
+                <col width="15%">
+                </col>
+                <col width="15%">
+                </col>
+                <col width="15%">
+                </col>
+            </colgroup>
             <tbody class="text-center">
                 <tr>
                     <td class="text-start">Povinné ručení</td>
@@ -158,50 +170,110 @@
                 <tr>
                     <td></td>
                     <td>
-                        <div>
-                            <p class="fs-4">KOMFORT</p>
-                            <p class="fs-6">Základní balíček pro ty, kdo nechtějí za pojištění moc platit a stačí jim jen povinné ručení a základní pomoc.</p>
-                            <a href="#" class="btn btn-primary fw-bold btn-lg mt-3"><i class="bi bi-arrow-return-right"></i> SJEDNAT ONLINE</a>
-                        </div>
+                        <a href="#" class="btn btn-primary btn-sm fw-bold mt-3"><i class="bi bi-arrow-return-right"></i>
+                            SJEDNAT ONLINE</a>
                     </td>
-                    <td><p>Test</p></td>
-                    <td><p>Test</p></td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm fw-bold mt-3"><i class="bi bi-arrow-return-right"></i>
+                            SJEDNAT ONLINE</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm fw-bold mt-3"><i class="bi bi-arrow-return-right"></i>
+                            SJEDNAT ONLINE</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm fw-bold mt-3"><i class="bi bi-arrow-return-right"></i>
+                            SJEDNAT ONLINE</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="insurance-cards gap-3 pt-5 pb-5 flex-column justify-content-center align-items-center container-fluid">
+            <div class="card p-4 shadow">
+                <div class="card-body fs-6">
+                    <h5 class="card-title text-center pt-2 pb-3 fs-3">Komfort</h5>
+                    <p><i class="bi bi-check-lg"></i> Povinné ručení</p>
+                    <p><i class="bi bi-check-lg"></i> Právní poradenství</p>
+                    <p><i class="bi bi-check-lg"></i> Asistence</p>
+                    <p><i class="bi bi-check-lg"></i> Úrazové pojištění</p>
+                    <a href="#" class="btn btn-primary  w-100 fw-bold mt-3"><i
+                            class="bi bi-arrow-return-right"></i>
+                        SJEDNAT ONLINE</a>
+                </div>
+            </div>
+            <div class="card p-4 shadow">
+                <div class="card-body fs-6">
+                    <h5 class="card-title text-center pt-2 pb-3 fs-3">Plus</h5>
+                    <p><i class="bi bi-check-lg"></i> Povinné ručení</p>
+                    <p><i class="bi bi-check-lg"></i> Právní poradenství</p>
+                    <p><i class="bi bi-check-lg"></i> Asistence</p>
+                    <p><i class="bi bi-check-lg"></i> Úrazové pojištění</p>
+                    <p><i class="bi bi-check-lg"></i> Přírodní události</p>
+                    <p><i class="bi bi-check-lg"></i> Požár a výbuch</p>
+                    <p><i class="bi bi-check-lg"></i> Poškození zvířetem</p>
+                    <p><i class="bi bi-check-lg"></i> Rozšířená asistence</p>
+                    <a href="#" class="btn btn-primary  w-100 fw-bold mt-3"><i
+                            class="bi bi-arrow-return-right"></i>
+                        SJEDNAT ONLINE</a>
+                </div>
+            </div>
+            <div class="card p-4 shadow">
+                <div class="card-body fs-6">
+                    <h5 class="card-title text-center pt-2 pb-2 fs-3">Extra</h5>
+                    <p class="text-center pb-3">Všechny výhody pojištění Plus</p>
+                    <p><i class="bi bi-check-lg"></i> Krádež</p>
+                    <p><i class="bi bi-check-lg"></i> Skla</p>
+                    <p><i class="bi bi-check-lg"></i> Vandalismus</p>
+                    <a href="#" class="btn btn-primary  w-100 fw-bold mt-3"><i
+                            class="bi bi-arrow-return-right"></i>
+                        SJEDNAT ONLINE</a>
+                </div>
+            </div>
+            <div class="card p-4 shadow">
+                <div class="card-body fs-6">
+                    <h5 class="card-title text-center pt-2 pb-3 fs-3">Max</h5>
+                    <p class="text-center">Všechny výhody pojištění Extra</p>
+                    <p><i class="bi bi-check-lg"></i> Havárie</p>
+                    <a href="#" class="btn btn-primary  w-100 fw-bold mt-3"><i
+                            class="bi bi-arrow-return-right"></i>
+                        SJEDNAT ONLINE</a>
+                </div>
+            </div>
+        </div>
     </div>
 </article>
 
-<article class="insurance-process-article container-fluid">
-    <h2 class="text-center fs-1 pt-4 display-5">Jednoduchý proces vyřízení škody</h2>
-    <h3 class="text-center fs-1 pt-3 pb-4">Jak funguje proces vyřízení škodné události</h3>
+<article id="insurance-process" class="insurance-process-article container-fluid">
+    <h2 class="text-center fs-3 pt-4 display-5">Jednoduchý proces vyřízení škody</h2>
+    <h3 class="text-center fs-3 pt-3 pb-4">Jak funguje proces vyřízení škodné události</h3>
     <div class="container d-flex flex-row flex-wrap gap-2 justify-content-around pt-4 pb-5">
         <div class="card p-4 border-0">
             <div class="card-body">
                 <img src="./public/assets/images/call.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">Nahlásíte škodu telefonicky nebo online</h5>
+                <h5 class="card-title pt-5 pb-2 fs-6">Nahlásíte škodu telefonicky nebo online</h5>
                 <span class="lg-number position-absolute top-0 bottom-0">1</span>
-                <p class="card-text fs-5">V případě nečekané události jsme tu pro vás. Bezproblémové hlášení škody je na
+                <p class="card-text fs-6">V případě nečekané události jsme tu pro vás. Bezproblémové hlášení škody je na
                     dosah ruky – prostřednictvím jednoduchého telefonického hovoru nebo pohodlně online.</p>
             </div>
         </div>
         <div class="card p-4 border-0">
             <div class="card-body">
                 <img src="./public/assets/images/towing.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">Pohotově Vám pomůžeme s odtahem nebo likvidací havarovaného
+                <h5 class="card-title pt-5 pb-2 fs-6">Pohotově Vám pomůžeme s odtahem nebo likvidací havarovaného
                     vozidla.</h5>
                 <span class="lg-number position-absolute top-0 bottom-0">2</span>
-                <p class="card-text fs-5">Bez obav o havarované vozidlo – naše služby odtahu a likvidace jsou k
+                <p class="card-text fs-6">Bez obav o havarované vozidlo – naše služby odtahu a likvidace jsou k
                     dispozici okamžitě, abychom vám zajistili pohodlí v obtížných chvílích.</p>
             </div>
         </div>
         <div class="card p-4 border-0">
             <div class="card-body">
                 <img src="./public/assets/images/stats.png" />
-                <h5 class="card-title pt-5 pb-2 fs-4">Mějte celý proces na očích díky Sledování stavu škody (claims
+                <h5 class="card-title pt-5 pb-2 fs-6">Mějte celý proces na očích díky Sledování stavu škody (claims
                     tracker).</h5>
                 <span class="lg-number position-absolute top-0 bottom-0">3</span>
-                <p class="card-text fs-5">Nechte nás pracovat a vy sledujte! S naším Sledováním stavu škody (claims
+                <p class="card-text fs-6">Nechte nás pracovat a vy sledujte! S naším Sledováním stavu škody (claims
                     tracker) budete v reálném čase informováni o každém detailu procesu, abyste měli situaci pod
                     kontrolou.
                 </p>
@@ -211,37 +283,71 @@
 </article>
 
 <article id="faq" class="faq-article container-fluid">
-    <h2 class="text-center fs-1 pt-3 pb-4">Často kladené dotazy (FAQ)</h2>
-    <div class="container d-flex flex-row flex-wrap gap-2 justify-content-around pt-4 pb-5">
-        <div class="card p-4 border-0">
-            <div class="card-body">
-                <img src="./public/assets/images/call.png" />
-                <h5 class="card-title pt-5 pb-2">Nahlásíte škodu telefonicky nebo online</h5>
-                <span class="lg-number position-absolute top-0 bottom-0">1</span>
-                <p class="card-text">V případě nečekané události jsme tu pro vás. Bezproblémové hlášení škody je na
-                    dosah ruky – prostřednictvím jednoduchého telefonického hovoru nebo pohodlně online.</p>
+    <h2 class="text-center fs-3 pt-3 pb-4">Často kladené dotazy (FAQ)</h2>
+    <div class="container d-flex flex-row flex-wrap gap-2 pt-4 pb-5 fs-6">
+        <a class="btn btn-light d-flex align-items-center text-start justify-content-between fs-6 p-3 w-100"
+            data-bs-toggle="collapse" href="#faq1" role="button" aria-expanded="false" aria-controls="faq1">Platí
+            pojištění mého vozidla také v zahraničí?<i class="bi bi-chevron-down"></i></a>
+        <div class="collapse multi-collapse w-100" id="faq1">
+            <div class="card card-body">
+                Pojištění vozidla (povinné ručení a havarijní pojištění) je platné i v zahraničí. Územní platnost
+                povinného ručení je vyznačena na zelené kartě, konkrétně na její čelní straně. Obecně jde o státy celé
+                Evropy, asijskou část Ruska a Turecka, Irán, Izrael, Maroko a Tunisko. Pro území Ázerbájdžánu, Kypru a
+                Srbska je její platnost omezená na určité části těchto zemí.
             </div>
         </div>
-        <div class="card p-4 border-0">
-            <div class="card-body">
-                <img src="./public/assets/images/towing.png" />
-                <h5 class="card-title pt-5 pb-2">Pohotově Vám pomůžeme s odtahem nebo likvidací havarovaného vozidla.
-                </h5>
-                <span class="lg-number position-absolute top-0 bottom-0">2</span>
-                <p class="card-text">Bez obav o havarované vozidlo – naše služby odtahu a likvidace jsou k dispozici
-                    okamžitě, abychom vám zajistili pohodlí v obtížných chvílích.</p>
+        <a class="btn btn-light d-flex align-items-center text-start justify-content-between fs-6 p-3 mt-2 w-100"
+            data-bs-toggle="collapse" href="#faq2" role="button" aria-expanded="false" aria-controls="faq2">Kde zjistím
+            rozsah krytí mého havarijního pojištění?<i class="bi bi-chevron-down"></i></a>
+        <div class="collapse multi-collapse w-100" id="faq2">
+            <div class="card card-body">
+                Rozsah krytí havarijního pojištění máte uvedeno v pojistné smlouvě. Další informace vám rádi poskytneme
+                na klientském centru.
             </div>
         </div>
-        <div class="card p-4 border-0">
-            <div class="card-body">
-                <img src="./public/assets/images/stats.png" />
-                <h5 class="card-title pt-5 pb-2">Mějte celý proces na očích díky Sledování stavu škody (claims tracker).
-                </h5>
-                <span class="lg-number position-absolute top-0 bottom-0">3</span>
-                <p class="card-text">Nechte nás pracovat a vy sledujte! S naším Sledováním stavu škody (claims tracker)
-                    budete v reálném čase informováni o každém detailu procesu, abyste měli situaci pod kontrolou.
-                </p>
+        <a class="btn btn-light d-flex align-items-center text-start justify-content-between fs-6 p-3 mt-2 w-100"
+            data-bs-toggle="collapse" href="#faq3" role="button" aria-expanded="false" aria-controls="faq3">Na jaké
+            číslo mám volat, když způsobím škodu?<i class="bi bi-chevron-down"></i></a>
+        <div class="collapse multi-collapse w-100" id="faq3">
+            <div class="card card-body">
+                Zavolejte nám na číslo +420 255 555 000 a vše vyřešíme.
             </div>
+        </div>
+        <a class="btn btn-light d-flex align-items-center text-start justify-content-between fs-6 p-3 mt-2 w-100"
+            data-bs-toggle="collapse" href="#faq4" role="button" aria-expanded="false" aria-controls="faq4">Do kdy musím
+            nahlásit pojistnou událost a komu?<i class="bi bi-chevron-down"></i></a>
+        <div class="collapse multi-collapse w-100" id="faq4">
+            <div class="card card-body">
+                Nahlásit ji musíte nám a to bez zbytečných odkladů. Využijte jeden z našich formulářů pro hlášení škody.
+            </div>
+        </div>
+        <a class="btn btn-light d-flex align-items-center text-start justify-content-between fs-6 p-3 mt-2 w-100"
+            data-bs-toggle="collapse" href="#faq5" role="button" aria-expanded="false" aria-controls="faq5">V jakém
+            případě musím vyplnit společný záznam o dopravní nehodě?<i class="bi bi-chevron-down"></i></a>
+        <div class="collapse multi-collapse w-100" id="faq5">
+            <div class="card card-body">
+                Vyplňte ho raději vždy, pokud jsou u nehody aspoň dvě osoby. Výrazně nám to všem může zjednodušit život
+                při prokazování vašich nároků.
+            </div>
+        </div>
+    </div>
+</article>
+
+<article id="insurance-help" class="insurance-help container-fluid d-flex flex-column py-5">
+    <div class="headline d-flex flex-column justify-content-center align-items-center pt-4 ">
+        <h2 class="text-center fs-3">Potřebujete pomoct s výběrem pojištění?</h2>
+    </div>
+    <div class="container d-flex flex-column flex-wrap justify-content-center pt-5 pb-5">
+        <p class=" text-center fs-6">Nevíte si rady s výběrem pojištění nebo potřebujete pomoct při sjednání?
+            Vždy Vám rádi pomůžeme!
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-5 justify-content-center">
+            <a href="#" class="btn btn-primary  fw-bold"><i class="bi bi-arrow-return-right"></i>
+                NABÍDKA A HLÁŠENÍ ŠKOD
+            </a>
+            <a href="#" class="btn btn-primary  fw-bold"><i class="bi bi-telephone-fill"></i>
+                ZAVOLÁME VÁM
+            </a>
         </div>
     </div>
 </article>

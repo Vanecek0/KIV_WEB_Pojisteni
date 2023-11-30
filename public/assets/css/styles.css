@@ -7,6 +7,22 @@
     --black: #000;
 }
 
+.app {
+    padding-top: 85pt;
+}
+
+.navbar {
+    z-index: 99;
+}
+
+#navbar {
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+}
+
+.navbar-content {
+    width: 100%;
+}
+
 .menu a {
     text-decoration: none;
 }
@@ -22,7 +38,7 @@ ul {
 }
 
 .logo img {
-    width: 300px;
+    width: 200px;
 }
 
 .top-menu {
@@ -50,9 +66,6 @@ ul {
     gap: 5pt;
 }
 
-.main-menu {
-    border-top: 1px solid var(--light-gray);
-}
 
 .main-menu ul {
     align-items: stretch;
@@ -116,24 +129,29 @@ ul {
     box-shadow: 0px 6px 18px rgb(0 0 0 / 9%);
     border-radius: 12px;
 }
+
 .multistep-form .form-header {
     gap: 5px;
     text-align: center;
     font-size: .9em;
 }
+
 .multistep-form .form-header .stepIndicator {
     position: relative;
     flex: 1;
     padding-bottom: 30px;
 }
+
 .multistep-form .form-header .stepIndicator.active {
     font-weight: 600;
     color: var(--blue);
 }
+
 .multistep-form .form-header .stepIndicator.finish {
     font-weight: 600;
     color: var(--blue);
 }
+
 .multistep-form .form-header .stepIndicator::before {
     content: "";
     position: absolute;
@@ -147,14 +165,17 @@ ul {
     border-radius: 50%;
     border: 3px solid #ecf5f4;
 }
+
 .multistep-form .form-header .stepIndicator.active::before {
     background-color: var(--blue);
     border: 3px solid #b0c9e9;
 }
+
 .multistep-form .form-header .stepIndicator.finish::before {
     background-color: var(--blue);
     border: 3px solid #b7e1dd;
 }
+
 .multistep-form .form-header .stepIndicator::after {
     content: "";
     position: absolute;
@@ -164,57 +185,63 @@ ul {
     height: 3px;
     background-color: #f3f3f3;
 }
+
 .multistep-form .form-header .stepIndicator.active::after {
     background-color: #abc8ed;
 }
+
 .multistep-form .form-header .stepIndicator.finish::after {
     background-color: var(--blue);
 }
+
 .multistep-form .form-header .stepIndicator:last-child:after {
     display: none;
 }
+
 .multistep-form .step {
-  display: none;
+    display: none;
 }
-.multistep-form .form-footer{
-    overflow:auto;
+
+.multistep-form .form-footer {
+    overflow: auto;
     gap: 20px;
 }
+
 .multistep-form fieldset h3 {
     font-size: 20pt;
     font-weight: bold;
 }
+
 .multistep-form .vehicle-radio-input .form-check-input {
     margin-bottom: 3px;
 }
+
 .multistep-form .vehicle-radio-input .form-check-input {
     margin-bottom: 3px;
 }
 
 .header-modal {
     background: url('../images/modal_bac.min.jpg') no-repeat center center;
+    background-size: cover;
     background-position: left;
-    background-size: 130%;
     height: 100vh;
     max-height: 720px;
 }
 
 .header-modal .modal-item {
-    width: 100%;
-    max-width: 920px;
+    /*width: 100%;
+    max-width: 920px;*/
 }
 
-.header-modal .modal-item .header-headline{
+.header-modal .modal-item .header-headline {
     background-color: var(--blue);
 }
 
 .help-article {
     background-color: var(--blue);
-    height: 100vh;
-    max-height: 480px;
 }
 
-.help-article .headline .underline{
+.help-article .headline .underline {
     height: 4px;
     background-color: white;
     max-width: 250px;
@@ -232,8 +259,9 @@ ul {
 }
 
 .benefits-article .card {
-    width: 350px;
+    width: 100%;
     min-width: 200px;
+    max-width: 350px;
 }
 
 .benefits-article img {
@@ -255,6 +283,104 @@ ul {
     width: 350px;
 }
 
- .insurance-table {
-    width: 600px;
+.insurance-table tr {
+    vertical-align: top;
+}
+
+.insurance-cards {
+    display: none;
+}
+
+.insurance-cards .card {
+    width: 100%;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.insurance-help {
+    background-color: #E3EFFF;
+}
+
+.social::after {
+    content: "";
+    width: 100%;
+    border-bottom: solid 1px var(--blue);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+}
+
+.footer-links a {
+    height: 100%;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+@media (max-width: 991px) {
+    .app {
+        padding-top: 75pt;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .top-menu {
+        display: none;
+    }
+
+    .navbar-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: white;
+    }
+
+    .main-menu {
+        height: 100vh;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        padding-top: 20pt;
+    }
+
+    .main-menu ul li {
+        font-size: 1.5rem;
+    }
+
+    .benefits-article .card {
+        max-width: 500px;
+    }
+
+    .insurance-table {
+        display: none;
+    }
+
+    .insurance-cards {
+        display: flex;
+    }
+
+    .insurance-help .btn {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10pt;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
 }

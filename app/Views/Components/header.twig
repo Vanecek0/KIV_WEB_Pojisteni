@@ -1,20 +1,33 @@
 <header>
-    <div class="container-fluid d-flex justify-content-between align-items-center my-3 fs-4">
-        <div class="logo">
-            <a href="/"><img src="./public/assets/images/logo.png"></a>
+    <nav id="navbar" class="navbar navbar-expand-lg w-100 bg-white position-fixed flex-wrap navbar-light">
+        <div class="container-xxl my-0 d-flex justify-content-between align-items-center fs-6">
+            <div class="logo navbar-brand">
+                <a href="/"><img src="./public/assets/images/logo.png"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="top-menu">
+                <section>
+                    <a class="bi-icon btn btn-link fs-6" href="/online-hlaseni"><i class="bi bi-ev-front"></i><b>Hlášení
+                            škody</b></a>
+                    <a class="bi-icon" href="/portal">Klientský portál</a>
+                </section>
+                <div class="divider"></div>
+                <section>
+                    <a class="bi-icon btn btn-outline-primary border-2 fs-6" href="tel:255555000"><i
+                            class="bi bi-telephone-fill"></i><b>+420 255 555 000</b></a>
+                </section>
+            </div>
         </div>
-        <div class="top-menu">
-            <section>
-                <a class="bi-icon btn btn-link fs-4" href="/online-hlaseni"><i class="bi bi-ev-front"></i><b>Hlášení škody</b></a>
-                <a class="bi-icon" href="/portal">Klientský portál</a>
-            </section>
-            <div class="divider"></div>
-            <section>
-                <a class="bi-icon btn btn-outline-primary border-2 fs-4" href="tel:255555000"><i class="bi bi-telephone-fill"></i><b>+420 255 555 000</b></a>
-            </section>
+        <div class="collapse navbar-collapse navbar-content" id="navbarSupportedContent">
+            {% if showMainMenu is not defined or showMainMenu %}
+            {% include 'Components/menu.twig' %}
+            {% endif %}
         </div>
-    </div>
-    {% if showMainMenu is not defined or showMainMenu %}
-        {% include 'Components/menu.twig' %}
-    {% endif %}
+    </nav>
+
+    <script src="/public/assets/js/hide-menu.js"></script>
 </header>
