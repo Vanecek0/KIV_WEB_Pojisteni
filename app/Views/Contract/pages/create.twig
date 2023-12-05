@@ -1,38 +1,15 @@
 {% block title %}Nové pojištění - Klientský portál{% endblock %}
 
 {% block content %}
-<form id="new-contract" class="multistep-form">
+<form id="new-contract" class="multistep-form" method="post">
     <div class="form-header d-flex mb-5">
         <span class="stepIndicator">Vstupní údaje</span>
-        <span class="stepIndicator">Kalkulace ceny</span>
         <span class="stepIndicator">Údaje o vozidle</span>
         <span class="stepIndicator">Smlouva</span>
     </div>
     <div class="container">
         <div class="step">
-            <fieldset id="vehicle" class="mb-4 mt-2">
-                <h3>Moje vozidlo</h3>
-                <div class="vehicle-radio-group d-flex gap-2 mb-3 mt-3">
-                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                        <label for="car" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
-                        <span>Osobní vozidlo (do 3,5t)</span>
-                        <i class="bi bi-car-front-fill fs-4"></i>
-                        <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
-                        </label>
-                    </div>
-                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                        <label for="motocycle" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
-                        <span>Motocykl</span>
-                        <i class="fa-solid fa-motorcycle fs-4"></i>
-                        <input type="radio" id="motocycle" value="motocycle" name="vehicle" class="form-check-input">
-                        </label>
-                    </div>
-                </div>
-
-                <label for="spz" class="form-label">SPZ vozidla</label>
-                <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" class="form-control">
-            </fieldset>
-            <fieldset id="vehicle" class="mb-4 mt-2">
+            <fieldset id="insurer" class="mb-4 mt-2">
                 <h3>Údaje pojistníka</h3>
 
 
@@ -56,7 +33,7 @@
                             </div>
                     </div>
                      <label for="ico" class="form-label">Zadejte IČO:</label>
-                     <input name="ico" id="ico" onchange="searchIco('icoInput')" class="form-control inputField entrepreneur mb-4" type="text" id="icoInput">
+                     <input name="ico" id="ico" onchange="searchIco(this)" class="form-control inputField entrepreneur mb-4" type="text" id="icoInput">
                      <label for="dic" class="form-label">Zadejte DIČ:</label>
                      <input name="dic" id="dic" onchange="searchIco('dicInput')" class="form-control inputField company mb-4" type="text" id="dicInput">
                 </div>
@@ -80,7 +57,7 @@
                 </div>
 
                 <label for="email" class="form-label">Emailová adresa *</label>
-                <input type="text" placeholder="Např.: jan.novak@example.com" id="email" name="email" class="form-control mb-4" required>
+                <input type="text" placeholder="Např.: jan.novak@example.com" id="email" name="email" class="form-control mb-4">
 
                 <label for="city" class="form-label">Město/obec</label>
                 <input type="text" placeholder="Např.: Praha 7-Holešovice" id="city" name="city" class="form-control mb-4">
@@ -94,26 +71,52 @@
             </fieldset>
         </div>
         <div class="step">
-            <p class="text-center mb-4">Your presence on the social network</p>
-            <div class="mb-3">
-                <input type="text" placeholder="Linked In" oninput="this.className = ''" name="linkedin">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Twitter" oninput="this.className = ''" name="twitter">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Facebook" oninput="this.className = ''" name="facebook">
-            </div>
+            <fieldset id="vehicle" class="mb-4 mt-2">
+                <h3>Moje vozidlo</h3>
+                <div class="vehicle-radio-group d-flex gap-2 mb-3 mt-3">
+                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="car" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
+                        <span>Osobní vozidlo (do 3,5t)</span>
+                        <i class="bi bi-car-front-fill fs-4"></i>
+                        <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
+                        </label>
+                    </div>
+                    <!--<div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="motocycle" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
+                        <span>Motocykl</span>
+                        <i class="fa-solid fa-motorcycle fs-4"></i>
+                        <input type="radio" id="motocycle" value="motocycle" name="vehicle" class="form-check-input">
+                        </label>
+                    </div>!-->
+                </div>
+
+                <label for="spz" class="form-label">VIN vozidla</label>
+                <input type="text" placeholder="Např.: TRUZZZ8J4A1003337" id="vin" name="vin" maxlength="17" class="form-control mb-4">
+
+                <label for="spz" class="form-label">SPZ vozidla</label>
+                <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" class="form-control mb-4">
+
+                <label for="car_model" class="form-label">Model vozidla</label>
+                <select class="selectpicker form-control" name="make" name="car_model" data-live-search="true" data-size="8">
+                {% for c in cars %}
+                    <option data-tokens="{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})" value="{{ c | json_encode }}">{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})</option>
+                {% endfor %}
+
+                <label for="car_photo" class="form-label">Fotky vozidla</label>
+                <input type="file" id="car_photo" name="car_photo" class="form-control mb-4" multiple accept="image/*"><br><br>
+        </select>
+            </fieldset>
         </div>
         <p id="errorMessage" class="text-danger"></p>
         <div class="form-footer d-flex justify-content-between">
             <button type="button" class="btn btn-outline-primary btn-lg" id="prevBtn" onclick="nextPrev(-1)">Předchozí</button>
             <button type="button" class="btn btn-primary btn-lg" id="nextBtn" onclick="nextPrev(1)">Pokračovat</button>
-            <button type="button" class="btn btn-primary btn-lg" id="submitBtn" >Odeslat</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" >Odeslat</button>
         </div>
     </div>
 </form>
 <script src="/public/assets/js/form/inputSet.js"></script>
+<script src="/public/assets/js/form/contract_send.js"></script>
 <script src="/public/assets/js/multistep-form.js"></script>
 <script src="/public/assets/js/ares.js"></script>
 {% endblock %}

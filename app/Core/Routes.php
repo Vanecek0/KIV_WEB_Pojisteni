@@ -20,7 +20,7 @@ return [
     "/register/post" => [Auth::class, "register", "guest_only", "/register"],
     "/portal" => [Portal::class, "index"],
     "/portal/contracts" => [Portal::class, "contracts"],
-    "/portal/new/contract" => [Contract::class, "create"],
-    "/portal/new/contract/post" => [Contract::class, "handleCreate" ],
+    "/portal/new/contract" => [Contract::class, "new_contract"],
+    "/portal/new/contract/post" => [Contract::class, "create" ],
     "/ares" => [Ares::class, "fetch"]
  ];

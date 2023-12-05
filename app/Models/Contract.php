@@ -68,56 +68,7 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function getAll()
     {
-        /*$contracts = $this->db->query("
-        SELECT v.*, c.* FROM contracts c
-        INNER JOIN vehicles v ON c.vehicle_id = v.id", [])->fetchAll(PDO::FETCH_FUNC, function (
-            $v_id,
-            $brand,
-            $model,
-            $v_type,
-            $engine_power,
-            $engine_capacity,
-            $fuel_type,
-            $manufacture_year,
-            $registration_date,
-            $vin,
-            $photos,
-            $c_id,
-            $client_id,
-            $vehicle_id,
-            $c_type,
-            $payment_state,
-            $valid_from,
-            $valid_to,
-            $notes
-        ) {
-
-            $contract = new Contract();
-            $contract->id = $c_id;
-            $contract->client_id = $client_id;
-            $contract->vehicle_id = $vehicle_id;
-            $contract->type = $c_type;
-            $contract->payment_state = $payment_state;
-            $contract->valid_from = $valid_from;
-            $contract->valid_to = $valid_to;
-            $contract->notes = $notes;
-
-            $contract->vehicle = new Vehicle();
-            $contract->vehicle->v_id = $v_id;
-            $contract->vehicle->brand = $brand;
-            $contract->vehicle->model = $model;
-            $contract->vehicle->v_type = $v_type;
-            $contract->vehicle->engine_power = $engine_power;
-            $contract->vehicle->engine_capacity = $engine_capacity;
-            $contract->vehicle->fuel_type = $fuel_type;
-            $contract->vehicle->manufacture_year = $manufacture_year;
-            $contract->vehicle->registration_date = $registration_date;
-            $contract->vehicle->vin = $vin;
-            $contract->vehicle->photos = $photos;
-
-            return $contract;
-        });*/
-
+       
         $contractsData = $this->db->query("
         SELECT v.*, c.* FROM contracts c
         INNER JOIN vehicles v ON c.vehicle_id = v.id", [])->fetchAll(PDO::FETCH_ASSOC);

@@ -1,5 +1,5 @@
-async function searchIco(id) {
-  var icoInput = $('#' + id).val();
+async function searchIco(element) {
+  var icoInput = $(element).val();
 
   var url = 'http://pojisteni.localhost.com/ares?ico=' + icoInput;
 
@@ -21,11 +21,15 @@ async function searchIco(id) {
       return node.nodeType === 1;
     });
 
-    var ico = aresInfoArr[0].textContent;
-    var pf = aresInfoArr[1].textContent;
-    var name = aresInfoArr[2].textContent;
-    var address = aresInfoArr[3].textContent;
 
-    document.getElementById('result').innerHTML = address;
+    var name = (aresInfoArr[2].textContent).split(' ');
+    var street = aresInfoArr[3].textContent;
+
+
+
+    $('[name="firstname"]').val(name[0]);
+    $('[name="lastname"]').val(name.slice(1).join(' '));
+    $('[name="street"]').val(street);
+
   }
 }
