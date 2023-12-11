@@ -5,12 +5,6 @@
 {% block content %}
     <div class="overview py-2">
         <h2>Vítejte, <b>{{user.firstname}}</b></h2>
-        <p>Máte uzavřeno celkem 5 smluv na 5 aut.</p>
-
-        <select class="selectpicker" name="make" data-live-search="true" data-size="8">
-            {% for c in cars %}
-                <option data-tokens="{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})" value="{{ c | json_encode }}">{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})</option>
-            {% endfor %}
-        </select>
+        <p>Máte uzavřeno celkem <b>{{contracts_number}}</b> smluv na <b>{{vehicles_number}}</b> aut.</p>
     </div>
 {% endblock %}

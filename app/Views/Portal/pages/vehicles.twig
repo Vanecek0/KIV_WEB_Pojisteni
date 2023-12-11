@@ -1,0 +1,31 @@
+{% block title %}Vozidla - Klientský portál{% endblock %}
+{% block headline %}Vozidla - Klientský portál{% endblock %}
+
+{% block content %}
+<section class="contracts py-3">
+    <h3>Vaše vozidla</h3>
+    <div class="contracts-header d-flex bg-light py-1">
+        <a class="btn btn-primary" href="/portal/new/contract"><i class="bi bi-plus-lg"></i> Přidat nové</a>
+    </div>
+    {% for vehicle in vehicles %}
+    <div class="contract card my-2">
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
+            <span class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
+                aria-expanded="false" aria-controls="collapseContent{{ loop.index }}">
+                <b>{{ vehicle.brand }} {{ vehicle.model }}</b>
+            </span>
+            <div class="portal-action-buttons">
+                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
+            </div>
+        </div>
+        <div id="collapseContent{{ loop.index }}" class="collapse" aria-labelledby="collapseHeader">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

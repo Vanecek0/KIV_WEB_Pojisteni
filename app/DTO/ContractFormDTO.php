@@ -7,6 +7,7 @@ class ContractFormDTO
     public function __construct(
         public readonly string $vehicle,
         public readonly string $spz,
+        public readonly string $vin,
         public readonly string $insurer,
         public readonly string $ico,
         public readonly string $dic,
@@ -18,7 +19,9 @@ class ContractFormDTO
         public readonly string $email,
         public readonly string $city,
         public readonly string $street,
-        public readonly string $psc
+        public readonly string $psc,
+        public readonly string $car_photos,
+        public readonly string $type
     ) {
     }
 
@@ -27,6 +30,7 @@ class ContractFormDTO
         return [
             'vehicle' => $this->vehicle,
             'spz' => $this->spz,
+            'vin' => $this->vin,
             'insurer' => $this->insurer,
             'ico' => $this->ico,
             'dic' => $this->dic,
@@ -39,6 +43,8 @@ class ContractFormDTO
             'city' => $this->city,
             'street' => $this->street,
             'psc' => $this->psc,
+            'car_photos' => $this->car_photos,
+            'type' => $this->type
         ];
     }
 }

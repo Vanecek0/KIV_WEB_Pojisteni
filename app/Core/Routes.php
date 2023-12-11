@@ -22,5 +22,7 @@ return [
     "/portal/contracts" => [Portal::class, "contracts"],
     "/portal/new/contract" => [Contract::class, "new_contract"],
     "/portal/new/contract/post" => [Contract::class, "create" ],
+    "/portal/insurance-events" => [Portal::class, "insuranceEvents"],
+    "/portal/vehicles" => [Portal::class, "vehicles"],
     "/ares" => [Ares::class, "fetch"]
  ];

@@ -16,7 +16,8 @@
 }
 
 #navbar {
-    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    transition: top 0.5s;
+    /* Transition effect when sliding down (and up) */
 }
 
 .navbar-content {
@@ -122,6 +123,30 @@ ul {
     text-decoration: none;
 }
 
+.login-content {
+    min-height: 500px;
+}
+
+.login-content #portal-login{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.register-content #portal-register {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 720px;
+    min-width: 250px;
+}
+
 .multistep-form {
     background-color: #ffffff;
     margin: 40px auto;
@@ -212,12 +237,24 @@ ul {
     font-weight: bold;
 }
 
-.multistep-form .vehicle-radio-input .form-check-input {
+.multistep-form .radio-group .form-check-input {
     margin-bottom: 3px;
 }
 
-.multistep-form .vehicle-radio-input .form-check-input {
+.multistep-form .radio-group .form-check-input {
     margin-bottom: 3px;
+}
+
+.multistep-form .card-input-element {
+    display: none;
+}
+
+.multistep-form .card-input:hover {
+    cursor: pointer;
+}
+
+.multistep-form .card-input-element:checked+.card-input {
+    box-shadow: 0 0 1px 1px var(--blue);
 }
 
 .header-modal {
@@ -321,6 +358,16 @@ ul {
     color: var(--blue);
     text-decoration: underline;
     text-decoration-thickness: 3px;
+}
+
+.error-flash:not(:empty) {
+    background-color: red;
+    padding: 5pt;
+}
+
+.message-flash:not(:empty) {
+    background-color: #acacac;
+    padding: 5pt;
 }
 
 @media (max-width: 991px) {

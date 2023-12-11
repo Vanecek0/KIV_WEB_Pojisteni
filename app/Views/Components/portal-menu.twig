@@ -3,17 +3,16 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a href="/portal" class="nav-link"><i class="bi bi-bar-chart-line-fill"></i>Přehled</a></li>
         <li class="nav-item"><a href="/portal/contracts" class="nav-link"><i class="bi bi-clipboard-fill"></i>Smlouvy</a></li>
-        <li class="nav-item"><a href="/portal/contracts" class="nav-link"><i class="bi bi-lightning-charge-fill"></i>Pojistné události</a></li>
-        <li class="nav-item"><a href="/portal/contracts" class="nav-link"><i class="bi bi-car-front-fill"></i>Vaše vozidla</a></li>
+        <li class="nav-item"><a href="/portal/insurance-events" class="nav-link"><i class="bi bi-lightning-charge-fill"></i>Pojistné události</a></li>
+        <li class="nav-item"><a href="/portal/vehicles" class="nav-link"><i class="bi bi-car-front-fill"></i>Vaše vozidla</a></li>
       </ul>
+      <div>
+      <span><i class="bi bi-person-circle"></i>Přihlášen jako <b>{{user.firstname}}</b> (<a href="/logout">odhlásit se</a>)</span>
+      </div>
     </div>
   </div>
-  <!--<ul>
-    <li><a href="/insurance-report"><i class="bi bi-plus"></i>Nahlásit pojistnou událost</a></li>
-    <li><a href="/logout">Odhlásit se</a></li>
-  </ul>!-->
 </nav>

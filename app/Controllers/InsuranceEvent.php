@@ -7,24 +7,25 @@ use App\Core\Request;
 use App\DTO\ContractFormDTO;
 use App\Interfaces\IController;
 use App\Models\Contract as ContractModel;
+use App\Models\InsuranceEvent as InsuranceEventModel;
 use Twig\Environment;
 
-class Contract implements IController
+class InsuranceEvent implements IController
 {
     private Environment $twig;
-    private ContractModel $contractmodel;
+    private InsuranceEventModel $insuranceModel;
     private string $cars;
     private FlashMessage $flashmessage;
 
     public function __construct(Environment $twig)
     {
         $this->twig = $twig;
-        $this->contractmodel = new ContractModel();
+        $this->insuranceModel = new InsuranceEventModel();
         $this->cars = file_get_contents('../app/Lists/Cars.json');
         $this->flashmessage = new FlashMessage();
     }
 
-    public function new_contract()
+    /*public function new_contract()
     {
         return $this->twig->render('Contract/index.twig', [
             "template" => "create.twig",
@@ -77,5 +78,5 @@ class Contract implements IController
     public function delete()
     {
         var_dump("test");
-    }
+    }*/
 }

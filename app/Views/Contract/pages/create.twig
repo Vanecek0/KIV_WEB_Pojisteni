@@ -1,7 +1,7 @@
 {% block title %}Nové pojištění - Klientský portál{% endblock %}
 
 {% block content %}
-<form id="new-contract" class="multistep-form" method="post">
+<form id="new-contract" class="multistep-form" method="post" enctype="multipart/form-data">
     <div class="form-header d-flex mb-5">
         <span class="stepIndicator">Vstupní údaje</span>
         <span class="stepIndicator">Údaje o vozidle</span>
@@ -15,27 +15,41 @@
 
                 <div class="inputSet">
                     <div class="insurer-radio-group d-flex gap-2 mb-3 mt-3">
-                        <div class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                            <label for="person" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Fyzická osoba
-                                <input type="radio" id="person" value="person" name="insurer" class="form-check-input setSelection" onclick="inputSet()" checked>
+                        <div
+                            class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                            <label for="person" role="button"
+                                class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Fyzická
+                                osoba
+                                <input type="radio" id="person" value="person" name="insurer"
+                                    class="form-check-input setSelection" onclick="inputSet()" checked>
                             </label>
                         </div>
-                            <div class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                                <label for="entrepreneur" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Fyzická osoba podnikající
-                                    <input type="radio" id="entrepreneur" value="entrepreneur" name="insurer" onclick="inputSet('entrepreneur')" class="form-check-input setSelection">
-                                </label>
-                            </div>
+                        <div
+                            class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                            <label for="entrepreneur" role="button"
+                                class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Fyzická
+                                osoba podnikající
+                                <input type="radio" id="entrepreneur" value="entrepreneur" name="insurer"
+                                    onclick="inputSet('entrepreneur')" class="form-check-input setSelection">
+                            </label>
+                        </div>
 
-                            <div class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                                <label for="company" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Právnická osoba
-                                    <input type="radio" id="company" value="company" name="insurer" onclick="inputSet('company')" class="form-check-input setSelection">
-                                </label>
-                            </div>
+                        <div
+                            class="form-check insurer-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                            <label for="company" role="button"
+                                class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">Právnická
+                                osoba
+                                <input type="radio" id="company" value="company" name="insurer"
+                                    onclick="inputSet('company')" class="form-check-input setSelection">
+                            </label>
+                        </div>
                     </div>
-                     <label for="ico" class="form-label">Zadejte IČO:</label>
-                     <input name="ico" id="ico" onchange="searchIco(this)" class="form-control inputField entrepreneur mb-4" type="text" id="icoInput">
-                     <label for="dic" class="form-label">Zadejte DIČ:</label>
-                     <input name="dic" id="dic" onchange="searchIco('dicInput')" class="form-control inputField company mb-4" type="text" id="dicInput">
+                    <label for="ico" class="form-label">Zadejte IČO:</label>
+                    <input name="ico" id="ico" onchange="searchIco(this)"
+                        class="form-control inputField entrepreneur mb-4" type="text" id="icoInput">
+                    <label for="dic" class="form-label">Zadejte DIČ:</label>
+                    <input name="dic" id="dic" onchange="searchIco('dicInput')"
+                        class="form-control inputField company mb-4" type="text" id="dicInput">
                 </div>
 
                 <label for="firstname" class="form-label">Jméno</label>
@@ -48,22 +62,27 @@
                 <input type="date" placeholder="Např.: Novák" id="birth" name="birth" class="form-control mb-4">
 
                 <label for="birth-number" class="form-label">Rodné číslo</label>
-                <input type="text" placeholder="Např.: 739028/5163" id="birth-number" name="birth-number" class="form-control mb-4">
+                <input type="text" placeholder="Např.: 739028/5163" id="birth-number" name="birth-number"
+                    class="form-control mb-4">
 
                 <label for="phone-number" class="form-label">Telefon</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <span class="input-group-text" id="basic-addon1">+420</span>
-                    <input type="text" placeholder="Např.: 123 456 789" id="phone-number" name="phone-number" aria-describedby="basic-addon1" class="form-control mb-4">
+                    <input type="text" placeholder="Např.: 123 456 789" id="phone-number" name="phone-number"
+                        aria-describedby="basic-addon1" class="form-control">
                 </div>
 
                 <label for="email" class="form-label">Emailová adresa *</label>
-                <input type="text" placeholder="Např.: jan.novak@example.com" id="email" name="email" class="form-control mb-4">
+                <input type="text" placeholder="Např.: jan.novak@example.com" id="email" name="email"
+                    class="form-control mb-4">
 
                 <label for="city" class="form-label">Město/obec</label>
-                <input type="text" placeholder="Např.: Praha 7-Holešovice" id="city" name="city" class="form-control mb-4">
+                <input type="text" placeholder="Např.: Praha 7-Holešovice" id="city" name="city"
+                    class="form-control mb-4">
 
                 <label for="street" class="form-label">Ulice</label>
-                <input type="text" placeholder="Např.: Dukelských Hrdinů 906/48" id="street" name="street" class="form-control mb-4">
+                <input type="text" placeholder="Např.: Dukelských Hrdinů 906/48" id="street" name="street"
+                    class="form-control mb-4">
 
                 <label for="psc" class="form-label">PSČ</label>
                 <input type="text" placeholder="Např.: 170 00" id="psc" name="psc" class="form-control mb-4">
@@ -73,12 +92,14 @@
         <div class="step">
             <fieldset id="vehicle" class="mb-4 mt-2">
                 <h3>Moje vozidlo</h3>
-                <div class="vehicle-radio-group d-flex gap-2 mb-3 mt-3">
-                    <div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
-                        <label for="car" role="button" class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
-                        <span>Osobní vozidlo (do 3,5t)</span>
-                        <i class="bi bi-car-front-fill fs-4"></i>
-                        <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
+                <div class="radio-group d-flex gap-2 mb-3 mt-3">
+                    <div
+                        class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
+                        <label for="car" role="button"
+                            class="form-check-label p-3 d-flex flex-row-reverse gap-2 justify-content-center align-items-center">
+                            <span>Osobní vozidlo (do 3,5t)</span>
+                            <i class="bi bi-car-front-fill fs-4"></i>
+                            <input type="radio" id="car" value="car" name="vehicle" class="form-check-input" checked>
                         </label>
                     </div>
                     <!--<div class="form-check vehicle-radio-input bg-light rounded d-flex justify-content-center align-items-center">
@@ -90,28 +111,116 @@
                     </div>!-->
                 </div>
 
-                <label for="spz" class="form-label">VIN vozidla</label>
-                <input type="text" placeholder="Např.: TRUZZZ8J4A1003337" id="vin" name="vin" maxlength="17" class="form-control mb-4">
+                <label for="vin" class="form-label">VIN vozidla</label>
+                <input type="text" id="vin" name="vin" class="form-control mb-4">
 
                 <label for="spz" class="form-label">SPZ vozidla</label>
                 <input type="text" placeholder="Např.: 1A2 9875" id="spz" name="spz" class="form-control mb-4">
 
                 <label for="car_model" class="form-label">Model vozidla</label>
-                <select class="selectpicker form-control" name="make" name="car_model" data-live-search="true" data-size="8">
-                {% for c in cars %}
-                    <option data-tokens="{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})" value="{{ c | json_encode }}">{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})</option>
-                {% endfor %}
+                <select class="selectpicker form-control" name="make" name="car_model" data-live-search="true"
+                    data-size="8">
+                    {% for c in cars %}
+                    <option data-tokens="{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})"
+                        value="{{ c | json_encode }}">{{ c.make }} {{ c.model }} {{ c.eng_power }}hp (r.v {{ c.year }})
+                    </option>
+                    {% endfor %}
 
-                <label for="car_photo" class="form-label">Fotky vozidla</label>
-                <input type="file" id="car_photo" name="car_photo" class="form-control mb-4" multiple accept="image/*"><br><br>
-        </select>
+                    <label for="car_photos" class="form-label">Fotky vozidla</label>
+                    <input type="file" id="car_photos" name="car_photos" class="form-control mb-4" multiple
+                        accept="image/*"><br><br>
+                </select>
             </fieldset>
+        </div>
+        <div class="step">
+            <fieldset id="contract" class="mb-4 mt-2">
+                <h3>Výběr pojištění</h3>
+            </fieldset>
+            <div class="d-flex gap-3">
+                <div class="d-flex">
+                    <label class="d-flex align-items-stretch">
+                        <input type="radio" value="KOMFORT" name="type" selected checked
+                            class="card-input-element" />
+
+                        <div class="card card-default card-input">
+                            <div class="card-header fw-bold">KOMFORT</div>
+                            <div class="card-body">
+                                <p><i class="bi bi-check-lg"></i> Povinné ručení</p>
+                                <p><i class="bi bi-check-lg"></i> Právní poradenství</p>
+                                <p><i class="bi bi-check-lg"></i> Asistence</p>
+                                <p><i class="bi bi-check-lg"></i> Úrazové pojištění</p>
+                            </div>
+                            <span class="btn btn-primary">Vybrat</span>
+                        </div>
+
+                    </label>
+
+                </div>
+                <div class="d-flex">
+
+                    <label class="d-flex align-items-stretch">
+                        <input type="radio" value="PLUS" name="type" selected checked class="card-input-element" />
+
+                        <div class="card card-default card-input">
+                            <div class="card-header fw-bold">PLUS</div>
+                            <div class="card-body">
+                                <p><i class="bi bi-check-lg"></i> Povinné ručení</p>
+                                <p><i class="bi bi-check-lg"></i> Právní poradenství</p>
+                                <p><i class="bi bi-check-lg"></i> Asistence</p>
+                                <p><i class="bi bi-check-lg"></i> Úrazové pojištění</p>
+                                <p><i class="bi bi-check-lg"></i> Přírodní události</p>
+                                <p><i class="bi bi-check-lg"></i> Požár a výbuch</p>
+                                <p><i class="bi bi-check-lg"></i> Poškození zvířetem</p>
+                                <p><i class="bi bi-check-lg"></i> Rozšířená asistence</p>
+                            </div>
+                            <span class="btn btn-primary">Vybrat</span>
+                        </div>
+
+                    </label>
+
+                </div>
+                <div class="d-flex">
+
+                    <label class="d-flex align-items-stretch">
+                        <input type="radio" value="EXTRA" name="type" class="card-input-element" />
+
+                        <div class="card card-default card-input">
+                            <div class="card-header fw-bold">EXTRA</div>
+                            <div class="card-body">
+                                <p class="text-center">Všechny výhody pojištění Plus</p>
+                                <p><i class="bi bi-check-lg"></i> Krádež</p>
+                                <p><i class="bi bi-check-lg"></i> Skla</p>
+                                <p><i class="bi bi-check-lg"></i> Vandalismus</p>
+                            </div>
+                            <span class="btn btn-primary">Vybrat</span>
+                        </div>
+                    </label>
+
+                </div>
+                <div class="d-flex">
+
+                    <label class="d-flex align-items-stretch">
+                        <input type="radio" value="MAX" name="type" class="card-input-element" />
+
+                        <div class="card card-default card-input">
+                            <div class="card-header fw-bold">MAX</div>
+                            <div class="card-body">
+                                <p class="text-center">Všechny výhody pojištění Extra</p>
+                                <p><i class="bi bi-check-lg"></i> Havárie</p>
+                            </div>
+                            <span class="btn btn-primary">Vybrat</span>
+                        </div>
+                    </label>
+
+                </div>
+            </div>
         </div>
         <p id="errorMessage" class="text-danger"></p>
         <div class="form-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-outline-primary btn-lg" id="prevBtn" onclick="nextPrev(-1)">Předchozí</button>
+            <button type="button" class="btn btn-outline-primary btn-lg" id="prevBtn"
+                onclick="nextPrev(-1)">Předchozí</button>
             <button type="button" class="btn btn-primary btn-lg" id="nextBtn" onclick="nextPrev(1)">Pokračovat</button>
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" >Odeslat</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Odeslat</button>
         </div>
     </div>
 </form>

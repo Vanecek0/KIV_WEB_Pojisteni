@@ -3,20 +3,20 @@
 {% block title %}Přihlášení – Nebourej.cz{% endblock %}
 
 {% block content %}
-  <form id="portal-login" method="post">
-    <p id="login-message"></p>
-    <p id="login-error"></p>
-    <div class="container">
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username" required>
-      <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Zadejte heslo" id="password" name="password" required>
-      <button id="send-request">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-      <p>Nemáte ještě účet? <a href="/register">Registrujte se</a></p>
-    </div>
-  </form>
+  <div class="login-content container-xxl d-flex flex-column bg-light justify-content-center align-items-center">
+  <h1>Přihlášení</h1>
+    <form id="portal-login" class="h-100" method="post">
+      <p id="login-message"></p>
+      <p class="error-flash text-white" id="login-error"></p>
+      <div class="container">
+        <label class="form-label" for="username"><b>Uživatelské jméno</b></label>
+        <input class="form-control mb-4 py-3" type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username" required>
+        <label class="form-label" for="password"><b>Heslo</b></label>
+        <input class="form-control mb-4 py-3" type="password" placeholder="Zadejte heslo" id="password" name="password" required>
+        <button class="btn btn-primary mb-2 w-100" id="send-request">Přihlásit se</button>
+        <p>Nemáte ještě účet? <a href="/register">Registrujte se</a></p>
+      </div>
+    </form>
+  </div>
   <script src="/public/assets/js/portal_login.js"></script>
 {% endblock %}

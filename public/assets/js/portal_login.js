@@ -17,6 +17,10 @@ jQuery(function () {
                 var json_response = JSON.parse(response);
                 $("#login-message").text(json_response.login_message);
                 $("#login-error").text(json_response.login_error);
+                
+                if(json_response.login_error) {
+                    $("#portal-login")[0].reset();
+                }
             },
             error: function (xhr, status, error) {
                 alert('Error :' + error)

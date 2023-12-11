@@ -8,7 +8,7 @@
 <div class="portal container-xl">
     <div class="my-3">
     <h2 class="display-6">{{ block("headline", template) }}</h2>
-        {% include 'Components/portal-menu.twig' %}
+        {% include 'Components/portal-menu.twig' with {'user': user} %}
         <div class="portal-content my-2">
             {{ block("content", template) }}
         </div>

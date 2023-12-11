@@ -141,10 +141,7 @@ class Auth implements IController
 
     private function handleLogin(LoginFormDTO $loginFormDTO)
     {
-        $username = $loginFormDTO->username;
-        $password = $loginFormDTO->password;
-
-        $dbUser = $this->usermodel->getByUsername($username);
+        $dbUser = $this->usermodel->getByUsername($loginFormDTO->username);
 
         if ($dbUser == null) {
             $this->flashmessage->setFlashMessage("login_error", "Uživatel nenalezen!");
@@ -152,7 +149,7 @@ class Auth implements IController
             return false;
         }
 
-        if (!password_verify($password, $dbUser->password)) {
+        if (!password_verify($loginFormDTO->password, $dbUser->password)) {
             $this->flashmessage->setFlashMessage("login_error", "Chybně zadané heslo!");
             echo $this->flashmessage->getMessagesArray();
             return false;

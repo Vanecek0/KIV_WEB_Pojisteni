@@ -36,14 +36,23 @@ class Contract implements IDBmodel, JsonSerializable
     public function create(array $data)
     {
 
-        if (!in_array($data['type'], self::TYPE_OPTIONS)) {
+        /*if (!in_array($data['type'], self::TYPE_OPTIONS)) {
             throw new InvalidArgumentException("Invalid type: " . $data['type']);
         }
         if (!in_array($data['payment_state'], self::PAYMENT_STATE_OPTIONS)) {
             throw new InvalidArgumentException("Invalid payment state: " . $data['payment_state']);
-        }
+        }*/
 
-        $this->db->insert($this->table, $data);
+        $this->db->insert($this->table, [
+            'client_id' => '1',
+            'vehicle_id' => '2',
+            'type' => $data['type'],
+            'price' => $data['price'],
+            'payment_state' => 'UNPAID',
+            'valid_from' => time(),
+            'valid_to' => '2023-11-08 14:53:05',
+            'notes' => 'OK'
+        ]);
         return true;
     }
 
@@ -68,7 +77,7 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function getAll()
     {
-       
+
         $contractsData = $this->db->query("
         SELECT v.*, c.* FROM contracts c
         INNER JOIN vehicles v ON c.vehicle_id = v.id", [])->fetchAll(PDO::FETCH_ASSOC);
@@ -89,6 +98,13 @@ class Contract implements IDBmodel, JsonSerializable
             return null;
         }
         return $contracts;
+    }
+
+    public function getCount()
+    {
+        return $this->db->query("
+    SELECT COUNT(*) as count FROM contracts c
+    INNER JOIN vehicles v ON c.vehicle_id = v.id", [])->fetch(PDO::FETCH_ASSOC)['count'];
     }
 
     public function getById(int $id)

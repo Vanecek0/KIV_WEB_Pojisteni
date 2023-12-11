@@ -62,6 +62,15 @@ class User implements IDBmodel, JsonSerializable{
     {
         return null;
     }
+
+    public function hydrate(array $data)
+    {
+        foreach ($data as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->$key = $value;
+            }
+        }
+    }
     
 
     public function getByUsername($username): ?User {

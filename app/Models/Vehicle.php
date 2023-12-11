@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Core\Database;
 use App\Interfaces\IDBmodel;
 use JsonSerializable;
+use PDO;
 
 class Vehicle implements IDBmodel, JsonSerializable
 {
@@ -23,6 +24,8 @@ class Vehicle implements IDBmodel, JsonSerializable
     public string $vin;
     public string $photos;
 
+    public User $user;
+
     private Database $db;
     protected $table = 'vehicles';
 
@@ -32,7 +35,7 @@ class Vehicle implements IDBmodel, JsonSerializable
     }
 
     public function create(array $data)
-    { 
+    {
         return null;
     }
 
@@ -46,22 +49,51 @@ class Vehicle implements IDBmodel, JsonSerializable
         return null;
     }
 
-    public function getAll()
+    public function hydrate(array $data)
     {
-        return null;
-    }
-
-    public function getById(int $id)
-    {
-        return null;
-    }
-
-    public function hydrate(array $data) {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
                 $this->$key = $value;
             }
         }
+    }
+
+
+    public function getAll()
+    {
+        $vehicleData = $this->db->query("
+    SELECT v.*, u.* FROM vehicles v
+    INNER JOIN users u ON v.user_id = u.id", [])->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $vehicles = [];
+        foreach ($vehicleData as $data) {
+            $vehicle = new Vehicle();
+            $vehicle->hydrate($data);
+
+            $user = new User();
+            $user->hydrate($data);
+
+            $vehicle->user = $user;
+            $vehicles[] = $vehicle;
+        }
+
+        if (!$vehicles) {
+            return null;
+        }
+        return $vehicles;
+    }
+
+    public function getCount()
+    {
+        return $this->db->query("
+    SELECT COUNT(*) as count FROM vehicles v
+    INNER JOIN users u ON v.user_id = u.id", [])->fetch(PDO::FETCH_ASSOC)['count'];
+    }
+
+    public function getById(int $id)
+    {
+        return null;
     }
 
     public function jsonSerialize(): mixed
