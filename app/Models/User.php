@@ -1,11 +1,13 @@
 <?php
+
 namespace App\Models;
 
 use App\Core\Database;
 use App\Interfaces\IDBmodel;
 use JsonSerializable;
 
-class User implements IDBmodel, JsonSerializable{
+class User implements IDBmodel, JsonSerializable
+{
 
     public int $id;
     public string $firstname;
@@ -24,16 +26,17 @@ class User implements IDBmodel, JsonSerializable{
 
     public User $user;
 
-    // 0 => not logged in, 1 => user, 1<<1 => admin, 1<<2 => superadmin
     private int $role;
     private Database $db;
     protected $table = 'users';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = Database::getInstance();
     }
 
-    public function create(array $data) {
+    public function create(array $data)
+    {
 
         $existingUser = $this->getByUsername($data['username']);
 
@@ -54,13 +57,31 @@ class User implements IDBmodel, JsonSerializable{
         return null;
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         return null;
     }
 
     public function getById(int $id)
     {
         return null;
+    }
+
+    public function getUserRole($username)
+    {
+        $userrole = $this->db->select(User::class, ["username=" => $username], $this->table);
+        return $userrole[0]->role;
+    }
+
+    public function updateUserRole($user, $newRole)
+    {
+        $requiredPermission = Role::ROLE_SUPERADMIN;
+        var_dump($requiredPermission);
+        if ($this->hasAccess((array)$user, $requiredPermission)) {
+            return 'ano';
+        }
+        return 'ne';
+        //return $this->db->update(User::class, ['role' => $newRole], ['user' => $username]);
     }
 
     public function hydrate(array $data)
@@ -71,12 +92,12 @@ class User implements IDBmodel, JsonSerializable{
             }
         }
     }
-    
 
-    public function getByUsername($username): ?User {
+    public function getByUsername($username): ?User
+    {
         $user = $this->db->select(User::class, ["username=" => $username], $this->table);
-        
-        if(!$user) { 
+
+        if (!$user) {
             return null;
         }
 
@@ -98,14 +119,27 @@ class User implements IDBmodel, JsonSerializable{
         return $this->user;
     }
 
-    public function hasRequiredRole($requiredRole) {
+    public function hasRequiredRole($requiredRole)
+    {
         if (!$this->user->role == $requiredRole) {
             return false;
         }
         return true;
     }
 
-    public function jsonSerialize():mixed {
+    public function hasAccess(array $userSession, $action): bool
+    {
+        if (isset($userSession['role'])) {
+            $userRole = (int)$userSession['role'];
+            var_dump($userRole & $action);
+            return ($userRole & $action) === $action;
+        }
+
+        return false;
+    }
+
+    public function jsonSerialize(): mixed
+    {
         return [
             'id' => $this->id,
             'firstname' => $this->firstname,

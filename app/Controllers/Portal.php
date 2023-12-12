@@ -43,6 +43,7 @@ class Portal implements IController
         return $this->renderPortalIndex([
             "template" => "overview.twig",
             "user" => $user,
+            "userperm" => $this->usermodel->updateUserRole($user, '-'),
             "vehicles_number" => $this->vehicle->getCount(),
             "contracts_number" => $this->contract->getCount()
         ]);

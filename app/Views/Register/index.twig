@@ -4,54 +4,61 @@
 
 {% block content %}
 <div class="register-content container-xxl py-5 d-flex flex-column bg-light justify-content-center align-items-center">
-<h1>Registrace</h1>
-<form id="portal-register" method="post">
+  <h1>Registrace</h1>
+  <form id="portal-register" method="post">
     <p id="register-message"></p>
     <p id="register-error"></p>
     <div class="container">
       <h2 class="mb-3">Kontaktní osoba</h2>
       <label class="form-label" for="firstname"><b>Jméno</b></label>
-        <input class="form-control mb-4" type="text" placeholder="Zadejte jméno" id="firstname" name="firstname" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte jméno" id="firstname" name="firstname" required>
 
       <label class="form-label" for="lastname"><b>Příjmení</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte příjmení" id="lastname" name="lastname" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte příjmení" id="lastname" name="lastname"
+        required>
 
 
       <label for="phone-number" class="form-label">Telefon</label>
-        <div class="input-group mb-4">
-            <span class="input-group-text" id="basic-addon1">+420</span>
-            <input type="text" placeholder="Např.: 123 456 789" id="phone" name="phone" aria-describedby="basic-addon1" class="form-control">
-        </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">+420</span>
+        <input type="text" placeholder="Např.: 123 456 789" id="phone" name="phone" aria-describedby="basic-addon1"
+          class="form-control">
+      </div>
 
-       <label class="form-label" for="email"><b>Email</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte email" id="email" name="email">
+      <label class="form-label" for="email"><b>Email</b></label>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte email" id="email" name="email">
 
       <label class="form-label" for="birth"><b>Datum narození</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte datum narození" id="birth" name="birth" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte datum narození" id="birth" name="birth"
+        required>
 
       <label class="form-label" for="birth_number"><b>Rodné číslo</b></label>
-        <input class="form-control mb-4" type="text" placeholder="Zadejte rodné číslo" id="birth_number" name="birth_number" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte rodné číslo" id="birth_number"
+        name="birth_number" required>
 
       <h2 class="mb-3">Kontaktní adresa</h2>
       <label class="form-label" for="city"><b>Město/obec</b></label>
-        <input class="form-control mb-4" type="text" placeholder="Zadejte město/obec" id="city" name="city" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte město/obec" id="city" name="city" required>
 
       <label class="form-label" for="street"><b>Ulice</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte ulici a číslo popisné" id="street" name="street" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte ulici a číslo popisné" id="street" name="street"
+        required>
 
       <label class="form-label" for="psc"><b>PSČ</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte PSČ" id="psc" name="psc" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte PSČ" id="psc" name="psc" required>
 
       <h2 class="mb-3">Přihlašovací údaje</h2>
       <label class="form-label" for="username"><b>Uživatelské jméno</b></label>
-        <input  class="form-control mb-4" type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username" required>
+      <input class="form-control mb-3" type="text" placeholder="Zadejte uživatelské jméno" id="username" name="username"
+        required>
       <label class="form-label" for="password"><b>Heslo</b></label>
-          <input  class="form-control mb-4" type="password" placeholder="Zadejte heslo" id="password" name="password" required>
-          <button class="btn btn-primary w-100" id="send-request">Registrovat se</button>
-        <p class="mt-2">Registrací souhlasíte s GDPR a podmínkami použití</p>
+      <input class="form-control mb-3" type="password" placeholder="Zadejte heslo" id="password" name="password"
+        required>
+      <button class="btn btn-primary w-100" id="send-request">Registrovat se</button>
+      <p class="mt-2">Registrací souhlasíte s GDPR a podmínkami použití</p>
       <p>Máte již účet? <a href="/login">Přihlaste se</a></p>
     </div>
   </form>
 </div>
-  <script src="/public/assets/js/portal_register.js"></script>
+<script src="/public/assets/js/portal_register.js"></script>
 {% endblock %}

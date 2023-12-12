@@ -40,7 +40,7 @@ class Database
         array_walk(
             $params,
             function ($value, $key) use ($stmt) {
-                $stmt->bindValue($key+1, $value);
+                $stmt->bindValue($key + 1, $value);
             }
         );
 
@@ -72,7 +72,6 @@ class Database
         }
 
         return $result->fetchAll(PDO::FETCH_CLASS, $class);
-        
     }
 
     public function insert(string $tableName, array $data): ?int
@@ -88,5 +87,22 @@ class Database
         }
 
         return $this->pdo->lastInsertId();
+    }
+
+    public function update(string $class, array $data, array $condition, string $tableName = null): ?int
+    {
+        $tableName = $tableName ?? strtolower($class);
+        $setClause = implode(', ', array_map(fn ($column) => "$column = ?", array_keys($data)));
+        $conditionClause = implode(' AND ', array_map(fn ($column) => "$column = ?", array_keys($condition)));
+
+        $sql = "UPDATE $tableName SET $setClause WHERE $conditionClause";
+
+        $result = $this->query($sql, array_merge(array_values($data), array_values($condition)));
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $result->rowCount();
     }
 }
