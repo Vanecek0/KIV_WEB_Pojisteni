@@ -1,0 +1,141 @@
+{% block title %}Smlouvy - Klientský portál{% endblock %}
+{% block headline %}Smlouvy - Klientský portál{% endblock %}
+
+{% block content %}
+<section class="contracts py-3">
+    <h3>Správa klientů</h3>
+  <input class="form-control" id="myInput" type="text" placeholder="Hledat...">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Jméno</th>
+        <th>Příjmení</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Datum narození</th>
+        <th>Rodné číslo</th>
+        <th>Město</th>
+        <th>Ulice</th>
+        <th>PSČ</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <!-- Initial rows (visible) -->
+      <!-- These rows will be dynamically loaded from the server -->
+    </tbody>
+  </table>
+  <button id="loadMore">Načíst další</button>
+</section>
+
+<script>
+$(document).ready(function(){
+  var limit = 10;
+  var defaultLimit = limit;
+  var offset = 0;
+  var search = '';
+
+  function loadMoreRows() {
+    $.ajax({
+      url: 'http://pojisteni.localhost.com/users',
+      data: { search, limit, offset },
+      dataType: 'json',
+      success: function(data) {
+        if (data.length > 0) {
+          data.forEach(item => {
+            $('#myTable').append(`
+              <tr class="table-row">
+                <td>${item.id}</td>
+                <td>${item.firstname}</td>
+                <td>${item.lastname}</td>
+                <td>${item.phone}</td>
+                <td>${item.email}</td>
+                <td>${item.birth}</td>
+                <td>${item.birth_number}</td>
+                <td>${item.city}</td>
+                <td>${item.street}</td>
+                <td>${item.psc}</td>
+                <td>${item.role}</td>
+              </tr>
+            `);
+          });
+          offset += limit;
+
+          // Kontrola načtených řádků
+          if (data.length < limit) {
+            $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+          } else {
+            $('#loadMore').prop('disabled', false).text('Načíst další');
+          }
+        } else {
+          $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+        }
+      }
+    });
+  }
+
+  $("#loadMore").on("click", loadMoreRows);
+
+  $('#myInput').change(function() {
+    search = $('#myInput').val();
+    limit = defaultLimit;
+    offset = 0;
+    loadAllUsers();
+    $('#loadMore').prop('disabled', false).text('Načíst další');
+  });
+
+  function loadAllUsers() {
+    $.ajax({
+      url: 'http://pojisteni.localhost.com/users',
+      data: { search, limit, offset },
+      dataType: 'json',
+      success: function(data) {
+        $('#myTable').empty();
+        if (data.length > 0) {
+          data.forEach(item => {
+            $('#myTable').append(`
+              <tr class="table-row">
+                <td>${item.id}</td>
+                <td>${item.firstname}</td>
+                <td>${item.lastname}</td>
+                <td>${item.phone}</td>
+                <td>${item.email}</td>
+                <td>${item.birth}</td>
+                <td>${item.birth_number}</td>
+                <td>${item.city}</td>
+                <td>${item.street}</td>
+                <td>${item.psc}</td>
+                <td>${item.role}</td>
+              </tr>
+            `);
+          });
+          offset = limit;
+
+          // Kontrola načtených řádků
+          if (data.length < limit) {
+            $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+          } else {
+            $('#loadMore').prop('disabled', false).text('Načíst další');
+          }
+        } else {
+          $('#loadMore').prop('disabled', true).text('Žádné řádky k načtení');
+        }
+      }
+    });
+  }
+
+  loadAllUsers();
+});
+</script>
+
+
+
+
+
+
+
+
+
+{% endblock %}

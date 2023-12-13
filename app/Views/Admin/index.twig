@@ -1,0 +1,17 @@
+{% extends "index.twig" %}
+{% set template = 'Admin/pages/' ~ template %}
+{% set showMainMenu = false %}
+
+{% block title %}{{ block("title", template) }}{% endblock %}
+
+{% block content %}
+<div class="admin container-xl">
+    <div class="my-3">
+    <h2 class="display-6">{{ block("headline", template) }}</h2>
+        {% include 'Components/admin-menu.twig' with {'user': user} %}
+        <div class="admin-content my-2">
+            {{ block("content", template) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -30,21 +30,26 @@ class Request
     public function getAllParams() {
         $url = $_GET['url'] ?? '/';
         $url = ltrim($url, '/');
-
+    
         $queryString = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-
+    
         $queryParameters = [];
         if ($queryString !== null) {
             parse_str($queryString, $queryParameters);
         }
-        $allParams = array_merge($this->urlParams, $queryParameters);
-
+    
+        // Získejte parametry zadané pomocí & ze $_GET
+        $additionalParameters = $_GET;
+        unset($additionalParameters['url']);
+    
+        $allParams = array_merge($this->urlParams, $queryParameters, $additionalParameters);
+    
         return $allParams;
     }
 
     public function getParam($param) {
         $allParams = $this->getAllParams();
-        return $allParams[$param];
+        return isset($allParams[$param]) ? $allParams[$param] : null;
     }
 
     public function getPath()

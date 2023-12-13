@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Core;
+namespace App\API;
 
+use App\Core\Request;
 
 class Ares
 {

@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Core\Database;
+use App\Core\Session;
 use App\Interfaces\IDBmodel;
 use JsonSerializable;
+use PDO;
 
 class User implements IDBmodel, JsonSerializable
 {
@@ -21,10 +23,9 @@ class User implements IDBmodel, JsonSerializable
     public string $psc;
     public string $username;
     public string $password;
-    public string $gdpr;
-    public string $terms;
 
     public User $user;
+    public Session $session;
 
     private int $role;
     private Database $db;
@@ -33,6 +34,7 @@ class User implements IDBmodel, JsonSerializable
     public function __construct()
     {
         $this->db = Database::getInstance();
+        $this->session = Session::getInstance();
     }
 
     public function create(array $data)
@@ -67,6 +69,28 @@ class User implements IDBmodel, JsonSerializable
         return null;
     }
 
+    public function getWithOffsetLimit(int $offset, int $limit, string $search = null)
+    {
+        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
+            return $this->db->query("SELECT id, firstname, lastname, phone, birth, birth_number, city, street, psc, username, email, role FROM $this->table
+            WHERE 
+            id LIKE '%$search%' OR
+            firstname LIKE '%$search%' OR
+            lastname LIKE '%$search%' OR
+            phone LIKE '%$search%' OR
+            birth LIKE '%$search%' OR
+            birth_number LIKE '%$search%' OR
+            city LIKE '%$search%' OR
+            street LIKE '%$search%' OR
+            psc LIKE '%$search%' OR
+            username LIKE '%$search%' OR
+            email LIKE '%$search%' OR
+            role LIKE '%$search%'
+            LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return false;
+    }
+
     public function getUserRole($username)
     {
         $userrole = $this->db->select(User::class, ["username=" => $username], $this->table);
@@ -76,7 +100,6 @@ class User implements IDBmodel, JsonSerializable
     public function updateUserRole($user, $newRole)
     {
         $requiredPermission = Role::ROLE_SUPERADMIN;
-        var_dump($requiredPermission);
         if ($this->hasAccess((array)$user, $requiredPermission)) {
             return 'ano';
         }
@@ -131,11 +154,14 @@ class User implements IDBmodel, JsonSerializable
     {
         if (isset($userSession['role'])) {
             $userRole = (int)$userSession['role'];
-            var_dump($userRole & $action);
             return ($userRole & $action) === $action;
         }
-
         return false;
+    }
+
+    private function getUserFromSession()
+    {
+        return $this->session->get('user') ? json_decode($this->session->get('user')) : null;
     }
 
     public function jsonSerialize(): mixed

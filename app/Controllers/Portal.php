@@ -35,15 +35,10 @@ class Portal implements IController
     public function index()
     {
         $user = $this->getUserFromSession();
-
-        if (!$user) {
-            return $this->twig->render('Login/index.twig');
-        }
-
+        
         return $this->renderPortalIndex([
             "template" => "overview.twig",
             "user" => $user,
-            "userperm" => $this->usermodel->updateUserRole($user, '-'),
             "vehicles_number" => $this->vehicle->getCount(),
             "contracts_number" => $this->contract->getCount()
         ]);

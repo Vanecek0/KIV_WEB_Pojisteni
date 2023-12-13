@@ -1,6 +1,9 @@
 <?php
 namespace App\Core;
 
+use App\API\Ares;
+use App\API\Users;
+use App\Controllers\Admin;
 use App\Controllers\Auth;
 use App\Controllers\Contract;
 use App\Controllers\Home;
@@ -18,11 +21,16 @@ return [
     "/logout" => [Auth::class, "logout", "auth_only", "/login"],
     "/register" => [Auth::class, "signUpPage", "guest_only", "/"],
     "/register/post" => [Auth::class, "register", "guest_only", "/register"],
-    "/portal" => [Portal::class, "index"],
-    "/portal/contracts" => [Portal::class, "contracts"],
-    "/portal/new/contract" => [Contract::class, "new_contract"],
-    "/portal/new/contract/post" => [Contract::class, "create" ],
-    "/portal/insurance-events" => [Portal::class, "insuranceEvents"],
-    "/portal/vehicles" => [Portal::class, "vehicles"],
-    "/ares" => [Ares::class, "fetch"]
+    "/portal" => [Portal::class, "index", "auth_only", "/login"],
+    "/portal/contracts" => [Portal::class, "contracts", "auth_only", "/login"],
+    "/portal/new/contract" => [Contract::class, "new_contract", "auth_only", "/login"],
+    "/portal/new/contract/post" => [Contract::class, "create", "auth_only", "/login"],
+    "/portal/insurance-events" => [Portal::class, "insuranceEvents", "auth_only", "/login"],
+    "/portal/vehicles" => [Portal::class, "vehicles", "auth_only", "/login"],
+    "/admin" => [Admin::class, "index", "auth_only", "/login"],
+    "/admin/clients" => [Admin::class, "clients", "auth_only", "/login"],
+    "/admin/contracts" => [Admin::class, "contracts", "auth_only", "/login"],
+    "/admin/insurance-events" => [Admin::class, "insurance-events", "auth_only", "/login"],
+    "/ares" => [Ares::class, "fetch"],
+    "/users" => [Users::class, "fetch"],
  ];
