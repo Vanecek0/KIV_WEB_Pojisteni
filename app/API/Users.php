@@ -19,7 +19,7 @@ class Users
         header('Content-type: application/json');
 
         if (($req->getParam('offset') != null && $req->getParam('limit') != null)) {
-            $response = json_encode($this->usermodel->getWithOffsetLimit($req->getParam('offset'), $req->getParam('limit'), $req->getParam('search')));
+            $response = json_encode($this->usermodel->getWithOffsetLimit($req->getParam('offset'), $req->getParam('limit'), $req->getParam('sort'), $req->getParam('orderby'), $req->getParam('search')));
             return ($response);
         }
 

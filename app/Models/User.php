@@ -69,7 +69,7 @@ class User implements IDBmodel, JsonSerializable
         return null;
     }
 
-    public function getWithOffsetLimit(int $offset, int $limit, string $search = null)
+    public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)
     {
         if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
             return $this->db->query("SELECT id, firstname, lastname, phone, birth, birth_number, city, street, psc, username, email, role FROM $this->table
@@ -86,6 +86,7 @@ class User implements IDBmodel, JsonSerializable
             username LIKE '%$search%' OR
             email LIKE '%$search%' OR
             role LIKE '%$search%'
+            ORDER BY $orderby $sort
             LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
         }
         return false;

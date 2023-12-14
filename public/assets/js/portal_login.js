@@ -14,6 +14,7 @@ jQuery(function () {
                 if(response == 1) {
                     window.location = this.url;
                 }
+
                 var json_response = JSON.parse(response);
                 $("#login-message").text(json_response.login_message);
                 $("#login-error").text(json_response.login_error);

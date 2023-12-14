@@ -121,7 +121,6 @@ class Auth implements IController
 
     public function credentialLogin(Request $request)
     {
-
         if (!$request->isPost()) {
             $request->redirect('/login');
             return false;
@@ -142,7 +141,6 @@ class Auth implements IController
     private function handleLogin(LoginFormDTO $loginFormDTO)
     {
         $dbUser = $this->usermodel->getByUsername($loginFormDTO->username);
-
         if ($dbUser == null) {
             $this->flashmessage->setFlashMessage("login_error", "Uživatel nenalezen!");
             echo $this->flashmessage->getMessagesArray();
