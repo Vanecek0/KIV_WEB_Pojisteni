@@ -49,14 +49,28 @@ class User implements IDBmodel, JsonSerializable
         return true;
     }
 
-    public function update(int $id, array $data)
+    public function update(int $id, array $data): ?int
     {
-        return null;
+        $tableName = $this->table;
+
+        $setClause = implode(', ', array_map(fn ($column) => "$column = ?", array_keys($data)));
+        $sql = "UPDATE $tableName SET $setClause WHERE id = ?";
+
+        $result = $this->db->query($sql, array_merge(array_values($data), [$id]));
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $result->rowCount();
     }
 
     public function delete(int $id)
     {
-        return null;
+        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
+            return $this->db->delete($this->table, ['id' => $id]);
+        }
+        return false;
     }
 
     public function getAll()
@@ -64,9 +78,23 @@ class User implements IDBmodel, JsonSerializable
         return null;
     }
 
+    public function get(array $condition)
+    {
+        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
+            if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+                $condition = array_combine(array_map(function($key) { return "$key ="; }, array_keys($condition)), $condition);
+            }
+            return json_encode($this->db->select(User::class, $condition, $this->table));
+        }
+        return false;
+    }
+
     public function getById(int $id)
     {
-        return null;
+        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
+            return $this->db->select(User::class, ["id=" => $id], $this->table);
+        }
+        return false;
     }
 
     public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)

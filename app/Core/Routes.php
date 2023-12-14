@@ -32,5 +32,9 @@ return [
     "/admin/contracts" => [Admin::class, "contracts", "auth_only", "/login"],
     "/admin/insurance-events" => [Admin::class, "insurance-events", "auth_only", "/login"],
     "/ares" => [Ares::class, "fetch"],
-    "/users" => [Users::class, "fetch"],
+    "/users" => [Users::class, "fetchAll"],
+    "/users/get" => [Users::class, "get"],
+    "/users/delete" => [Users::class, "delete"],
+    "/users/update" => [Users::class, "update"],
+    "/users/create" => [Users::class, "create"]
  ];

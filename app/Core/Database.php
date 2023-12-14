@@ -105,4 +105,18 @@ class Database
 
         return $result->rowCount();
     }
+
+    public function delete(string $tableName, array $condition): ?int
+    {
+        $conditionClause = implode(' AND ', array_map(fn ($column) => "$column = ?", array_keys($condition)));
+        $sql = "DELETE FROM $tableName WHERE $conditionClause";
+
+        $result = $this->query($sql, array_values($condition));
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $result->rowCount();
+    }
 }

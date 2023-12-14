@@ -4,11 +4,10 @@
 {% block content %}
 <section class="contracts py-3">
     <h3>Správa klientů</h3>
-    <input class="form-control" id="searchInput" type="text" placeholder="Hledat...">
-    <br>
-    <div>
+    <input class="form-control my-3" id="searchInput" type="text" placeholder="Hledat...">
+    <div class="d-flex gap-2 align-items-center my-3">
       <label for="sortColumn">Seřadit podle:</label>
-      <select id="sortColumn">
+      <select id="sortColumn" class="form-select w-25">
         <option value="id">ID</option>
         <option value="firstname">Jméno</option>
         <option value="lastname">Příjmení</option>
@@ -23,12 +22,12 @@
         <option value="role">Role</option>
       </select>
     
-      <select id="sortDirection">
+      <select id="sortDirection" class="form-select w-25">
         <option value="ASC">Vzestupně</option>
         <option value="DESC">Sestupně</option>
       </select>
     
-      <button id="sortButton">Řadit</button>
+      <button id="sortButton" class="btn btn-light">Seřadit</button>
     </div>
     
     <table class="table table-bordered table-striped">
@@ -52,11 +51,29 @@
       <tbody id="clientsTable"></tbody>
     </table>
     <button class="btn btn-primary" id="loadMore">Načíst další</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Upravit záznam</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="rowData"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Zavřít</button>
+            <button type="button" class="btn btn-success">Uložit změny</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </section>
 
 <script>
 $(document).ready(function(){
-  var limit = 6;
+  var limit = 10;
   var defaultLimit = limit;
   var offset = 0;
   var search = '';
@@ -72,7 +89,7 @@ $(document).ready(function(){
         if (data.length > 0) {
           data.forEach(item => {
             $('#clientsTable').append(`
-              <tr class="table-row">
+              <tr user-id="${item.id}" class="table-row">
                 <td>${item.id}</td>
                 <td>${item.firstname}</td>
                 <td>${item.lastname}</td>
@@ -85,6 +102,12 @@ $(document).ready(function(){
                 <td>${item.street}</td>
                 <td>${item.psc}</td>
                 <td>${item.role}</td>
+                <td class='align-middle'>
+                <div class='d-flex gap-2'>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a>
+                  <a onclick="deleteRow(${item.id})" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                </div>
+              </td>
               </tr>
             `);
           });
@@ -104,6 +127,13 @@ $(document).ready(function(){
 
   $("#loadMore").on("click", loadMoreRows);
 
+  function search() {
+    search = $('#searchInput').val();
+      limit = defaultLimit;
+      offset = 0;
+      loadAllUsers();
+      $('#loadMore').prop('disabled', false).text('Načíst další');
+  }
   $('#searchInput').change(function() {
     search = $('#searchInput').val();
     limit = defaultLimit;
@@ -111,6 +141,7 @@ $(document).ready(function(){
     loadAllUsers();
     $('#loadMore').prop('disabled', false).text('Načíst další');
   });
+
 
   function loadAllUsers() {
     $.ajax({
@@ -122,22 +153,27 @@ $(document).ready(function(){
         if (data.length > 0) {
           data.forEach(item => {
             $('#clientsTable').append(`
-              <tr class="table-row">
-                <td>${item.id}</td>
-                <td>${item.firstname}</td>
-                <td>${item.lastname}</td>
-                <td>${item.phone}</td>
-                <td>${item.username}</td>
-                <td>${item.email}</td>
-                <td>${item.birth}</td>
-                <td>${item.birth_number}</td>
-                <td>${item.city}</td>
-                <td>${item.street}</td>
-                <td>${item.psc}</td>
-                <td>${item.role}</td>
-                <td><a onclick='deleteRow()' class="btn btn-primary"><i class="bi bi-trash"></i></a></td>
-              </tr>
-            `);
+            <tr user-id="${item.id}" class="table-row">
+              <td>${item.id}</td>
+              <td>${item.firstname}</td>
+              <td>${item.lastname}</td>
+              <td>${item.phone}</td>
+              <td>${item.username}</td>
+              <td>${item.email}</td>
+              <td>${item.birth}</td>
+              <td>${item.birth_number}</td>
+              <td>${item.city}</td>
+              <td>${item.street}</td>
+              <td>${item.psc}</td>
+              <td>${item.role}</td>
+              <td class='align-middle'>
+                <div class='d-flex gap-2'>
+                  <a onclick="updateRow(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a>
+                  <a onclick="deleteRow(${item.id})" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                </div>
+              </td>
+            </tr>
+          `);
           });
           offset = limit;
 
@@ -174,7 +210,38 @@ $(document).ready(function(){
   loadAllUsers();
 });
 </script>
+<script>
+ function deleteRow(id) {
+    $.ajax({
+      url: 'http://pojisteni.localhost.com/users/delete',
+      data: { id },
+      dataType: 'json',
+      success: function(data) {
+        $('#clientsTable tr[user-id="'+id+'"]').remove();
+        return true;
+      }
+    });
+  }
 
+  function updateRow(id) {
+    $.ajax({
+      url: 'http://pojisteni.localhost.com/users/get',
+      data: { id },
+      dataType: 'json',
+      success: function(data) {
+        $('#rowData').empty();
+        if (data.length > 0) {
+          data.forEach(item => {
+        $('#rowData').append(`
+            <p>${item.id}</p>
+          `);
+        return true;
+      }
+    )};
+      }
+    });
+  }
+</script>
 
 
 

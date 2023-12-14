@@ -43,7 +43,6 @@ class Request
         unset($additionalParameters['url']);
     
         $allParams = array_merge($this->urlParams, $queryParameters, $additionalParameters);
-    
         return $allParams;
     }
 
