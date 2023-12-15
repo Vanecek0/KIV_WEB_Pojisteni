@@ -38,7 +38,6 @@ class Request
             parse_str($queryString, $queryParameters);
         }
     
-        // Získejte parametry zadané pomocí & ze $_GET
         $additionalParameters = $_GET;
         unset($additionalParameters['url']);
     

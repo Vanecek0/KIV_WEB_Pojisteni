@@ -3,6 +3,7 @@ namespace App\Core;
 
 use App\API\Ares;
 use App\API\Users;
+use App\API\Roles;
 use App\Controllers\Admin;
 use App\Controllers\Auth;
 use App\Controllers\Contract;
@@ -36,5 +37,7 @@ return [
     "/users/get" => [Users::class, "get"],
     "/users/delete" => [Users::class, "delete"],
     "/users/update" => [Users::class, "update"],
-    "/users/create" => [Users::class, "create"]
+    "/users/create" => [Users::class, "create"],
+    "/roles" => [Roles::class, "getAll"],
+    "/roles/get" => [Roles::class, "getRoleByValue"],
  ];

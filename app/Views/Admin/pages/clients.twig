@@ -3,92 +3,95 @@
 
 {% block content %}
 <section class="contracts py-3">
-    <h3>Správa klientů</h3>
-    <input class="form-control my-3" id="searchInput" type="text" placeholder="Hledat...">
-    <div class="d-flex gap-2 align-items-center my-3">
-      <label for="sortColumn">Seřadit podle:</label>
-      <select id="sortColumn" class="form-select w-25">
-        <option value="id">ID</option>
-        <option value="firstname">Jméno</option>
-        <option value="lastname">Příjmení</option>
-        <option value="phone">Telefon</option>
-        <option value="username">Uživatelské jméno</option>
-        <option value="email">Email</option>
-        <option value="birth">Datum narození</option>
-        <option value="birth_number">Rodné číslo</option>
-        <option value="city">Město</option>
-        <option value="street">Ulice</option>
-        <option value="psc">PSČ</option>
-        <option value="role">Role</option>
-      </select>
-    
-      <select id="sortDirection" class="form-select w-25">
-        <option value="ASC">Vzestupně</option>
-        <option value="DESC">Sestupně</option>
-      </select>
-    
-      <button id="sortButton" class="btn btn-light">Seřadit</button>
-    </div>
-    
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Jméno</th>
-          <th>Příjmení</th>
-          <th>Telefon</th>
-          <th>Uživatelské jméno</th>
-          <th>Email</th>
-          <th>Datum narození</th>
-          <th>Rodné číslo</th>
-          <th>Město</th>
-          <th>Ulice</th>
-          <th>PSČ</th>
-          <th>Role</th>
-          <th>Akce</th>
-        </tr>
-      </thead>
-      <tbody id="clientsTable"></tbody>
-    </table>
-    <button class="btn btn-primary" id="loadMore">Načíst další</button>
+  <h3>Správa klientů</h3>
+  <input class="form-control my-3" id="searchInput" type="text" placeholder="Hledat...">
+  <div class="d-flex gap-2 align-items-center my-3">
+    <label for="sortColumn">Seřadit podle:</label>
+    <select id="sortColumn" class="form-select w-25">
+      <option value="id">ID</option>
+      <option value="firstname">Jméno</option>
+      <option value="lastname">Příjmení</option>
+      <option value="phone">Telefon</option>
+      <option value="username">Uživatelské jméno</option>
+      <option value="email">Email</option>
+      <option value="birth">Datum narození</option>
+      <option value="birth_number">Rodné číslo</option>
+      <option value="city">Město</option>
+      <option value="street">Ulice</option>
+      <option value="psc">PSČ</option>
+      <option value="role">Role</option>
+    </select>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Upravit záznam</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+    <select id="sortDirection" class="form-select w-25">
+      <option value="ASC">Vzestupně</option>
+      <option value="DESC">Sestupně</option>
+    </select>
+
+    <button id="sortButton" class="btn btn-light">Seřadit</button>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Jméno</th>
+        <th>Příjmení</th>
+        <th>Telefon</th>
+        <th>Uživatelské jméno</th>
+        <th>Email</th>
+        <th>Datum narození</th>
+        <th>Rodné číslo</th>
+        <th>Město</th>
+        <th>Ulice</th>
+        <th>PSČ</th>
+        <th>Role</th>
+        <th>Akce</th>
+      </tr>
+    </thead>
+    <tbody id="clientsTable"></tbody>
+  </table>
+  <button class="btn btn-primary" id="loadMore">Načíst další</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upravit záznam</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="user_edit_form" style="display: contents" method='POST'>
           <div class="modal-body" id="rowData"></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Zavřít</button>
-            <button type="button" class="btn btn-success">Uložit změny</button>
+            <input type="submit" value="Uložit změny" class="btn btn-success" />
           </div>
-        </div>
+        </form>
       </div>
     </div>
+  </div>
 
 </section>
 
 <script>
-$(document).ready(function(){
-  var limit = 10;
-  var defaultLimit = limit;
-  var offset = 0;
-  var search = '';
-  var orderby = 'id';
-  var sort = 'ASC';
+  $(document).ready(function () {
+    var limit = 10;
+    var defaultLimit = limit;
+    var offset = 0;
+    var search = '';
+    var orderby = 'id';
+    var sort = 'ASC';
 
-  function loadMoreRows() {
-    $.ajax({
-      url: 'http://pojisteni.localhost.com/users',
-      data: { search, limit, offset, sort, orderby },
-      dataType: 'json',
-      success: function(data) {
-        if (data.length > 0) {
-          data.forEach(item => {
-            $('#clientsTable').append(`
+    function loadMoreRows() {
+      $.ajax({
+        url: 'http://pojisteni.localhost.com/users',
+        data: { search, limit, offset, sort, orderby },
+        dataType: 'json',
+        success: function (data) {
+          if (data.length > 0) {
+            data.forEach(item => {
+              $('#clientsTable').append(`
               <tr user-id="${item.id}" class="table-row">
                 <td>${item.id}</td>
                 <td>${item.firstname}</td>
@@ -110,49 +113,49 @@ $(document).ready(function(){
               </td>
               </tr>
             `);
-          });
-          offset += limit;
+            });
+            offset += limit;
 
-          if (data.length < limit) {
-            $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+            if (data.length < limit) {
+              $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+            } else {
+              $('#loadMore').prop('disabled', false).text('Načíst další');
+            }
           } else {
-            $('#loadMore').prop('disabled', false).text('Načíst další');
+            $('#loadMore').prop('disabled', true).text('Žádné další řádky');
           }
-        } else {
-          $('#loadMore').prop('disabled', true).text('Žádné další řádky');
         }
-      }
-    });
-  }
+      });
+    }
 
-  $("#loadMore").on("click", loadMoreRows);
+    $("#loadMore").on("click", loadMoreRows);
 
-  function search() {
-    search = $('#searchInput').val();
+    function search() {
+      search = $('#searchInput').val();
       limit = defaultLimit;
       offset = 0;
       loadAllUsers();
       $('#loadMore').prop('disabled', false).text('Načíst další');
-  }
-  $('#searchInput').change(function() {
-    search = $('#searchInput').val();
-    limit = defaultLimit;
-    offset = 0;
-    loadAllUsers();
-    $('#loadMore').prop('disabled', false).text('Načíst další');
-  });
+    }
+    $('#searchInput').change(function () {
+      search = $('#searchInput').val();
+      limit = defaultLimit;
+      offset = 0;
+      loadAllUsers();
+      $('#loadMore').prop('disabled', false).text('Načíst další');
+    });
 
 
-  function loadAllUsers() {
-    $.ajax({
-      url: 'http://pojisteni.localhost.com/users',
-      data: { search, limit, offset, sort, orderby },
-      dataType: 'json',
-      success: function(data) {
-        $('#clientsTable').empty();
-        if (data.length > 0) {
-          data.forEach(item => {
-            $('#clientsTable').append(`
+    function loadAllUsers() {
+      $.ajax({
+        url: 'http://pojisteni.localhost.com/users',
+        data: { search, limit, offset, sort, orderby },
+        dataType: 'json',
+        success: function (data) {
+          $('#clientsTable').empty();
+          if (data.length > 0) {
+            data.forEach(item => {
+              $('#clientsTable').append(`
             <tr user-id="${item.id}" class="table-row">
               <td>${item.id}</td>
               <td>${item.firstname}</td>
@@ -168,86 +171,145 @@ $(document).ready(function(){
               <td>${item.role}</td>
               <td class='align-middle'>
                 <div class='d-flex gap-2'>
-                  <a onclick="updateRow(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a>
+                  <a onclick="showEditModal(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a>
                   <a onclick="deleteRow(${item.id})" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                 </div>
               </td>
             </tr>
           `);
-          });
-          offset = limit;
+            });
+            offset = limit;
 
-          if (data.length < limit) {
-            $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+            if (data.length < limit) {
+              $('#loadMore').prop('disabled', true).text('Žádné další řádky');
+            } else {
+              $('#loadMore').prop('disabled', false).text('Načíst další');
+            }
           } else {
-            $('#loadMore').prop('disabled', false).text('Načíst další');
+            $('#loadMore').prop('disabled', true).text('Žádné řádky k načtení');
           }
-        } else {
-          $('#loadMore').prop('disabled', true).text('Žádné řádky k načtení');
         }
-      }
+      });
+    }
+
+    $("#loadMore").on("click", loadMoreRows);
+
+    $('#searchInput').change(function () {
+      search = $('#searchInput').val();
+      limit = defaultLimit;
+      offset = 0;
+      loadAllUsers();
+      $('#loadMore').prop('disabled', false).text('Načíst další');
     });
-  }
 
-  $("#loadMore").on("click", loadMoreRows);
+    $('#sortButton').on('click', function () {
+      orderby = $('#sortColumn').val();
+      sort = $('#sortDirection').val();
+      offset = 0;
+      loadAllUsers();
+      $('#loadMore').prop('disabled', false).text('Načíst další');
+    });
 
-  $('#searchInput').change(function () {
-    search = $('#searchInput').val();
-    limit = defaultLimit;
-    offset = 0;
     loadAllUsers();
-    $('#loadMore').prop('disabled', false).text('Načíst další');
   });
-
-  $('#sortButton').on('click', function () {
-    orderby = $('#sortColumn').val();
-    sort = $('#sortDirection').val();
-    offset = 0;
-    loadAllUsers();
-    $('#loadMore').prop('disabled', false).text('Načíst další');
-  });
-
-  loadAllUsers();
-});
 </script>
 <script>
- function deleteRow(id) {
+  function deleteRow(id) {
     $.ajax({
       url: 'http://pojisteni.localhost.com/users/delete',
       data: { id },
       dataType: 'json',
-      success: function(data) {
-        $('#clientsTable tr[user-id="'+id+'"]').remove();
+      success: function (data) {
+        $('#clientsTable tr[user-id="' + id + '"]').remove();
         return true;
       }
     });
   }
 
-  function updateRow(id) {
+  function getRoles() {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: 'http://pojisteni.localhost.com/roles',
+        dataType: 'json',
+        success: function (data) {
+          resolve(data);
+        },
+        error: function (error) {
+          reject(error);
+        }
+      });
+    });
+  }
+
+  function showEditModal(id) {
     $.ajax({
       url: 'http://pojisteni.localhost.com/users/get',
       data: { id },
       dataType: 'json',
-      success: function(data) {
+      success: function (data) {
         $('#rowData').empty();
         if (data.length > 0) {
-          data.forEach(item => {
-        $('#rowData').append(`
-            <p>${item.id}</p>
+          getRoles().then(roles => {
+            const rolesOptions = Object.keys(roles).map(function (key) {
+              return `<option value="${roles[key]}">${key}</option>`;
+            });
+            data.forEach(item => {
+              $('#rowData').append(`
+              <label class="form-label" for="firstname">Jméno</label>
+              <input type="text" class="form-control mb-3" name="firstname" value="${item.firstname}" />
+              <label class="form-label" for="lastname">Příjmení</label>
+              <input type="text" class="form-control mb-3" name="lastname" value="${item.lastname}" />
+              <label class="form-label" for="phone">Telefon</label>
+              <input type="text" class="form-control mb-3" name="phone" value="${item.phone}" />
+              <label class="form-label" for="username">Uživatelské jméno</label>
+              <input type="text" class="form-control id="username" mb-3" name="username" value="${item.username}" />
+              <label class="form-label" for="email">Email</label>
+              <input type="text" class="form-control mb-3" name="email" value="${item.email}" />
+              <label class="form-label" for="birth">Datum narození</label>
+              <input type="date" class="form-control mb-3" name="birth" value="${item.birth}" />
+              <label class="form-label" for="birth_number">Rodné číslo</label>
+              <input type="text" class="form-control mb-3" name="birth_number" value="${item.birth_number}" />
+              <label class="form-label" for="city">Město</label>
+              <input type="text" class="form-control mb-3" name="city" value="${item.city}" />
+              <label class="form-label" for="street">Ulice</label>
+              <input type="text" class="form-control mb-3" name="street" value="${item.street}" />
+              <label class="form-label" for="psc">PSČ</label>
+              <input type="text" class="form-control mb-3" name="psc" value="${item.psc}" />
+              <label class="form-label" for="role">Role</label>
+                <select class="form-control mb-3" name="role"> 
+                  ${rolesOptions}
+                </select>
           `);
-        return true;
-      }
-    )};
+              return true;
+            });
+          });
+        };
       }
     });
   }
 </script>
 
+<script>
+  jQuery(function () {
+    $("#user_edit_form").on('submit', function (event) {
+      event.preventDefault();
 
+      var formData = new FormData(this);
 
-
-
-
-
-
+      $.ajax({
+        url: 'http://pojisteni.localhost.com/users/update',
+        //type: 'POST',
+        data: formData,
+        processData: false,  // Dejte false pro prevenci automatického zpracování dat
+        contentType: false,  // Dejte false pro prevenci automatického nastavení Content-Type
+        success: function (data) {
+          alert(data);
+        },
+        error: function (xhr, status, error) {
+          alert('Error: ' + error);
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}
