@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Core\Database;
+use App\Core\Session;
 use App\Interfaces\IDBmodel;
 use InvalidArgumentException;
 use JsonSerializable;
@@ -28,9 +29,12 @@ class Contract implements IDBmodel, JsonSerializable
     private Database $db;
     protected $table = 'contracts';
 
+    private array $userSession;
+
     public function __construct()
     {
         $this->db = Database::getInstance();
+        $this->userSession = (array) json_decode(Session::getInstance()->get('user'));
     }
 
     public function create(array $data)
@@ -75,6 +79,17 @@ class Contract implements IDBmodel, JsonSerializable
         }
     }
 
+    public function get(array $condition)
+    {
+        if ($this->hasAccess($this->userSession, Role::ROLE_ADMIN)) { //Vytvořit access (hasaccess) controller v Core
+            if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+                $condition = array_combine(array_map(function($key) { return "$key ="; }, array_keys($condition)), $condition);
+            }
+            return json_encode($this->db->select(User::class, $condition, $this->table));
+        }
+        return false;
+    }
+
     public function getAll()
     {
 
@@ -111,6 +126,26 @@ class Contract implements IDBmodel, JsonSerializable
     {
         return null;
     }
+
+    public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)
+    {
+        if ($this->hasAccess($this->userSession, Role::ROLE_ADMIN)) {
+            return $this->db->query("SELECT id, client_id, vehicle_id, type, price, payment_state, valid_from, valid_to, notes FROM $this->table
+            WHERE 
+            id LIKE '%$search%' OR
+            client_id LIKE '%$search%' OR
+            vehicle_id LIKE '%$search%' OR
+            type LIKE '%$search%' OR
+            payment_state LIKE '%$search%' OR
+            valid_from LIKE '%$search%' OR
+            valid_to LIKE '%$search%' OR
+            notes LIKE '%$search%' OR
+            ORDER BY $orderby $sort
+            LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return false;
+    }
+
 
     public function jsonSerialize(): mixed
     {

@@ -38,6 +38,20 @@ class Admin implements IController
         ]);
     }
 
+    public function contracts()
+    {
+        return $this->renderAdminIndex([
+            "template" => "contracts.twig",
+        ]);
+    }
+
+    public function insuranceEvents()
+    {
+        return $this->renderAdminIndex([
+            "template" => "insurance-events.twig",
+        ]);
+    }
+
     private function renderAdminIndex(array $data)
     {
         $user = $this->getUserFromSession();
