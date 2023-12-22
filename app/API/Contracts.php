@@ -4,15 +4,21 @@ namespace App\API;
 
 use App\Core\Request;
 use App\Models\Contract as ContractModel;
+use App\Core\RoleAccess;
+use App\Core\FlashMessage;
 
 class Contracts
 {
     private ContractModel $contractmodel;
+    private RoleAccess $roleaccess;
+    private FlashMessage $flashmessage;
 
     public function __construct()
     {
         header('Content-type: application/json');
         $this->contractmodel = new ContractModel();
+        $this->roleaccess = RoleAccess::getInstance();
+        $this->flashmessage = new FlashMessage();
     }
 
     public function fetchAll(Request $req)
@@ -33,10 +39,24 @@ class Contracts
 
     public function update(Request $req)
     {
-        if ($req->getParam('id') != null) {
-            return $this->contractmodel->update($req->getParam('id'), array_slice($req->getAllParams(), 2));
+        if (!$this->roleaccess->hasAccess(Role::ROLE_EDITOR)) {
+            $this->flashmessage->setFlashMessage("message", "Pro provedení této akce nemáte dostatečná oprávnění");
+            return $this->flashmessage->getMessagesArray();
         }
-        return false;
+
+        $contractId = $req->getParam('id');
+        if ($contractId === null) {
+            return false;
+        }
+
+        $update = $this->contractmodel->update($contractId, array_slice($req->getAllParams(), 2), $req->getParamAsArray('id'));
+        
+        if ($update) {
+            $this->flashmessage->setFlashMessage("message", "Změny úspěšně uloženy");
+            return $this->flashmessage->getMessagesArray();
+        }
+
+        return true;
     }
 
     public function delete(Request $req)

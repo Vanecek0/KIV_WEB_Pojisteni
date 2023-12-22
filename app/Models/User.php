@@ -23,11 +23,11 @@ class User implements IDBmodel, JsonSerializable
     public string $psc;
     public string $username;
     public string $password;
+    public string $role;
 
     public User $user;
     public Session $session;
 
-    private int $role;
     private Database $db;
     protected $table = 'users';
 
@@ -49,28 +49,20 @@ class User implements IDBmodel, JsonSerializable
         return true;
     }
 
-    public function update(int $id, array $data): ?int
+    public function update(int $id, array $data, array $condition)
     {
         $tableName = $this->table;
-
-        $setClause = implode(', ', array_map(fn ($column) => "$column = ?", array_keys($data)));
-        $sql = "UPDATE $tableName SET $setClause WHERE id = ?";
-
-        $result = $this->db->query($sql, array_merge(array_values($data), [$id]));
-
+        $result = $this->db->update(User::class, $data, $condition, $tableName);
         if ($result == null) {
             return null;
         }
 
-        return $result->rowCount();
+        return $result;
     }
 
     public function delete(int $id)
     {
-        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
-            return $this->db->delete($this->table, ['id' => $id]);
-        }
-        return false;
+        return $this->db->delete($this->table, ['id' => $id]);
     }
 
     public function getAll()
@@ -80,60 +72,41 @@ class User implements IDBmodel, JsonSerializable
 
     public function get(array $condition)
     {
-        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
-            if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
-                $condition = array_combine(array_map(function($key) { return "$key ="; }, array_keys($condition)), $condition);
-            }
-            return json_encode($this->db->select(User::class, $condition, $this->table));
+        if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+            $condition = array_combine(array_map(function($key) { return "$key"; }, array_keys($condition)), $condition);
         }
-        return false;
+        return json_encode($this->db->select(User::class, null, $condition, $this->table));
     }
 
     public function getById(int $id)
     {
-        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
-            return $this->db->select(User::class, ["id=" => $id], $this->table);
-        }
-        return false;
+        return $this->db->select(User::class, null, ["id" => $id], $this->table);
     }
 
     public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)
     {
-        if ($this->hasAccess((array)$this->getUserFromSession(), Role::ROLE_ADMIN)) {
-            return $this->db->query("SELECT id, firstname, lastname, phone, birth, birth_number, city, street, psc, username, email, role FROM $this->table
-            WHERE 
-            id LIKE '%$search%' OR
-            firstname LIKE '%$search%' OR
-            lastname LIKE '%$search%' OR
-            phone LIKE '%$search%' OR
-            birth LIKE '%$search%' OR
-            birth_number LIKE '%$search%' OR
-            city LIKE '%$search%' OR
-            street LIKE '%$search%' OR
-            psc LIKE '%$search%' OR
-            username LIKE '%$search%' OR
-            email LIKE '%$search%' OR
-            role LIKE '%$search%'
-            ORDER BY $orderby $sort
-            LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return false;
+        return $this->db->query("SELECT id, firstname, lastname, phone, birth, birth_number, city, street, psc, username, email, role FROM $this->table
+        WHERE 
+        id LIKE '%$search%' OR
+        firstname LIKE '%$search%' OR
+        lastname LIKE '%$search%' OR
+        phone LIKE '%$search%' OR
+        birth LIKE '%$search%' OR
+        birth_number LIKE '%$search%' OR
+        city LIKE '%$search%' OR
+        street LIKE '%$search%' OR
+        psc LIKE '%$search%' OR
+        username LIKE '%$search%' OR
+        email LIKE '%$search%' OR
+        role LIKE '%$search%'
+        ORDER BY $orderby $sort
+        LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getUserRole($username)
     {
-        $userrole = $this->db->select(User::class, ["username=" => $username], $this->table);
+        $userrole = $this->db->select(User::class, null, ["username" => $username], $this->table);
         return $userrole[0]->role;
-    }
-
-    public function updateUserRole($user, $newRole)
-    {
-        $requiredPermission = Role::ROLE_SUPERADMIN;
-        if ($this->hasAccess((array)$user, $requiredPermission)) {
-            return 'ano';
-        }
-        return 'ne';
-        //return $this->db->update(User::class, ['role' => $newRole], ['user' => $username]);
     }
 
     public function hydrate(array $data)
@@ -147,7 +120,7 @@ class User implements IDBmodel, JsonSerializable
 
     public function getByUsername($username): ?User
     {
-        $user = $this->db->select(User::class, ["username=" => $username], $this->table);
+        $user = $this->db->select(User::class, null, ["username" => $username], $this->table);
 
         if (!$user) {
             return null;
@@ -169,28 +142,6 @@ class User implements IDBmodel, JsonSerializable
 
         $this->user = $user[0];
         return $this->user;
-    }
-
-    public function hasRequiredRole($requiredRole)
-    {
-        if (!$this->user->role == $requiredRole) {
-            return false;
-        }
-        return true;
-    }
-
-    public function hasAccess(array $userSession, $action): bool
-    {
-        if (isset($userSession['role'])) {
-            $userRole = (int)$userSession['role'];
-            return ($userRole & $action) === $action;
-        }
-        return false;
-    }
-
-    private function getUserFromSession()
-    {
-        return $this->session->get('user') ? json_decode($this->session->get('user')) : null;
     }
 
     public function jsonSerialize(): mixed

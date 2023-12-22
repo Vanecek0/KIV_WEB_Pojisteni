@@ -26,6 +26,21 @@ class Session
         return isset($_SESSION[$key]) ? $_SESSION[$key] : false;
     }
 
+    public function getAsArray($key)
+    {
+        $value = $this->get($key);
+
+        if ($value !== false) {
+            $decodedValue = json_decode($value, true);
+
+            if (json_last_error() === JSON_ERROR_NONE) {
+                return $decodedValue;
+            }
+        }
+
+        return [];
+    }
+
     public function remove($key): void
     {
         unset($_SESSION[$key]);

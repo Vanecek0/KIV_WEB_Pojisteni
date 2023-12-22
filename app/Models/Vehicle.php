@@ -39,10 +39,18 @@ class Vehicle implements IDBmodel, JsonSerializable
         return null;
     }
 
-    public function update(int $id, array $data)
+    public function update(int $id, array $data, array $condition)
     {
-        return null;
+        $tableName = $this->table;
+        $result = $this->db->update(Vehicle::class, $data, $condition, $tableName);
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $result;
     }
+
 
     public function delete(int $id)
     {

@@ -51,21 +51,20 @@ class Database
         return $stmt;
     }
 
-    public function select(string $class, array $where = [], string $tableName = null)
+    public function select(string $class, ?array $columns = null, array $where = [], string $tableName = null)
     {
         $tableName = $tableName ?? strtolower($class);
-        $sql = "SELECT * FROM $tableName";
-
+        $columnsClause = $columns ? implode(', ', $columns) : '*';
+        $sql = "SELECT $columnsClause FROM $tableName";
 
         if (!empty($where)) {
             $sql .= " WHERE ";
-            $keys = array_map(fn ($key) => $key . " ?", array_keys($where));
-            $sql .= join(", ", $keys);
+            $conditions = array_map(fn($key) => "$key = ?", array_keys($where));
+            $sql .= implode(" AND ", $conditions);
         }
 
         $values = array_values($where);
         $result = $this->query($sql, $values);
-
 
         if ($result == null) {
             return [];
@@ -96,7 +95,6 @@ class Database
         $conditionClause = implode(' AND ', array_map(fn ($column) => "$column = ?", array_keys($condition)));
 
         $sql = "UPDATE $tableName SET $setClause WHERE $conditionClause";
-
         $result = $this->query($sql, array_merge(array_values($data), array_values($condition)));
 
         if ($result == null) {

@@ -1,6 +1,9 @@
 <?php
 namespace App\Models;
 
+use App\Core\Database;
+use App\Core\Session;
+
 class Role {
     //Základní oprávnění
     const PERM_R = 1 << 0; //1
@@ -17,6 +20,15 @@ class Role {
     const ROLE_EDITOR = self::ROLE_USER | self::PERM_W | self::PERM_E | self::PERM_D; //15
     const ROLE_ADMIN = self::ROLE_EDITOR | self::PERM_U_E_D; //31
     const ROLE_SUPERADMIN = self::ROLE_ADMIN | self::PERM_A_E_D; //63
+
+    private Database $db;
+    private Session $session;
+
+    public function __construct()
+    {
+        $this->db = Database::getInstance();
+        $this->session = Session::getInstance();
+    }
 
     public static function getRoleByValue($value) {
         $roles = self::getRoles();

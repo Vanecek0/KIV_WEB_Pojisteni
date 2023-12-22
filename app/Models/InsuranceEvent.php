@@ -43,10 +43,18 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
         return true;
     }
 
-    public function update(int $id, array $data)
+    public function update(int $id, array $data, array $condition)
     {
-        return null;
+        $tableName = $this->table;
+        $result = $this->db->update(InsuranceEvent::class, $data, $condition, $tableName);
+
+        if ($result == null) {
+            return null;
+        }
+
+        return $result;
     }
+
 
     public function delete(int $id)
     {

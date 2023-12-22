@@ -10,6 +10,9 @@ jQuery(function () {
         url: 'http://pojisteni.localhost.com/users/update',
         data: formData,
         success: function (response) {
+          if(response.hasOwnProperty('message')) {
+            alert(response.message);
+          }
           var userId = $('[name="id"]').val();
           var $tableRow = $(`#clientsTable tr[user-id="${userId}"]`);
 

@@ -50,6 +50,11 @@ class Request
         return isset($allParams[$param]) ? $allParams[$param] : null;
     }
 
+    public function getParamAsArray($param):array {
+        $allParams = $this->getAllParams();
+        return isset($allParams[$param]) ? [$param => $allParams[$param]] : [];
+    }
+
     public function getPath()
     {
         return array_filter(array_slice(explode('/', $this->actualRoute), 0, -1));
