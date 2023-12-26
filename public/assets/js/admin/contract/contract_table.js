@@ -8,12 +8,12 @@ jQuery(function () {
 
     function loadMoreRows() {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/users',
+            url: 'http://pojisteni.localhost.com/insurance-contracts',
             data: { search, limit, offset, sort, orderby },
             dataType: 'json',
             success: function (data) {
                 if (data.length > 0) {
-                    appendUserRows(data);
+                    appendContractRows(data);
                     offset += limit;
 
                     if (data.length < limit) {
@@ -29,32 +29,32 @@ jQuery(function () {
     }
 
     $("#loadMore").on("click", loadMoreRows);
-    $('#searchInput').on('change', searchUsers);
+    $('#searchInput').on('change', searchContracts);
     $('#sortButton').on('click', sortUsers);
 
-    function searchUsers() {
+    function searchContracts() {
         search = $('#searchInput').val();
         limit = defaultLimit;
         offset = 0;
-        loadAllUsers();
+        loadAllContracts();
     }
 
     function sortUsers() {
         orderby = $('#sortColumn').val();
         sort = $('#sortDirection').val();
         offset = 0;
-        loadAllUsers();
+        loadAllContracts();
     }
 
-    function loadAllUsers() {
+    function loadAllContracts() {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/users',
+            url: 'http://pojisteni.localhost.com/insurance-contracts',
             data: { search, limit, offset, sort, orderby },
             dataType: 'json',
             success: function (data) {
-                $('#clientsTable').empty();
+                $('#contractsTable').empty();
                 if (data.length > 0) {
-                    appendUserRows(data);
+                    appendContractRows(data);
                     offset = limit;
                     enableLoadMoreButton('Načíst další');
                 } else {
@@ -64,26 +64,23 @@ jQuery(function () {
         });
     }
 
-    function appendUserRows(data) {
+    function appendContractRows(data) {
         data.forEach(item => {
-            $('#clientsTable').append(`
-        <tr user-id="${item.id}" class="table-row">
+            $('#contractsTable').append(`
+        <tr contract-id="${item.id}" class="table-row">
           <td>${item.id}</td>
-          <td>${item.firstname}</td>
-          <td>${item.lastname}</td>
-          <td>${item.phone}</td>
-          <td>${item.username}</td>
-          <td>${item.email}</td>
-          <td>${item.birth}</td>
-          <td>${item.birth_number}</td>
-          <td>${item.city}</td>
-          <td>${item.street}</td>
-          <td>${item.psc}</td>
-          <td id="role">${item.role}</td>
+          <td>${item.client_id}</td>
+          <td>${item.vehicle_id}</td>
+          <td id="type">${item.type}</td>
+          <td>${item.price}</td>
+          <td id="payment">${item.payment_state}</td>
+          <td>${item.valid_from}</td>
+          <td>${item.valid_to}</td>
+          <td>${item.notes}</td>
           <td class='align-middle'>
             <div class='d-flex gap-2'>
               <a onclick="showEditModal(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-pencil-square"></i></a>
-              <a onclick="deleteRow(${item.id})" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+              <a onclick="if(confirm('Opravdu chcete odstranit tento záznam?')) {deleteRow(${item.id})}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
             </div>
           </td>
         </tr>
@@ -99,5 +96,5 @@ jQuery(function () {
         $('#loadMore').prop('disabled', true).text(text);
     }
 
-    loadAllUsers();
+    loadAllContracts();
 });

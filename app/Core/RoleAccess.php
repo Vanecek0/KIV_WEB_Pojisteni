@@ -21,11 +21,8 @@ class RoleAccess
 
     public function hasAccess($requiredRole): bool
     {
-        if ($this->hasRequiredRole($requiredRole)) {
-            $userRole = (int)$this->getUserRole();
-            return ($userRole & $requiredRole) === $requiredRole;
-        }
-        return false;
+        $userRole = (int)$this->getUserRole();
+        return ($userRole & $requiredRole) >= $requiredRole;
     }
 
     public function hasRequiredRole($requiredRole)
@@ -36,7 +33,8 @@ class RoleAccess
         return true;
     }
 
-    public function getUserRole():string {
+    public function getUserRole(): string
+    {
         return $this->session->getAsArray('user')['role'];
     }
 }

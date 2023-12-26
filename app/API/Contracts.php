@@ -6,6 +6,7 @@ use App\Core\Request;
 use App\Models\Contract as ContractModel;
 use App\Core\RoleAccess;
 use App\Core\FlashMessage;
+use App\Models\Role;
 
 class Contracts
 {
@@ -23,8 +24,7 @@ class Contracts
 
     public function fetchAll(Request $req)
     {
-
-        if (($req->getParam('offset') != null && $req->getParam('limit') != null)) {
+        if ($this->roleaccess->hasAccess(Role::ROLE_EDITOR) && ($req->getParam('offset') != null && $req->getParam('limit') != null)) {
             $response = json_encode($this->contractmodel->getWithOffsetLimit($req->getParam('offset'), $req->getParam('limit'), $req->getParam('sort'), $req->getParam('orderby'), $req->getParam('search')));
             return ($response);
         }
@@ -32,9 +32,10 @@ class Contracts
     }
 
     public function get(Request $req) {
-        if($req->getAllParams() != null) {
+        if($this->roleaccess->hasAccess(Role::ROLE_EDITOR) && $req->getAllParams() != null) {
             return $this->contractmodel->get(array_slice($req->getAllParams(), 2));
         }
+        return false;
     }
 
     public function update(Request $req)
@@ -65,5 +66,11 @@ class Contracts
             return $this->contractmodel->delete($req->getParam('id'));
         }
         return false;
+    }
+
+
+    public function getAllContstants(Request $req)
+    {
+        return json_encode($this->contractmodel->getContractConstants());
     }
 }

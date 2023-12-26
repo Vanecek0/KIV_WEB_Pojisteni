@@ -2,16 +2,16 @@ jQuery(function () {
     $("#contract_edit_form").on('submit', (function (event) {
       event.preventDefault();
       var formData = {};
-      $('#rowData input, #rowData select').each(function () {
+      $('#rowData input, #rowData select, #rowData textarea').each(function () {
         formData[$(this).attr('name')] = $(this).val();
       });
 
       $.ajax({
-        url: 'http://pojisteni.localhost.com/contracts/update',
+        url: 'http://pojisteni.localhost.com/insurance-contracts/update',
         data: formData,
         success: function (response) {
-          var userId = $('[name="id"]').val();
-          var $tableRow = $(`#contractsTable tr[contract-id="${userId}"]`);
+          var contractId = $('[name="id"]').val();
+          var $tableRow = $(`#contractsTable tr[contract-id="${contractId}"]`);
 
           $tableRow.find('td').each(function () {
             var columnName = $(this).index();

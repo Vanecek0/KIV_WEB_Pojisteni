@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\API\Ares;
+use App\API\Contracts;
 use App\API\Users;
 use App\API\Roles;
 use App\Controllers\Admin;
@@ -38,11 +39,12 @@ return [
     "/users/delete" => [Users::class, "delete"],
     "/users/update" => [Users::class, "update"],
     "/users/create" => [Users::class, "create"],
-    "/contracts" => [Contr::class, "fetchAll"],
-    "/users/get" => [Users::class, "get"],
-    "/users/delete" => [Users::class, "delete"],
-    "/users/update" => [Users::class, "update"],
-    "/users/create" => [Users::class, "create"],
+    "/insurance-contracts" => [Contracts::class, "fetchAll"],
+    "/insurance-contracts/get" => [Contracts::class, "get"],
+    "/insurance-contracts/delete" => [Contracts::class, "delete"],
+    "/insurance-contracts/update" => [Contracts::class, "update"],
+    "/insurance-contracts/create" => [Contracts::class, "create"],
+    "/contracts-constants" => [Contracts::class, "getAllContstants"],
     "/roles" => [Roles::class, "getAll"],
     "/roles/get" => [Roles::class, "getRoleByValue"],
  ];

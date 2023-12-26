@@ -19,6 +19,7 @@ class Contract implements IDBmodel, JsonSerializable
     public int $client_id;
     public int $vehicle_id;
     public string $type;
+    public string $price;
     public string $payment_state;
     public string $valid_from;
     public string $valid_to;
@@ -39,24 +40,7 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function create(array $data)
     {
-
-        /*if (!in_array($data['type'], self::TYPE_OPTIONS)) {
-            throw new InvalidArgumentException("Invalid type: " . $data['type']);
-        }
-        if (!in_array($data['payment_state'], self::PAYMENT_STATE_OPTIONS)) {
-            throw new InvalidArgumentException("Invalid payment state: " . $data['payment_state']);
-        }*/
-
-        $this->db->insert($this->table, [
-            'client_id' => '1',
-            'vehicle_id' => '2',
-            'type' => $data['type'],
-            'price' => $data['price'],
-            'payment_state' => 'UNPAID',
-            'valid_from' => time(),
-            'valid_to' => '2023-11-08 14:53:05',
-            'notes' => 'OK'
-        ]);
+        $this->db->insert($this->table, $data);
         return true;
     }
 
@@ -74,7 +58,7 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function delete(int $id)
     {
-        return null;
+        return $this->db->delete($this->table, ['id' => $id]);
     }
 
     public function hydrate(array $data)
@@ -88,13 +72,12 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function get(array $condition)
     {
-        if ($this->hasAccess($this->userSession, Role::ROLE_ADMIN)) { //Vytvořit access (hasaccess) controller v Core
-            if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
-                $condition = array_combine(array_map(function($key) { return "$key ="; }, array_keys($condition)), $condition);
-            }
-            return json_encode($this->db->select(User::class, $condition, $this->table));
+        if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+            $condition = array_combine(array_map(function ($key) {
+                return $key;
+            }, array_keys($condition)), $condition);
         }
-        return false;
+        return json_encode($this->db->select(Contract::class, null, $condition, $this->table));
     }
 
     public function getAll()
@@ -136,23 +119,32 @@ class Contract implements IDBmodel, JsonSerializable
 
     public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)
     {
-        if ($this->hasAccess($this->userSession, Role::ROLE_ADMIN)) {
-            return $this->db->query("SELECT id, client_id, vehicle_id, type, price, payment_state, valid_from, valid_to, notes FROM $this->table
-            WHERE 
-            id LIKE '%$search%' OR
-            client_id LIKE '%$search%' OR
-            vehicle_id LIKE '%$search%' OR
-            type LIKE '%$search%' OR
-            payment_state LIKE '%$search%' OR
-            valid_from LIKE '%$search%' OR
-            valid_to LIKE '%$search%' OR
-            notes LIKE '%$search%' OR
-            ORDER BY $orderby $sort
-            LIMIT $limit OFFSET $offset", [])->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return false;
+        return $this->db->query("
+        SELECT v.*, u.*, c.*
+        FROM $this->table c
+        INNER JOIN vehicles v ON c.vehicle_id = v.id
+        INNER JOIN users u ON c.client_id = u.id
+        WHERE 
+            c.id LIKE '%$search%' OR
+            c.client_id LIKE '%$search%' OR
+            c.vehicle_id LIKE '%$search%' OR
+            c.type LIKE '%$search%' OR
+            c.payment_state LIKE '%$search%' OR
+            c.valid_from LIKE '%$search%' OR
+            c.valid_to LIKE '%$search%' OR
+            c.notes LIKE '%$search%'
+        ORDER BY c.$orderby $sort
+        LIMIT $limit OFFSET $offset
+    ")->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getContractConstants()
+    {
+        return array(
+            'TYPE_OPTIONS' => self::TYPE_OPTIONS,
+            'PAYMENT_STATE_OPTIONS' => self::PAYMENT_STATE_OPTIONS,
+        );
+    }
 
     public function jsonSerialize(): mixed
     {
@@ -161,6 +153,7 @@ class Contract implements IDBmodel, JsonSerializable
             'client_id' => $this->client_id,
             'vehicle_id' => $this->vehicle_id,
             'type' => $this->type,
+            'price' => $this->price,
             'payment_state' => $this->payment_state,
             'valid_from' => $this->valid_from,
             'valid_to' => $this->valid_to,

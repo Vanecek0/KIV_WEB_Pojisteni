@@ -83,7 +83,7 @@ jQuery(function () {
           <td class='align-middle'>
             <div class='d-flex gap-2'>
               <a onclick="showEditModal(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-pencil-square"></i></a>
-              <a onclick="deleteRow(${item.id})" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+              <a onclick="if(confirm('Opravdu chcete odstranit tento záznam?')) {deleteRow(${item.id})}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
             </div>
           </td>
         </tr>
