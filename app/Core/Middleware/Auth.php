@@ -13,10 +13,12 @@ class Auth {
 
     public function handle(string $redirect) {
         if(!$this->session->get('user')) {
+
             if($redirect == '') {
-                Application::$app->request->redirect("/");
+                Application::$app->request->redirect($this->session->get('previous_page') ? $this->session->get('previous_page') : '');
                 return true;
             }
+
             Application::$app->request->redirect($redirect);
             return false;
         }

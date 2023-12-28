@@ -3,6 +3,7 @@ namespace App\Core;
 
 use App\API\Ares;
 use App\API\Contracts;
+use App\API\InsuranceEvents;
 use App\API\Users;
 use App\API\Roles;
 use App\Controllers\Admin;
@@ -39,6 +40,13 @@ return [
     "/users/delete" => [Users::class, "delete"],
     "/users/update" => [Users::class, "update"],
     "/users/create" => [Users::class, "create"],
+    "/insurances" => [InsuranceEvents::class, "fetchAll"],
+    "/insurances/get" => [InsuranceEvents::class, "get"],
+    "/insurances/delete" => [InsuranceEvents::class, "delete"],
+    "/insurances/update" => [InsuranceEvents::class, "update"],
+    "/insurances/create" => [InsuranceEvents::class, "create"],
+    "/insurances-constants" => [InsuranceEvents::class, "getAllContstants"],
+
     "/insurance-contracts" => [Contracts::class, "fetchAll"],
     "/insurance-contracts/get" => [Contracts::class, "get"],
     "/insurance-contracts/delete" => [Contracts::class, "delete"],

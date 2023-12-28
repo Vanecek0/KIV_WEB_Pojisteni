@@ -9,20 +9,27 @@
     </div>
     {% for contract in contracts %}
     <div class="contract card my-2">
-        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
-            <span class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
-                aria-expanded="false" aria-controls="collapseContent{{ loop.index }}">
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}" aria-controls="collapseContent{{ loop.index }}">
+            <span class="btn btn-link" type="button"
+                aria-expanded="false">
                 <b>{{ contract.type }}</b> ({{ contract.vehicle.brand }} {{ contract.vehicle.model }})
             </span>
-            <div class="portal-action-buttons">
-                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
-            </div>
+            
         </div>
         <div id="collapseContent{{ loop.index }}" class="collapse" aria-labelledby="collapseHeader">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title mb-3">Údaje smlouvy:</h5>
+                <p class="card-text"><b>Typ:</b> {{ contract.type }}</p>
+                <p class="card-text"><b>Cena:</b> {{ contract.price }} kč/rok</p>
+                <p class="card-text"><b>Stav:</b> {{ contract.payment_state }}</p>
+                <p class="card-text"><b>Platnost od:</b> {{ contract.valid_from }}</p>
+                <p class="card-text"><b>Platnost do:</b> {{ contract.valid_to }}</p>
+                <h5 class="card-title mb-3 mt-4">Smlouva k vozidlu:</h5>
+                <p class="card-text"><b>Značka:</b> {{ contract.vehicle.brand }}</p>
+                <p class="card-text"><b>Model:</b> {{ contract.vehicle.model }}</p>
+                <p class="card-text"><b>VIN:</b> {{ contract.vehicle.vin }}</p>
+                <p class="card-text"><b>SPZ:</b> {{ contract.vehicle.spz }}</p>
+                <a href="/portal/vehicles" class="btn btn-primary">Zobrazit vozidlo</a>
             </div>
         </div>
     </div>

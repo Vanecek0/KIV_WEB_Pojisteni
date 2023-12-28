@@ -26,6 +26,7 @@ class Admin implements IController
 
     public function index()
     {   
+        
         return $this->renderAdminIndex([
             "template" => "overview.twig",
         ]);

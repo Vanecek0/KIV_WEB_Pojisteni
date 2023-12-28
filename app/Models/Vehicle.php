@@ -9,8 +9,6 @@ use PDO;
 
 class Vehicle implements IDBmodel, JsonSerializable
 {
-    public const MODEL_OPTIONS = ["KOMFORT", "PLUS", "EXTRA", "MAX"];
-    public const PAYMENT_STATE_OPTIONS = ["UNPAID", "WAITING", "DECLINED", "PAID"];
 
     public int $id;
     public string $brand;
@@ -22,6 +20,7 @@ class Vehicle implements IDBmodel, JsonSerializable
     public string $manufacture_year;
     public string $registration_date;
     public string $vin;
+    public string $spz;
     public string $photos;
 
     public User $user;
@@ -116,6 +115,7 @@ class Vehicle implements IDBmodel, JsonSerializable
             'manufacture_year' => $this->manufacture_year,
             'registration_date' => $this->registration_date,
             'vin' => $this->vin,
+            'spz' => $this->spz,
             'photos' => $this->photos,
         ];
     }

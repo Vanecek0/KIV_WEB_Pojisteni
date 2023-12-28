@@ -4,14 +4,13 @@ namespace App\Models;
 
 use App\Core\Database;
 use App\Interfaces\IDBmodel;
-use InvalidArgumentException;
 use JsonSerializable;
 use PDO;
 
 class InsuranceEvent implements IDBmodel, JsonSerializable
 {
 
-    public const REPORT_STATE = ["IN_PROGRESS", "REJECTED", "SUCCESSFULLY_CLOSED"];
+    public const REPORT_STATE = ["PROBÍHÁ", "ZAMÍTNUTO", "UZAVŘENO"];
 
     public int $id;
     public int $contract_id;
@@ -39,7 +38,7 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
 
     public function create(array $data)
     {
-
+        $this->db->insert($this->table, $data);
         return true;
     }
 
@@ -55,10 +54,9 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
         return $result;
     }
 
-
     public function delete(int $id)
     {
-        return null;
+        return $this->db->delete($this->table, ['id' => $id]);
     }
 
     public function hydrate(array $data)
@@ -70,34 +68,84 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
         }
     }
 
+    public function get(array $condition)
+    {
+        if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+            $condition = array_combine(array_map(function ($key) {
+                return $key;
+            }, array_keys($condition)), $condition);
+        }
+        return json_encode($this->db->select(InsuranceEvent::class, null, $condition, $this->table));
+    }
+
+
     public function getAll()
     {
 
-        $insuranceEventData = $this->db->query("
-    SELECT r.*, c.* FROM reports r
-    INNER JOIN contracts c ON r.contract_id = c.id", [])->fetchAll(PDO::FETCH_ASSOC);
+        $insurancesData = $this->db->query("
+        SELECT c.*, r.* FROM $this->table r
+        INNER JOIN contracts c ON r.contract_id = c.id", [])->fetchAll(PDO::FETCH_ASSOC);
 
-        $insuranceEvents = [];
-        foreach ($insuranceEventData as $data) {
-            $insuranceEvent = new InsuranceEvent();
-            $insuranceEvent->hydrate($data);
+        $insurances = [];
+        foreach ($insurancesData as $data) {
+
+            $insurance = new InsuranceEvent();
+            $insurance->hydrate($data);
 
             $contract = new Contract();
             $contract->hydrate($data);
 
-            $insuranceEvent->contract = $contract;
-            $insuranceEvents[] = $insuranceEvent;
+            $insurance->contract = $contract;
+            $insurances[] = $insurance;
         }
 
-        if (!$insuranceEvents) {
+        if (!$insurances) {
             return null;
         }
-        return $insuranceEvents;
+        return $insurances;
+    }
+
+    public function getWithOffsetLimit(int $offset, int $limit, string $sort, string $orderby, string $search = null)
+    {
+        return $this->db->query("
+        SELECT c.*, r.*
+        FROM $this->table r
+        INNER JOIN contracts c ON r.contract_id = c.id
+        WHERE 
+            r.id LIKE '%$search%' OR
+            r.contract_id LIKE '%$search%' OR
+            r.accident_datetime LIKE '%$search%' OR
+            r.accident_place LIKE '%$search%' OR
+            r.accident_description LIKE '%$search%' OR
+            r.estimated_damage_amount LIKE '%$search%' OR
+            r.culprit_firstname LIKE '%$search%' OR
+            r.culprit_lastname LIKE '%$search%' OR
+            r.culprit_phone LIKE '%$search%' OR
+            r.report_state LIKE '%$search%' OR
+            r.closed_datetime LIKE '%$search%' OR
+            r.notes LIKE '%$search%'
+        ORDER BY r.$orderby $sort
+        LIMIT $limit OFFSET $offset
+    ")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getCount()
+    {
+        return $this->db->query("
+    SELECT COUNT(*) as count FROM $this->table r
+    INNER JOIN contracts c ON r.contract_id = c.id", [])->fetch(PDO::FETCH_ASSOC)['count'];
     }
 
     public function getById(int $id)
     {
         return null;
+    }
+
+    public static function getInsuranceConstants()
+    {
+        return array(
+            'REPORT_STATE_OPTIONS' => self::REPORT_STATE,
+        );
     }
 
     public function jsonSerialize(): mixed

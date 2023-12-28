@@ -13,7 +13,7 @@ class Contract implements IDBmodel, JsonSerializable
 {
 
     public const TYPE_OPTIONS = ["KOMFORT", "PLUS", "EXTRA", "MAX"];
-    public const PAYMENT_STATE_OPTIONS = ["UNPAID", "WAITING", "DECLINED", "PAID"];
+    public const PAYMENT_STATE_OPTIONS = ["NEZAPLACENO", "ČEKAJÍCÍ", "ZAMÍTNUTA", "ZAPLACENO"];
 
     public int $id;
     public int $client_id;

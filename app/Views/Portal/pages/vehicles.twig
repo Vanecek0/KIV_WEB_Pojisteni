@@ -9,20 +9,21 @@
     </div>
     {% for vehicle in vehicles %}
     <div class="contract card my-2">
-        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
-            <span class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
                 aria-expanded="false" aria-controls="collapseContent{{ loop.index }}">
+            <span class="btn btn-link" type="button">
                 <b>{{ vehicle.brand }} {{ vehicle.model }}</b>
             </span>
-            <div class="portal-action-buttons">
-                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
-            </div>
         </div>
         <div id="collapseContent{{ loop.index }}" class="collapse" aria-labelledby="collapseHeader">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text"><b>VIN:</b> {{ vehicle.vin }}</p>
+                <p class="card-text"><b>SPZ:</b> {{ vehicle.spz }}</p>
+                <p class="card-text"><b>Datum registrace:</b> {{ vehicle.registration_date }}</p>
+                <p class="card-text"><b>Datum výroby:</b> {{ vehicle.manufacture_year }}</p>
+                <p class="card-text"><b>Objem:</b> {{ vehicle.engine_capacity }} ccm</p>
+                <p class="card-text"><b>Výkon:</b> {{ vehicle.engine_power }} kw</p>
+                <p class="card-text"><b>Palivo:</b> {{ vehicle.fuel_type }}</p>
             </div>
         </div>
     </div>

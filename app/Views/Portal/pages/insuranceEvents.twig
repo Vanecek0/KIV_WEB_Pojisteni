@@ -9,14 +9,11 @@
     </div>
     {% for event in insuranceEvents %}
     <div class="contract card my-2">
-        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader">
-            <span class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
+        <div class="card-header contract-card-header d-flex justify-content-between" id="collapseHeader" data-bs-toggle="collapse" data-bs-target="#collapseContent{{ loop.index }}"
                 aria-expanded="false" aria-controls="collapseContent{{ loop.index }}">
-                <b>Pojistná událost č.{{event.id}}</b> ({{ event.report_state }})
+            <span class="btn btn-link" type="button">
+                <b>Pojistná událost č.{{event.id}}</b> ({{ event.accident_datetime }}) - <b>{{ event.report_state }}</b>
             </span>
-            <div class="portal-action-buttons">
-                <button class="btn btn-primary"><i class="bi bi-file-earmark-text-fill"></i></button>
-            </div>
         </div>
         <div id="collapseContent{{ loop.index }}" class="collapse" aria-labelledby="collapseHeader">
             <div class="card-body">
