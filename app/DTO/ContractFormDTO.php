@@ -5,46 +5,26 @@ namespace App\DTO;
 class ContractFormDTO
 {
     public function __construct(
-        public readonly string $vehicle,
-        public readonly string $spz,
-        public readonly string $vin,
-        public readonly string $insurer,
-        public readonly string $ico,
-        public readonly string $dic,
-        public readonly string $firstname,
-        public readonly string $lastname,
-        public readonly string $birth,
-        public readonly string $birth_number,
-        public readonly string $phone_number,
-        public readonly string $email,
-        public readonly string $city,
-        public readonly string $street,
-        public readonly string $psc,
-        public readonly string $car_photos,
-        public readonly string $type
+        public readonly int $client_id,
+        public int $vehicle_id,
+        public readonly string $type,
+        public readonly string $price,
+        public readonly string $valid_from,
+        public readonly string $valid_to,
+        public readonly string $notes,
     ) {
     }
 
     public function toArray(): array
     {
         return [
-            'vehicle' => $this->vehicle,
-            'spz' => $this->spz,
-            'vin' => $this->vin,
-            'insurer' => $this->insurer,
-            'ico' => $this->ico,
-            'dic' => $this->dic,
-            'firstname' => $this->firstname,
-            'lastname' => $this->lastname,
-            'birth' => $this->birth,
-            'birth_number' => $this->birth_number,
-            'phone_number' => $this->phone_number,
-            'email' => $this->email,
-            'city' => $this->city,
-            'street' => $this->street,
-            'psc' => $this->psc,
-            'car_photos' => $this->car_photos,
-            'type' => $this->type
+            'client_id' => $this->client_id,
+            'vehicle_id' => $this->vehicle_id,
+            'type' => $this->type,
+            'price' => $this->price,
+            'valid_from' => $this->valid_from,
+            'valid_to' => $this->valid_to,
+            'notes' => $this->notes,
         ];
     }
 }

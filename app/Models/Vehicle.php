@@ -11,9 +11,9 @@ class Vehicle implements IDBmodel, JsonSerializable
 {
 
     public int $id;
+    public int $user_id;
     public string $brand;
     public string $model;
-    public string $type;
     public string $engine_power;
     public string $engine_capacity;
     public string $fuel_type;
@@ -21,12 +21,12 @@ class Vehicle implements IDBmodel, JsonSerializable
     public string $registration_date;
     public string $vin;
     public string $spz;
-    public string $photos;
+    public ?string $images;
 
     public User $user;
 
     private Database $db;
-    protected $table = 'vehicles';
+    public $table = 'vehicles';
 
     public function __construct()
     {
@@ -35,7 +35,7 @@ class Vehicle implements IDBmodel, JsonSerializable
 
     public function create(array $data)
     {
-        return null;
+        return $this->db->insert($this->table, $data);;
     }
 
     public function update(int $id, array $data, array $condition)
@@ -103,12 +103,23 @@ class Vehicle implements IDBmodel, JsonSerializable
         return null;
     }
 
+    public function get(array $condition)
+    {
+        if (!empty($condition) && key($condition) !== key(array_keys($condition))) {
+            $condition = array_combine(array_map(function ($key) {
+                return $key;
+            }, array_keys($condition)), $condition);
+        }
+        return json_encode($this->db->select(Vehicle::class, null, $condition, $this->table));
+    }
+
     public function jsonSerialize(): mixed
     {
         return [
             'id' => $this->id,
+            'user_id' => $this->user_id,
             'brand' => $this->brand,
-            'type' => $this->type,
+            'model' => $this->model,
             'engine_power' => $this->engine_power,
             'engine_capacity' => $this->engine_capacity,
             'fuel_type' => $this->fuel_type,
@@ -116,7 +127,7 @@ class Vehicle implements IDBmodel, JsonSerializable
             'registration_date' => $this->registration_date,
             'vin' => $this->vin,
             'spz' => $this->spz,
-            'photos' => $this->photos,
+            'images' => $this->images,
         ];
     }
 }

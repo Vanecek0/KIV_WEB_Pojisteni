@@ -28,7 +28,7 @@ class Contract implements IDBmodel, JsonSerializable
     public Vehicle $vehicle;
 
     private Database $db;
-    protected $table = 'contracts';
+    public $table = 'contracts';
 
     private array $userSession;
 

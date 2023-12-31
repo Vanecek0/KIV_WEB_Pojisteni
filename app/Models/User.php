@@ -29,7 +29,7 @@ class User implements IDBmodel, JsonSerializable
     public Session $session;
 
     private Database $db;
-    protected $table = 'users';
+    public $table = 'users';
 
     public function __construct()
     {

@@ -29,7 +29,7 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
     public Contract $contract;
 
     private Database $db;
-    protected $table = 'reports';
+    public $table = 'reports';
 
     public function __construct()
     {
