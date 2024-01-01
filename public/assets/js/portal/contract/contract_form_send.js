@@ -11,11 +11,22 @@ jQuery(function () {
             processData: false,
             contentType: false,
             success: function (response) {
-                if (response === '1') {
-                    alert('Success: ' + response);
-                } else {
-                    alert('Error: ' + response);
+
+                var json_response = JSON.parse(response);
+                $("#contract-message").text(json_response.contract_message);
+                $("#contract-error").text(json_response.contract_error);
+
+                if(json_response.contract_message) {
+                    alert(json_response.contract_message);
                 }
+
+                if(!json_response.contract_error) {
+                    window.location = this.url;
+                } else {
+                    alert(json_response.contract_error);
+                }
+
+                
             },
             error: function (xhr, status, error) {
                 alert('Error: ' + error);

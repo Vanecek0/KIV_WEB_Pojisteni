@@ -123,6 +123,12 @@ ul {
     text-decoration: none;
 }
 
+.portal .contracts .contract .image-gallery img {
+    width: 245px; 
+    height: 245px;
+    object-fit: cover;
+}
+
 .login-content {
     min-height: 500px;
 }

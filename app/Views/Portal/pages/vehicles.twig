@@ -24,6 +24,18 @@
                 <p class="card-text"><b>Objem:</b> {{ vehicle.engine_capacity }} ccm</p>
                 <p class="card-text"><b>Výkon:</b> {{ vehicle.engine_power }} kw</p>
                 <p class="card-text"><b>Palivo:</b> {{ vehicle.fuel_type }}</p>
+                <p class="card-text"><b>Fotografie:</b></p>
+                <div class="image-gallery">
+                <div class="d-flex flex-wrap gap-2">
+                    {% for image in vehicle.images|replace({'["': '' , '"]': ''})|split('","') %}
+                        <img
+                        src="/public/{{ image }}"
+                        class="img-fluid mb-4"
+                        alt="{{ vehicle.brand }} {{ vehicle.model }}"
+                        />
+                     {% endfor %}
+                </div>
+            </div>
             </div>
         </div>
     </div>

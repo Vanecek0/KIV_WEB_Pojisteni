@@ -53,7 +53,7 @@ class Contract implements IController
     public function create(Request $request)
     {
         if (!$request->isPost()) {
-            $request->redirect('/portal/new/contract');
+            $request->redirect('/portal/contracts');
             return false;
         }
 
@@ -112,19 +112,19 @@ class Contract implements IController
     {
         $uploadedFile = $_FILES['images'];
 
-        if (!in_array(UPLOAD_ERR_OK, $uploadedFile['error']) && $uploadedFile['error'] !== UPLOAD_ERR_NO_FILE) {
-            $this->flashmessage->setFlashMessage("file_upload", "Soubor se nepodařilo nahrát.");
+        if (!in_array(UPLOAD_ERR_OK, $uploadedFile['error']) && !in_array(UPLOAD_ERR_NO_FILE, $uploadedFile['error'])) {
+            $this->flashmessage->setFlashMessage("contract_error", "Soubor se nepodařilo nahrát.");
             echo $this->flashmessage->getMessagesArray();
             return false;
         }
 
-        if ($uploadedFile['error'] != UPLOAD_ERR_NO_FILE || (!in_array(0, $uploadedFile['size']) && !in_array(UPLOAD_ERR_OK, $uploadedFile['error']))) {
+        if (!in_array(UPLOAD_ERR_NO_FILE, $uploadedFile['error']) || (!in_array(0, $uploadedFile['size']) && !in_array(UPLOAD_ERR_OK, $uploadedFile['error']))) {
             foreach ($uploadedFile['tmp_name'] as $key => $tmp_name) {
                 $fileType = mime_content_type($tmp_name);
                 $allowedTypes = ['image/jpg', 'image/jpeg', 'image/png'];
 
                 if (!in_array($fileType, $allowedTypes)) {
-                    $this->flashmessage->setFlashMessage("file_upload", "Byl nahrán soubor nesprávného typu.");
+                    $this->flashmessage->setFlashMessage("contract_error", "Byl nahrán soubor nesprávného typu.");
                     echo $this->flashmessage->getMessagesArray();
                     return false;
                 }
@@ -138,7 +138,15 @@ class Contract implements IController
             $this->imageupload->uploadImages($this->vehiclemodel, $vehicleFormDTO, 'images');
         }
 
-        return $this->contractmodel->create($contractFormDTO->toArray());
+        $inserted_constract = $this->contractmodel->create($contractFormDTO->toArray());
+        if(!$inserted_constract) {
+            $this->flashmessage->setFlashMessage("contract_error", "Nová pojistná smlouva nemohla být vytvořena.");
+            echo $this->flashmessage->getMessagesArray();
+            return false;
+        }
+
+        $this->flashmessage->setFlashMessage("contract_message", "Nová pojistná smlouva byla úspěšně vytvořena.");
+        return $this->flashmessage->getMessagesArray();
     }
 
     private function getUserFromSession()
