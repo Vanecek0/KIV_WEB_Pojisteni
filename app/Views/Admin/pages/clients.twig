@@ -30,26 +30,28 @@
     <button id="sortButton" class="btn btn-light">Seřadit</button>
   </div>
 
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Jméno</th>
-        <th>Příjmení</th>
-        <th>Telefon</th>
-        <th>Uživatelské jméno</th>
-        <th>Email</th>
-        <th>Datum narození</th>
-        <th>Rodné číslo</th>
-        <th>Město</th>
-        <th>Ulice</th>
-        <th>PSČ</th>
-        <th>Role</th>
-        <th>Akce</th>
-      </tr>
-    </thead>
-    <tbody id="clientsTable"></tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Jméno</th>
+          <th>Příjmení</th>
+          <th>Telefon</th>
+          <th>Uživatelské jméno</th>
+          <th>Email</th>
+          <th>Datum narození</th>
+          <th>Rodné číslo</th>
+          <th>Město</th>
+          <th>Ulice</th>
+          <th>PSČ</th>
+          <th>Role</th>
+          <th>Akce</th>
+        </tr>
+      </thead>
+      <tbody id="clientsTable"></tbody>
+    </table>
+  </div>
   <button class="btn btn-primary" id="loadMore">Načíst další</button>
 
   <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userEditModal" data-bs-backdrop="static"

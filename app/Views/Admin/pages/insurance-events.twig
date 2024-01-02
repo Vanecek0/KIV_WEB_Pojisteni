@@ -9,17 +9,21 @@
     <label for="sortColumn">Seřadit podle:</label>
     <select id="sortColumn" class="form-select w-25">
       <option value="id">ID</option>
-      <option value="firstname">Jméno</option>
-      <option value="lastname">Příjmení</option>
-      <option value="phone">Telefon</option>
-      <option value="username">Uživatelské jméno</option>
-      <option value="email">Email</option>
-      <option value="birth">Datum narození</option>
-      <option value="birth_number">Rodné číslo</option>
-      <option value="city">Město</option>
-      <option value="street">Ulice</option>
-      <option value="psc">PSČ</option>
-      <option value="role">Role</option>
+      <option value="contract_id">Jméno</option>
+      <option value="accident_datetime">Příjmení</option>
+      <option value="accident_place">Telefon</option>
+      <option value="accident_description">Uživatelské jméno</option>
+      <option value="estimated_damage_amount">Email</option>
+      <option value="culprit_firstname">Jméno viníka</option>
+      <option value="culprit_lastname">Příjmení viníka</option>
+      <option value="culprit_phone">Telefon viníka</option>
+      <option value="culprit_email">Email viníka</option>
+      <option value="culprit_city">Město viníka</option>
+      <option value="culprit_street">Ulice viníka</option>
+      <option value="culprit_psc">PSČ viníka</option>
+      <option value="culprit_spz">SPZ vozidla viníka</option>
+      <option value="culprit_vehicle">Vozidlo viníka</option>
+      <option value="culprit_insurance">Pojišťovna viníka</option>
     </select>
 
     <select id="sortDirection" class="form-select w-25">
@@ -29,27 +33,34 @@
 
     <button id="sortButton" class="btn btn-light">Seřadit</button>
   </div>
-
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Smlouva ID</th>
-        <th>Datum nehody</th>
-        <th>Místo nehody</th>
-        <th>Popis</th>
-        <th>Odhadovaná škoda</th>
-        <th>Jméno viníka</th>
-        <th>Příjmení viníka</th>
-        <th>Telefon viníka</th>
-        <th>Stav hlášení</th>
-        <th>Uzavřeno</th>
-        <th>Poznámky</th>
-        <th>Akce</th>
-      </tr>
-    </thead>
-    <tbody id="insurancesTable"></tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Smlouva ID</th>
+          <th>Datum nehody</th>
+          <th>Místo nehody</th>
+          <th>Popis</th>
+          <th>Odhadovaná škoda</th>
+          <th>Jméno viníka</th>
+          <th>Příjmení viníka</th>
+          <th>Telefon viníka</th>
+          <th>Email viníka</th>
+          <th>Město viníka</th>
+          <th>Ulice viníka</th>
+          <th>PSČ viníka</th>
+          <th>SPZ vozidla viníka</th>
+          <th>Vozidlo viníka</th>
+          <th>Pojišťovna viníka</th>
+          <th>Stav hlášení</th>
+          <th>Uzavřeno</th>
+          <th>Akce</th>
+        </tr>
+      </thead>
+      <tbody id="insurancesTable"></tbody>
+    </table>
+  </div>
   <button class="btn btn-primary" id="loadMore">Načíst další</button>
 
   <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userEditModal" data-bs-backdrop="static"

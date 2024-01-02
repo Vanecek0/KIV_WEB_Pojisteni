@@ -21,10 +21,16 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
     public string $culprit_firstname;
     public string $culprit_lastname;
     public string $culprit_phone;
+    public string $culprit_email;
+    public string $culprit_city;
+    public string $culprit_street;
+    public string $culprit_psc;
+    public string $culprit_spz;
+    public string $culprit_vehicle;
+    public string $culprit_insurance;
     public string $report_state;
     public string $closed_datetime;
-    public string $files;
-    public string $notes;
+    public ?string $images;
 
     public Contract $contract;
 
@@ -38,8 +44,7 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
 
     public function create(array $data)
     {
-        $this->db->insert($this->table, $data);
-        return true;
+        return $this->db->insert($this->table, $data);
     }
 
     public function update(int $id, array $data, array $condition)
@@ -121,9 +126,15 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
             r.culprit_firstname LIKE '%$search%' OR
             r.culprit_lastname LIKE '%$search%' OR
             r.culprit_phone LIKE '%$search%' OR
+            r.culprit_email LIKE '%$search%' OR
+            r.culprit_city LIKE '%$search%' OR
+            r.culprit_street LIKE '%$search%' OR
+            r.culprit_psc LIKE '%$search%' OR
+            r.culprit_spz LIKE '%$search%' OR
+            r.culprit_vehicle LIKE '%$search%' OR
+            r.culprit_insurance LIKE '%$search%' OR
             r.report_state LIKE '%$search%' OR
-            r.closed_datetime LIKE '%$search%' OR
-            r.notes LIKE '%$search%'
+            r.closed_datetime LIKE '%$search%'
         ORDER BY r.$orderby $sort
         LIMIT $limit OFFSET $offset
     ")->fetchAll(PDO::FETCH_ASSOC);
@@ -160,11 +171,16 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
             'culprit_firstname' => $this->culprit_firstname,
             'culprit_lastname' => $this->culprit_lastname,
             'culprit_phone' => $this->culprit_phone,
+            'culprit_email' => $this->culprit_email,
+            'culprit_city' => $this->culprit_city,
+            'culprit_street' => $this->culprit_street,
+            'culprit_psc' => $this->culprit_psc,
+            'culprit_spz' => $this->culprit_spz,
+            'culprit_vehicle' => $this->culprit_vehicle,
+            'culprit_insurance' => $this->culprit_insurance,
             'report_state' => $this->report_state,
             'closed_datetime' => $this->closed_datetime,
-            'files' => $this->culprit_firstname,
-            'notes' => $this->notes,
-
+            'images' => $this->images,
         ];
     }
 }

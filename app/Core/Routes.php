@@ -1,7 +1,6 @@
 <?php
 namespace App\Core;
 
-use App\API\Ares;
 use App\API\Contracts;
 use App\API\InsuranceEvents;
 use App\API\Users;
@@ -10,6 +9,7 @@ use App\Controllers\Admin;
 use App\Controllers\Auth;
 use App\Controllers\Contract;
 use App\Controllers\Home;
+use App\Controllers\InsuranceEvent;
 use App\Controllers\Portal;
 use App\Controllers\User;
 
@@ -29,12 +29,13 @@ return [
     "/portal/new/contract" => [Contract::class, "new_contract", "auth_only", "/login"],
     "/portal/new/contract/post" => [Contract::class, "create", "auth_only", "/login"],
     "/portal/insurance-events" => [Portal::class, "insuranceEvents", "auth_only", "/login"],
+    "/portal/new/insurance-events" => [InsuranceEvent::class, "new_event", "auth_only", "/login"],
+    "/portal/new/insurance-events/post" => [InsuranceEvent::class, "create", "auth_only", "/login"],
     "/portal/vehicles" => [Portal::class, "vehicles", "auth_only", "/login"],
     "/admin" => [Admin::class, "index", "auth_only", "/login"],
     "/admin/clients" => [Admin::class, "clients", "auth_only", "/login"],
     "/admin/contracts" => [Admin::class, "contracts", "auth_only", "/login"],
     "/admin/insurance-events" => [Admin::class, "insuranceEvents", "auth_only", "/login"],
-    "/ares" => [Ares::class, "fetch"],
     "/users" => [Users::class, "fetchAll"],
     "/users/get" => [Users::class, "get"],
     "/users/delete" => [Users::class, "delete"],

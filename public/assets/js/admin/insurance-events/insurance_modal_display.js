@@ -31,6 +31,22 @@ function showEditModal(id) {
     `;
     }
 
+    function createImageGallery(images) {
+        let galleryHtml = '<div class="image-gallery"><div class="d-flex flex-wrap gap-2">';
+    
+        for (const image of images) {
+            galleryHtml += `
+                <img
+                    src="/public/${image}"
+                    class="img-fluid mb-4"
+                    alt="{{ vehicle.brand }} {{ vehicle.model }}"
+                />
+            `;
+        }
+        galleryHtml += '</div></div>';
+        return galleryHtml;
+    }
+
 
     function createInsuranceConstantsOption(constants, selectedConstant) {
         return constants.map((value) => `
@@ -60,10 +76,17 @@ function showEditModal(id) {
               ${createInput('text', 'Jméno viníka', 'culprit_firstname', item.culprit_firstname)}
               ${createInput('text', 'Příjmení viníka', 'culprit_lastname', item.culprit_lastname)}
               ${createInput('text', 'Telefon viníka', 'culprit_phone', item.culprit_phone)}
+              ${createInput('text', 'Email viníka', 'culprit_email', item.culprit_email)}
+              ${createInput('text', 'Město viníka', 'culprit_city', item.culprit_city)}
+              ${createInput('text', 'Ulice viníka', 'culprit_street', item.culprit_street)}
+              ${createInput('text', 'PSČ viníka', 'culprit_psc', item.culprit_psc)}
+              ${createInput('text', 'SPZ viníka', 'culprit_spz', item.culprit_spz)}
+              ${createInput('text', 'Vozidlo viníka', 'culprit_vehicle', item.culprit_vehicle)}
+              ${createInput('text', 'Pojišťovna viníka', 'culprit_insurance', item.culprit_insurance)}
               <label class="form-label" for="report_state">Stav hlášení</label>
               <select class="form-control mb-3" name="report_state">${reportOptions}</select>
               ${createInput('datetime-local', 'Uzavřeno', 'closed_datetime', item.closed_datetime)}
-              ${createTextArea('Poznámka', 'notes', item.notes)}
+              ${item.images ? createImageGallery(JSON.parse(item.images.replace(/\\/g, ''))) : ''}
             `);
                     });
                 });

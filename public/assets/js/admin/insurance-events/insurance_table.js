@@ -77,9 +77,15 @@ jQuery(function () {
           <td>${item.culprit_firstname}</td>
           <td>${item.culprit_lastname}</td>
           <td>${item.culprit_phone}</td>
+          <td>${item.culprit_email}</td>
+          <td>${item.culprit_city}</td>
+          <td>${item.culprit_street}</td>
+          <td>${item.culprit_psc}</td>
+          <td>${item.culprit_spz}</td>
+          <td>${item.culprit_vehicle}</td>
+          <td>${item.culprit_insurance}</td>
           <td id="report">${item.report_state}</td>
           <td>${item.closed_datetime}</td>
-          <td>${item.notes}</td>
           <td class='align-middle'>
             <div class='d-flex gap-2'>
               <a onclick="showEditModal(${item.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-pencil-square"></i></a>

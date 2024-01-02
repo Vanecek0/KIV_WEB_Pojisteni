@@ -129,6 +129,12 @@ ul {
     object-fit: cover;
 }
 
+.admin .contracts .modal-content .image-gallery img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+  }
+
 .login-content {
     min-height: 500px;
 }

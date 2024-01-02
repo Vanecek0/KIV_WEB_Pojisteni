@@ -27,23 +27,25 @@
     <button id="sortButton" class="btn btn-light">Seřadit</button>
   </div>
 
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th style="width:25px">ID</th>
-        <th style="width:100px">Klient ID</th>
-        <th style="width:100px">Vozidlo ID</th>
-        <th style="width:120px">Typ pojištění</th>
-        <th style="width:95px">Cena</th>
-        <th style="width:120px">Stav platby</th>
-        <th style="width:135px">Platné od</th>
-        <th style="width:135px">Platné do</th>
-        <th style="width:100px">Poznámky</th>
-        <th style="width:50px">Akce</th>
-      </tr>
-    </thead>
-    <tbody id="contractsTable"></tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width:25px">ID</th>
+          <th style="width:100px">Klient ID</th>
+          <th style="width:100px">Vozidlo ID</th>
+          <th style="width:120px">Typ pojištění</th>
+          <th style="width:95px">Cena</th>
+          <th style="width:120px">Stav platby</th>
+          <th style="width:135px">Platné od</th>
+          <th style="width:135px">Platné do</th>
+          <th style="width:100px">Poznámky</th>
+          <th style="width:50px">Akce</th>
+        </tr>
+      </thead>
+      <tbody id="contractsTable"></tbody>
+    </table>
+  </div>
   <button class="btn btn-primary" id="loadMore">Načíst další</button>
 
   <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userEditModal" data-bs-backdrop="static"

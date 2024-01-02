@@ -1,0 +1,153 @@
+{% block title %}Nové pojištění - Klientský portál{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<form id="new-insurance" class="multistep-form" method="post" enctype="multipart/form-data">
+    <div class="form-header d-flex mb-5">
+        <span class="stepIndicator">Údaje pojistníka</span>
+        <span class="stepIndicator">Údaje viníka</span>
+        <span class="stepIndicator">Místo nehody a shrnutí</span>
+    </div>
+    <div class="container">
+        <div class="step">
+            <fieldset id="insurer" class="mb-4 mt-2">
+                <h3>Údaje pojistníka</h3>
+
+                <input type="hidden" name="client_id" value="{{user.id}}">
+
+                <label for="firstname" class="form-label">Jméno</label>
+                <input type="text" placeholder="Např.: Jan" value="{{user.firstname}}" id="firstname" name="firstname" class="form-control mb-4" disabled>
+
+                <label for="lastname" class="form-label">Příjmení</label>
+                <input type="text" placeholder="Např.: Novák" value="{{user.lastname}}" id="lastname" name="lastname" class="form-control mb-4" disabled>
+
+                <label for="birth" class="form-label">Datum narození</label>
+                <input type="date" id="birth" name="birth" value="{{user.birth}}" class="form-control mb-4" disabled>
+
+                <label for="birth-number" class="form-label">Rodné číslo</label>
+                <input type="text" placeholder="Např.: 739028/5163" value="{{user.birth_number}}" id="birth-number" name="birth-number"
+                    class="form-control mb-4" disabled>
+
+                <label for="phone-number" class="form-label">Telefon</label>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="basic-addon1">+420</span>
+                    <input type="text" placeholder="Např.: 123 456 789" value="{{user.phone}}" id="phone-number" name="phone-number"
+                        aria-describedby="basic-addon1" class="form-control" disabled>
+                </div>
+
+                <label for="email" class="form-label">Emailová adresa *</label>
+                <input type="text" placeholder="Např.: jan.novak@example.com" value="{{user.email}}" id="email" name="email"
+                    class="form-control mb-4" disabled>
+
+                <label for="city" class="form-label">Město/obec</label>
+                <input type="text" placeholder="Např.: Praha 7-Holešovice" value="{{user.city}}" id="city" name="city"
+                    class="form-control mb-4" disabled>
+
+                <label for="street" class="form-label">Ulice</label>
+                <input type="text" placeholder="Např.: Dukelských Hrdinů 906/48" value="{{user.street}}" id="street" name="street"
+                    class="form-control mb-4" disabled>
+
+                <label for="psc" class="form-label">PSČ</label>
+                <input type="number" placeholder="Např.: 17000" id="psc" name="psc" value="{{user.psc}}" 
+                    class="form-control mb-4" disabled>
+
+            </fieldset>
+        </div>
+        <div class="step">
+            <fieldset id="culprit" class="mb-4 mt-2">
+                <h3>Údaje viníka</h3>
+
+                <label for="culprit_firstname" class="form-label">Jméno</label>
+                <input type="text" placeholder="Např.: Jan" id="culprit_firstname" name="culprit_firstname" class="form-control mb-4" >
+
+                <label for="culprit_lastname" class="form-label">Příjmení</label>
+                <input type="text" placeholder="Např.: Novák" id="culprit_lastname" name="culprit_lastname" class="form-control mb-4" >
+
+                <label for="culprit_phone" class="form-label">Telefon</label>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="basic-addon1">+420</span>
+                    <input type="text" placeholder="Např.: 123 456 789" id="culprit_phone" name="culprit_phone"
+                        aria-describedby="basic-addon1" class="form-control" >
+                </div>
+
+                <label for="culprit_email" class="form-label">Emailová adresa *</label>
+                <input type="text" placeholder="Např.: jan.novak@example.com" id="culprit_email" name="culprit_email"
+                    class="form-control mb-4" >
+
+                <label for="culprit_city" class="form-label">Město/obec</label>
+                <input type="text" placeholder="Např.: Praha 7-Holešovice" id="culprit_city" name="culprit_city"
+                    class="form-control mb-4" >
+
+                <label for="culprit_street" class="form-label">Ulice</label>
+                <input type="text" placeholder="Např.: Dukelských Hrdinů 906/48" id="culprit_street" name="culprit_street"
+                    class="form-control mb-4" >
+
+                <label for="culprit_psc" class="form-label">PSČ</label>
+                <input type="number" value="0" placeholder="Např.: 17000" id="culprit_psc" name="culprit_psc" 
+                    class="form-control mb-4" >
+                
+                <label for="culprit_spz" class="form-label">SPZ</label>
+                <input type="text" placeholder="Např.: 1US2738" id="culprit_spz" name="culprit_spz" 
+                    class="form-control mb-4" >
+
+                <label for="culprit_vehicle" class="form-label">Značka a model vozidla</label>
+                <input type="text" placeholder="Např.: Škoda Octavia 1 combi" id="culprit_vehicle" name="culprit_vehicle" 
+                    class="form-control mb-4" >
+
+                <label for="culprit_insurance" class="form-label">Název pojišťovny</label>
+                <input type="text" placeholder="Např.: Generali Česká pojišťovna a. s." id="culprit_insurance" name="culprit_insurance" 
+                    class="form-control mb-4" >
+
+            </fieldset>
+        </div>
+        <div class="step">
+            <fieldset id="insurance-place-description" class="mb-4 mt-2">
+                <h3>Místo a popis nehody</h3>
+
+                <label for="accident_datetime" class="form-label">Datum nehody</label>
+                <input type="datetime-local" id="accident_datetime" name="accident_datetime" class="form-control mb-4" >
+
+                <label for="searchInput" class="form-label">Místo nehody (vyberte na mapě)</label>
+                <input type="text" id="searchInput" name="searchInput" class="form-control " placeholder="Zadejte místo k vyhledání">
+                <div id="map" class="map mb-4 leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="height: 300px; position: relative; outline-style: none;"></div>
+
+                <input type="hidden" id="accident_place" name="accident_place" class="form-control mb-4" >
+
+                <label for="accident_description" class="form-label">Popis nehody</label>
+                <textarea id="accident_description" name="accident_description" class="form-control mb-4"></textarea>
+
+                <label for="estimated_damage_amount" class="form-label">Odhad škody na vozidle</label>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="basic-addon1">Kč</span>
+                    <input type="number" min="0" step="1000" value="5000" name="estimated_damage_amount" id="estimated_damage_amount" aria-describedby="basic-addon1" class="form-control">
+                </div>
+
+                <label for="contract_id" class="form-label mt-2">Vyberte pojistnou smlouvu</label>
+                <select class="selectpicker form-control mb-4" name="contract_id" data-live-search="true" data-size="8">
+                    <option value=""></option>
+                    {% for c in user_contracts %}
+                        <option data-tokens="{{ c.type }}"
+                            value="{{ c.id }}">{{ c.valid_from }} ({{ c.type }})
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <label for="images" class="form-label">Fotografie nehody</label>
+                <input type="file" id="images" name="images[]" class="form-control mb-4" accept="image/*" multiple>
+
+            </fieldset>
+        </div>
+        <p id="errorMessage" class="text-danger"></p>
+        <div class="form-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-primary btn-lg" id="prevBtn"
+                onclick="nextPrev(-1)">Předchozí</button>
+            <button type="button" class="btn btn-primary btn-lg" id="nextBtn" onclick="nextPrev(1)">Pokračovat</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Odeslat</button>
+        </div>
+    </div>
+</form>
+<script src="/public/assets/js/portal/insurance-events/insurance_form_send.js"></script>
+<script src="/public/assets/js/portal/insurance-events/open_map.js"></script>
+<script src="/public/assets/js/portal/multistep_form.js"></script>
+{% endblock %}
