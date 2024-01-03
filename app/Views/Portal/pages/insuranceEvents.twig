@@ -17,9 +17,24 @@
         </div>
         <div id="collapseContent{{ loop.index }}" class="collapse" aria-labelledby="collapseHeader">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title mb-3">Údaje pojistné události:</h5>
+                <p class="card-text"><b>Datum a čas:</b> {{ event.accident_datetime }}</p>
+                <p class="card-text"><b>Místo nehody (souřadnice):</b> {{ event.accident_place }}</p>
+                <p class="card-text"><b>Cena:</b> {{ contract.price }} kč/rok</p>
+                <p class="card-text"><b>Popis:</b> {{ event.accident_description }}</p>
+                <p class="card-text"><b>Odhad škody na vozidle:</b> {{ event.estimated_damage_amount }}</p>
+                <p class="card-text"><b>Stav:</b> {{ event.report_state }}</p>
+                <p class='card-text'><b>Uzavřeno:</b> {{event.closed_datetime}}</p>
+                <h5 class="card-title mb-3 mt-4">Viník pojistné události</h5>
+                <p class="card-text"><b>Viník:</b> {{ event.culprit_firstname }} {{ event.culprit_lastname }}</p>
+                <p class="card-text"><b>Telefon:</b> {{ event.culprit_phone }}</p>
+                <p class="card-text"><b>Email:</b> {{ event.culprit_email }}</p>
+                <p class="card-text"><b>Město:</b> {{ event.culprit_city }}</p>
+                <p class="card-text"><b>Ulice:</b> {{ event.culprit_street }}</p>
+                <p class="card-text"><b>PSČ:</b> {{ event.culprit_psc }}</p>
+                <p class="card-text"><b>SPZ:</b> {{ event.culprit_spz }}</p>
+                <p class="card-text"><b>Vozidlo:</b> {{ event.culprit_vehicle }}</p>
+                <p class="card-text"><b>Pojišťovna:</b> {{ event.culprit_insurance }}</p>
             </div>
         </div>
     </div>

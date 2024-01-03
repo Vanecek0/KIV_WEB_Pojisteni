@@ -282,10 +282,6 @@ ul {
     max-width: 920px;*/
 }
 
-.header-modal .modal-item .header-headline {
-    background-color: var(--blue);
-}
-
 .help-article {
     background-color: var(--blue);
 }

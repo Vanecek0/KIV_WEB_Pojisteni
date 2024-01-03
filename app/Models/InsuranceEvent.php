@@ -29,7 +29,7 @@ class InsuranceEvent implements IDBmodel, JsonSerializable
     public string $culprit_vehicle;
     public string $culprit_insurance;
     public string $report_state;
-    public string $closed_datetime;
+    public ?string $closed_datetime;
     public ?string $images;
 
     public Contract $contract;
