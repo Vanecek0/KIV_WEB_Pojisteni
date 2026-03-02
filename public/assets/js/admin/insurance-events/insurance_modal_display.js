@@ -1,7 +1,7 @@
 function getConstants() {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/insurances-constants',
+            url: '/insurances-constants',
             dataType: 'json',
             success: function (data) {
                 resolve(data);
@@ -14,7 +14,7 @@ function getConstants() {
 }
 
 function showEditModal(id) {
-    const fetchInsuranceUrl = 'http://pojisteni.localhost.com/insurances/get';
+    const fetchInsuranceUrl = '/insurances/get';
     const $rowData = $('#rowData');
 
     function createInput(type, label, name, value, disabled = false) {
@@ -37,7 +37,7 @@ function showEditModal(id) {
         for (const image of images) {
             galleryHtml += `
                 <img
-                    src="/public/${image}"
+                    src="./public/${image}"
                     class="img-fluid mb-4"
                     alt="{{ vehicle.brand }} {{ vehicle.model }}"
                 />

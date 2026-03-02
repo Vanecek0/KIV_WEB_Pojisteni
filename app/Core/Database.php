@@ -26,7 +26,7 @@ class Database
     public function connect(): PDO
     {
         try {
-            $this->pdo = new PDO('mysql:host=127.0.0.1:3307;dbname=carinsurance', $this->dbuser, $this->dbpass);
+            $this->pdo = new PDO('mysql:host=127.0.0.1:3306;dbname=carinsurance', $this->dbuser, $this->dbpass);
             return $this->pdo;
         } catch (PDOException $e) {
             error_log('Database connection error: ' . $e->getMessage());

@@ -1,7 +1,7 @@
 function getConstants() {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/contracts-constants',
+            url: '/contracts-constants',
             dataType: 'json',
             success: function (data) {
                 resolve(data);
@@ -14,7 +14,7 @@ function getConstants() {
 }
 
 function showEditModal(id) {
-    const fetchContractUrl = 'http://pojisteni.localhost.com/insurance-contracts/get';
+    const fetchContractUrl = '/insurance-contracts/get';
     const $rowData = $('#rowData');
 
     function createInput(type, label, name, value, disabled = false) {

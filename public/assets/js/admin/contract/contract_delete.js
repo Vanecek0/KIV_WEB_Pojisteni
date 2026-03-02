@@ -1,6 +1,6 @@
 function deleteRow(id) {
     $.ajax({
-        url: 'http://pojisteni.localhost.com/insurance-contracts/delete',
+        url: '/insurance-contracts/delete',
         data: { id },
         dataType: 'json',
         success: function (data) {

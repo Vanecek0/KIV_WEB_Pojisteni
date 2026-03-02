@@ -1,7 +1,7 @@
 async function searchIco(element) {
   var icoInput = $(element).val();
 
-  var url = 'http://pojisteni.localhost.com/ares?ico=' + icoInput;
+  var url = '/ares?ico=' + icoInput;
 
   const response = await fetch(url, {
     method: "GET",

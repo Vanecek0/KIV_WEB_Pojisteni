@@ -7,7 +7,7 @@ jQuery(function () {
       });
 
       $.ajax({
-        url: 'http://pojisteni.localhost.com/insurances/update',
+        url: '/insurances/update',
         data: formData,
         success: function (response) {
           var insuranceId = $('[name="id"]').val();

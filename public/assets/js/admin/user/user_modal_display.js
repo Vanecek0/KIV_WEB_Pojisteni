@@ -1,7 +1,7 @@
 function getRoles() {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/roles',
+            url: '/roles',
             dataType: 'json',
             success: function (data) {
                 resolve(data);
@@ -14,7 +14,7 @@ function getRoles() {
 }
 
 function showEditModal(id) {
-    const fetchUserUrl = 'http://pojisteni.localhost.com/users/get';
+    const fetchUserUrl = '/users/get';
     const $rowData = $('#rowData');
 
     function createInput(type, label, name, value) {
@@ -31,7 +31,7 @@ function showEditModal(id) {
     }
 
     function showModalWithUserData(id) {
-        const fetchUserUrl = 'http://pojisteni.localhost.com/users/get';
+        const fetchUserUrl = '/users/get';
         const $rowData = $('#rowData');
 
         return Object.keys(roles).map(key => `

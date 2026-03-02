@@ -8,7 +8,7 @@ jQuery(function () {
 
     function loadMoreRows() {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/insurance-contracts',
+            url: '/insurance-contracts',
             data: { search, limit, offset, sort, orderby },
             dataType: 'json',
             success: function (data) {
@@ -48,7 +48,7 @@ jQuery(function () {
 
     function loadAllContracts() {
         $.ajax({
-            url: 'http://pojisteni.localhost.com/insurance-contracts',
+            url: '/insurance-contracts',
             data: { search, limit, offset, sort, orderby },
             dataType: 'json',
             success: function (data) {

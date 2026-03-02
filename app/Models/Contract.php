@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Core\Database;
 use App\Core\Session;
 use App\Interfaces\IDBmodel;
-use InvalidArgumentException;
 use JsonSerializable;
 use PDO;
 

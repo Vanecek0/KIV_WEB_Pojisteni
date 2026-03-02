@@ -7,7 +7,7 @@ jQuery(function () {
       });
 
       $.ajax({
-        url: 'http://pojisteni.localhost.com/users/update',
+        url: '/users/update',
         data: formData,
         success: function (response) {
           if(response.hasOwnProperty('message')) {
